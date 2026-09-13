@@ -22,6 +22,7 @@
     --orange-bright:#F47A1E;
     --orange-soft:#F9EAE0;
     --charcoal:#2B2B2B;
+    --charcoal-deep:#1E1E1E;
     --near-black:#1A1A1A;
     --cream:#FFFFFF;
     --ink:#2B2B2B;
@@ -52,34 +53,38 @@
      WCAG AA, so orange sections carry near-black text (5.1:1) instead. */
   .sec{position:relative;overflow:hidden;padding:82px 0}
   .sec[id]{scroll-margin-top:82px}
-  .sec-dark{
+  .sec-a{
     background:var(--charcoal);
     --fg:#FFFFFF; --fg2:rgba(255,255,255,.72);
-    --cardbg:rgba(255,255,255,.05); --cardline:rgba(255,255,255,.13);
-    --cardbg-hi:rgba(255,255,255,.08);
-    --accent:var(--orange-bright);
+    --cardbg:#363636; --cardbg-hi:#414141; --cardline:rgba(255,255,255,.11);
   }
-  .sec-orange{
-    background:var(--orange);
-    --fg:var(--near-black); --fg2:var(--near-black);
-    --cardbg:rgba(255,255,255,.16); --cardline:rgba(26,26,26,.22);
-    --cardbg-hi:rgba(255,255,255,.24);
-    --accent:var(--near-black);
+  .sec-b{
+    background:var(--charcoal-deep);
+    --fg:#FFFFFF; --fg2:rgba(255,255,255,.72);
+    --cardbg:#2B2B2B; --cardbg-hi:#363636; --cardline:rgba(255,255,255,.10);
   }
   .pipe{position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;z-index:0}
   .veil{position:absolute;inset:0;pointer-events:none;z-index:1}
-  .sec-dark .veil{background:radial-gradient(ellipse 78% 72% at 50% 50%,rgba(43,43,43,.88) 0%,rgba(43,43,43,.58) 46%,rgba(43,43,43,0) 78%)}
-  .sec-orange .veil{background:radial-gradient(ellipse 78% 72% at 50% 50%,rgba(232,97,15,.88) 0%,rgba(232,97,15,.58) 46%,rgba(232,97,15,0) 78%)}
+  .sec-a .veil{background:radial-gradient(ellipse 78% 72% at 50% 50%,rgba(43,43,43,.88) 0%,rgba(43,43,43,.55) 46%,rgba(43,43,43,0) 78%)}
+  .sec-b .veil{background:radial-gradient(ellipse 78% 72% at 50% 50%,rgba(30,30,30,.88) 0%,rgba(30,30,30,.55) 46%,rgba(30,30,30,0) 78%)}
   .sec > .wrap{position:relative;z-index:2}
 
+  /* Orange pipeline divider between sections */
+  .divider{position:relative;height:2px;z-index:4;overflow:hidden;
+    background:linear-gradient(90deg,rgba(232,97,15,0),var(--orange) 9%,var(--orange-bright) 50%,var(--orange) 91%,rgba(232,97,15,0));
+    box-shadow:0 0 22px rgba(232,97,15,.5)}
+  .divider::before,.divider::after{content:"";position:absolute;left:0;top:0;bottom:0;width:150px;
+    background:linear-gradient(90deg,transparent,rgba(255,214,170,.9),#FFF3E6,rgba(255,214,170,.9),transparent);
+    animation:packet-run 5.4s linear infinite}
+  .divider::after{width:90px;animation-duration:7.6s;animation-delay:2.6s}
+  @keyframes packet-run{from{transform:translateX(-160px)}to{transform:translateX(100vw)}}
+
   .btn{display:inline-block;font-weight:700;padding:14px 26px;border-radius:999px;transition:.2s var(--ease);border:none;cursor:pointer;font-size:1rem;font-family:inherit}
-  .sec-dark .btn,header .btn{background:var(--orange);color:var(--near-black)}
-  .sec-dark .btn:hover,header .btn:hover{background:var(--orange-bright);transform:translateY(-2px);box-shadow:0 10px 26px rgba(232,97,15,.4)}
-  .sec-orange .btn{background:var(--charcoal);color:#fff}
-  .sec-orange .btn:hover{background:var(--near-black);transform:translateY(-2px);box-shadow:0 10px 26px rgba(20,16,12,.3)}
+  .btn{background:var(--orange);color:var(--near-black)}
+  .btn:hover{background:var(--orange-bright);transform:translateY(-2px);box-shadow:0 10px 26px rgba(232,97,15,.4)}
   .btn:active{transform:translateY(0)}
   .btn.ghost{background:transparent;color:var(--orange-bright);box-shadow:inset 0 0 0 2px var(--orange-bright)}
-  .sec-dark .btn.ghost:hover{background:rgba(244,122,30,.14);color:var(--orange-bright);box-shadow:inset 0 0 0 2px var(--orange-bright)}
+  .btn.ghost:hover{background:rgba(244,122,30,.14);color:var(--orange-bright);box-shadow:inset 0 0 0 2px var(--orange-bright)}
 
   .eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(244,122,30,.15);color:var(--orange-bright);font-weight:700;font-size:.8rem;letter-spacing:.04em;text-transform:uppercase;padding:7px 15px;border-radius:999px;margin-bottom:22px}
   .eyebrow i{width:7px;height:7px;border-radius:50%;background:var(--orange-bright);display:inline-block;animation:pulse 2s infinite}
@@ -197,7 +202,7 @@
   .ns-popup.compact .ns-feedback{font-size:.82rem;margin-top:12px;padding-top:11px}
 
   /* Marquee */
-  .marquee-sec{background:var(--charcoal);padding:30px 0;border-top:1px solid rgba(255,255,255,.09);border-bottom:1px solid rgba(255,255,255,.09);position:relative;z-index:2}
+  .marquee-sec{background:var(--charcoal-deep);padding:32px 0;position:relative;z-index:2}
   .marquee-lbl{text-align:center;font-size:.76rem;text-transform:uppercase;letter-spacing:.09em;color:rgba(255,255,255,.6);font-weight:600;margin-bottom:18px}
   .marquee{position:relative;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
   .marquee-track{display:flex;gap:14px;width:max-content;animation:scroll-x 38s linear infinite}
@@ -215,10 +220,10 @@
 
   /* Problem */
   .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .stat{background:#fff;border-radius:var(--radius);padding:32px 26px;box-shadow:var(--shadow-lg);text-align:center;transition:.25s var(--ease)}
-  .stat:hover{transform:translateY(-4px)}
-  .stat .num{font-size:2.8rem;font-weight:800;color:var(--orange-deep);line-height:1;letter-spacing:-.02em}
-  .stat .lbl{color:var(--muted);margin-top:12px;font-size:.97rem}
+  .stat{background:var(--cardbg);border:1px solid var(--cardline);border-radius:var(--radius);padding:32px 26px;text-align:center;transition:.25s var(--ease)}
+  .stat:hover{transform:translateY(-4px);background:var(--cardbg-hi)}
+  .stat .num{font-size:2.8rem;font-weight:800;color:var(--orange-bright);line-height:1;letter-spacing:-.02em}
+  .stat .lbl{color:var(--fg2);margin-top:12px;font-size:.97rem}
   .src{text-align:center;color:var(--fg2);font-size:.82rem;margin-top:26px;font-weight:500}
   @media(max-width:720px){.stats{grid-template-columns:1fr}}
 
@@ -238,14 +243,14 @@
 
   /* See it live */
   .live-tabs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:28px}
-  .tab{background:rgba(26,26,26,.1);border:1px solid rgba(26,26,26,.28);color:var(--near-black);font-weight:700;font-size:.93rem;padding:10px 22px;border-radius:999px;cursor:pointer;transition:.2s var(--ease);font-family:inherit}
-  .tab:hover{background:rgba(26,26,26,.18);transform:translateY(-2px)}
-  .tab.active{background:var(--charcoal);border-color:var(--charcoal);color:#fff}
+  .tab{background:var(--cardbg);border:1px solid var(--cardline);color:#fff;font-weight:600;font-size:.93rem;padding:10px 22px;border-radius:999px;cursor:pointer;transition:.2s var(--ease);font-family:inherit}
+  .tab:hover{background:var(--cardbg-hi);border-color:rgba(244,122,30,.5);transform:translateY(-2px)}
+  .tab.active{background:var(--orange);border-color:var(--orange);color:var(--near-black);font-weight:700}
   .live-stage{max-width:760px;margin:0 auto}
   .live .dw-body{min-height:590px}
   .live .dw-prompt{min-height:104px}
-  .live-cap{text-align:center;color:var(--near-black);font-size:.95rem;margin-top:22px;max-width:56ch;margin-left:auto;margin-right:auto;min-height:48px;transition:opacity .3s;font-weight:500}
-  .live-cap strong{font-weight:800}
+  .live-cap{text-align:center;color:var(--fg2);font-size:.95rem;margin-top:22px;max-width:56ch;margin-left:auto;margin-right:auto;min-height:48px;transition:opacity .3s}
+  .live-cap strong{color:#fff;font-weight:700}
   @media(max-width:640px){.tab{font-size:.85rem;padding:9px 16px}}
 
   /* Coverage */
@@ -256,7 +261,8 @@
   .cov .ci svg{width:22px;height:22px;color:var(--orange-bright)}
   .cov h3{font-size:1.08rem;margin-bottom:9px;color:var(--fg)}
   .cov p{color:var(--fg2);font-size:.93rem}
-  .cov.ai{background:rgba(244,122,30,.13);border-color:rgba(244,122,30,.38)}
+  .cov.ai{background:#3B2718;border-color:rgba(244,122,30,.42)}
+  .cov.ai:hover{background:#472F1D}
   .cov .pill{display:inline-block;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:#C9C3FF;background:rgba(79,70,229,.3);padding:3px 9px;border-radius:999px;margin-bottom:10px}
   @media(max-width:860px){.cov-grid{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:560px){.cov-grid{grid-template-columns:1fr}}
@@ -281,16 +287,16 @@
   @media(max-width:520px){.kpis{grid-template-columns:1fr}}
   .dash-cap{text-align:center;color:var(--fg2);font-size:.8rem;margin-top:14px;font-weight:500}
   .feats{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:44px}
-  .feat .dot{width:26px;height:26px;border-radius:8px;background:var(--charcoal);display:flex;align-items:center;justify-content:center;color:#fff;font-size:.8rem;font-weight:700;margin-bottom:11px}
+  .feat .dot{width:26px;height:26px;border-radius:8px;background:linear-gradient(150deg,var(--orange-bright),var(--orange));display:flex;align-items:center;justify-content:center;color:#fff;font-size:.8rem;font-weight:700;margin-bottom:11px}
   .feat h4{font-size:1.02rem;margin-bottom:4px;color:var(--fg)}
   .feat p{color:var(--fg2);font-size:.93rem}
   @media(max-width:860px){.feats{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:520px){.feats{grid-template-columns:1fr}}
-  .touch{margin-top:44px;background:#fff;border-radius:var(--radius);padding:34px 32px;box-shadow:var(--shadow-lg);display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start}
+  .touch{margin-top:44px;background:var(--cardbg);border:1px solid var(--cardline);border-radius:var(--radius);padding:34px 32px;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start}
   .touch .ti{width:52px;height:52px;border-radius:14px;background:linear-gradient(150deg,var(--orange-bright),var(--orange));display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(232,97,15,.3);flex:none}
   .touch .ti svg{width:26px;height:26px;color:#fff}
-  .touch h3{font-size:1.3rem;letter-spacing:-.02em;margin-bottom:9px;color:var(--ink)}
-  .touch p{color:var(--muted);font-size:1rem;max-width:62ch}
+  .touch h3{font-size:1.3rem;letter-spacing:-.02em;margin-bottom:9px;color:var(--fg)}
+  .touch p{color:var(--fg2);font-size:1rem;max-width:62ch}
   @media(max-width:640px){.touch{grid-template-columns:1fr;padding:28px 24px}}
 
   /* Why NorthSyte */
@@ -304,15 +310,15 @@
 
   /* CTA */
   .cta{text-align:center}
-  .cta h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:14px;letter-spacing:-.025em;font-weight:800;color:var(--near-black)}
-  .cta p{max-width:50ch;margin:0 auto 30px;font-size:1.08rem;color:var(--near-black)}
+  .cta h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:14px;letter-spacing:-.025em;font-weight:800;color:var(--fg)}
+  .cta p{max-width:50ch;margin:0 auto 30px;font-size:1.08rem;color:var(--fg2)}
   .form{display:flex;gap:12px;max-width:480px;margin:0 auto;flex-wrap:wrap;justify-content:center}
   .form input{flex:1;min-width:220px;padding:14px 18px;border-radius:999px;border:none;font-size:1rem;font-family:inherit;outline:none;color:var(--ink)}
-  .form input:focus{box-shadow:0 0 0 3px rgba(26,26,26,.4)}
-  .cta-note{margin-top:18px;font-size:.86rem;color:var(--near-black);font-weight:500}
-  #demo-success{color:var(--near-black);font-size:1.1rem;margin-top:16px;font-weight:700}
+  .form input:focus{box-shadow:0 0 0 3px rgba(244,122,30,.55)}
+  .cta-note{margin-top:18px;font-size:.86rem;color:var(--fg2)}
+  #demo-success{color:var(--orange-bright);font-size:1.1rem;margin-top:16px;font-weight:700}
 
-  footer{background:var(--charcoal);padding:46px 0;border-top:1px solid rgba(255,255,255,.09);text-align:center;color:rgba(255,255,255,.6);font-size:.9rem}
+  footer{background:var(--charcoal-deep);padding:46px 0;text-align:center;color:rgba(255,255,255,.6);font-size:.9rem}
   footer .logo{justify-content:center;margin-bottom:10px}
 
   @media(prefers-reduced-motion:reduce){
@@ -343,7 +349,7 @@
 </header>
 
 <!-- HERO -->
-<section class="sec sec-dark hero" data-pipe>
+<section class="sec sec-a hero" data-pipe>
   <div class="wrap">
     <div class="hero-grid">
       <div>
@@ -378,6 +384,8 @@
   </div>
 </section>
 
+<div class="divider"></div>
+
 <!-- COVERAGE MARQUEE -->
 <div class="marquee-sec">
   <div class="marquee-lbl">Protection built for the AI tools your team already uses</div>
@@ -386,8 +394,10 @@
   </div>
 </div>
 
+<div class="divider"></div>
+
 <!-- PROBLEM -->
-<section class="sec sec-orange" data-pipe>
+<section class="sec sec-a" data-pipe>
   <div class="wrap">
     <div class="section-head" data-reveal>
       <h2>Policies on paper aren't protection.</h2>
@@ -402,8 +412,10 @@
   </div>
 </section>
 
+<div class="divider"></div>
+
 <!-- HOW IT WORKS -->
-<section id="how" class="sec sec-dark" data-pipe>
+<section id="how" class="sec sec-b" data-pipe>
   <div class="wrap">
     <div class="section-head" data-reveal>
       <h2>Protection that works the way your team does</h2>
@@ -432,8 +444,10 @@
   </div>
 </section>
 
+<div class="divider"></div>
+
 <!-- SEE IT LIVE -->
-<section id="live" class="sec sec-orange live" data-pipe>
+<section id="live" class="sec sec-a live" data-pipe>
   <div class="wrap">
     <div class="section-head" data-reveal>
       <h2>See it live</h2>
@@ -459,8 +473,10 @@
   </div>
 </section>
 
+<div class="divider"></div>
+
 <!-- WHAT WE CATCH -->
-<section id="coverage" class="sec sec-dark" data-pipe>
+<section id="coverage" class="sec sec-b" data-pipe>
   <div class="wrap">
     <div class="section-head" data-reveal>
       <h2>What NorthSyte catches</h2>
@@ -502,8 +518,10 @@
   </div>
 </section>
 
+<div class="divider"></div>
+
 <!-- INSIGHTS / DASHBOARD -->
-<section id="insights" class="sec sec-orange" data-pipe>
+<section id="insights" class="sec sec-a" data-pipe>
   <div class="wrap">
     <div class="section-head" data-reveal>
       <h2>See and improve how your team uses AI</h2>
@@ -565,8 +583,10 @@
   </div>
 </section>
 
+<div class="divider"></div>
+
 <!-- WHY NORTHSYTE -->
-<section id="why" class="sec sec-dark" data-pipe>
+<section id="why" class="sec sec-b" data-pipe>
   <div class="wrap">
     <div class="section-head" data-reveal>
       <h2>Why teams choose North<span style="color:var(--orange-bright)">Syte</span></h2>
@@ -583,8 +603,10 @@
   </div>
 </section>
 
+<div class="divider"></div>
+
 <!-- CTA / WAITLIST -->
-<section id="waitlist" class="sec sec-orange cta" data-pipe>
+<section id="waitlist" class="sec sec-a cta" data-pipe>
   <div class="wrap">
     <h2>Be the first to know</h2>
     <p>Join the waitlist and we'll reach out as soon as NorthSyte is ready.</p>
@@ -598,6 +620,8 @@
     <p class="cta-note">No spam. Just one note when we're ready for you.</p>
   </div>
 </section>
+
+<div class="divider"></div>
 
 <footer>
   <div class="wrap">
@@ -620,7 +644,6 @@
      Orthogonal "circuit" traces with glowing packets running along them.
      One canvas per section; only the visible ones animate. */
   function Pipeline(section){
-    var dark   = section.classList.contains('sec-dark');
     var canvas = document.createElement('canvas');
     canvas.className = 'pipe';
     var veil = document.createElement('div');
@@ -632,9 +655,9 @@
     var dpr = Math.min(window.devicePixelRatio || 1, 2);
     var w = 0, h = 0, traces = [], raf = null, last = 0, visible = false;
 
-    var TRACE = dark ? 'rgba(255,255,255,.07)'  : 'rgba(20,12,6,.13)';
-    var GLOW  = dark ? 'rgba(244,122,30,.85)'   : 'rgba(255,255,255,.8)';
-    var NODE  = dark ? 'rgba(244,122,30,.55)'   : 'rgba(255,255,255,.45)';
+    var TRACE = 'rgba(255,255,255,.07)';
+    var GLOW  = 'rgba(244,122,30,.85)';
+    var NODE  = 'rgba(244,122,30,.55)';
     var TAIL  = 78;
 
     function buildTraces(){
