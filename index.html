@@ -112,12 +112,12 @@
   .dw-bar{display:flex;align-items:center;gap:8px;padding:11px 15px;background:#F7F6F4;border-bottom:1px solid var(--line-soft)}
   .dw-dots{display:flex;gap:6px}
   .dw-dots i{width:10px;height:10px;border-radius:50%;background:#DCD9D4;display:block}
-  .dw-url{flex:1;text-align:center;font-size:.76rem;color:var(--muted);background:#fff;border:1px solid var(--line-soft);border-radius:999px;padding:4px 12px;max-width:210px;margin:0 auto}
-  .dw-badge{display:flex;align-items:center;gap:5px;font-size:.66rem;font-weight:700;color:var(--orange-deep);background:var(--orange-soft);padding:4px 9px;border-radius:999px;letter-spacing:.03em}
+  .dw-url{flex:1;text-align:center;font-size:.76rem;color:var(--muted);background:#fff;border:1px solid var(--line-soft);border-radius:999px;padding:4px 12px;max-width:210px;margin:0 auto;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .dw-badge{display:flex;align-items:center;gap:5px;font-size:.66rem;font-weight:700;color:var(--orange-deep);background:var(--orange-soft);padding:4px 9px;border-radius:999px;letter-spacing:.03em;white-space:nowrap}
   .dw-badge i{width:6px;height:6px;border-radius:50%;background:var(--orange);animation:pulse 2s infinite}
-  .dw-body{position:relative;padding:20px;min-height:560px;background:#fff}
+  .dw-body{position:relative;padding:20px;background:#fff}
   .dw-label{font-size:.68rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:600;margin-bottom:9px}
-  .dw-prompt{font-size:.95rem;line-height:1.62;color:var(--ink);word-break:break-word;min-height:88px}
+  .dw-prompt{font-size:.95rem;line-height:1.62;color:var(--ink);word-break:break-word}
   .dw-prompt .tok{border-radius:4px;padding:1px 2px;transition:background .35s var(--ease),box-shadow .35s var(--ease)}
   .dw-prompt .tok.on{background:rgba(232,97,15,.16);box-shadow:0 1px 0 0 var(--orange)}
   .caret{display:inline-block;width:2px;height:1.05em;background:var(--orange);vertical-align:-.16em;margin-left:1px;animation:blink 1s steps(1) infinite}
@@ -126,14 +126,15 @@
   .dw-scrim.show{opacity:1}
   .dw-popup-slot{position:absolute;left:16px;right:16px;bottom:16px;opacity:0;transform:translateY(18px) scale(.97);transition:.45s var(--ease);pointer-events:none}
   .dw-popup-slot.show{opacity:1;transform:none}
+  .hero .dw-body{min-height:560px}
+  .hero .dw-prompt{min-height:88px}
 
   /* ---- NorthSyte popup (product UI) ---- */
   .ns-popup{background:#fff;border:1px solid #E6E4E1;border-radius:20px;box-shadow:0 24px 60px rgba(30,25,20,.28);padding:22px;text-align:left}
   .ns-pop-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px}
   .ns-mark{font-size:1.3rem;font-weight:800;letter-spacing:-.02em;color:#161616}
   .ns-mark span{color:var(--orange)}
-  .ns-close{background:none;border:0;cursor:pointer;color:#9A9691;padding:2px;line-height:0;border-radius:6px;transition:.18s}
-  .ns-close:hover{color:var(--ink);background:#F3F2F0}
+  .ns-close{background:none;border:0;color:#9A9691;padding:2px;line-height:0;border-radius:6px}
   .ns-close svg{width:21px;height:21px}
   .ns-pop-title{display:flex;align-items:center;gap:14px;margin-bottom:10px}
   .ns-warn{flex:none;width:44px;height:44px;border-radius:13px;background:#FDF0E7;display:flex;align-items:center;justify-content:center}
@@ -149,22 +150,15 @@
   .ns-snip mark{background:#FBE3D5;color:#B4460B;font-weight:700;border-radius:4px;padding:1px 5px;font-style:normal}
   @keyframes snipin{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:none}}
   .ns-actions{display:flex;flex-direction:column;gap:10px}
-  .ns-btn{border:0;border-radius:11px;font-family:inherit;font-size:1rem;font-weight:700;padding:15px 18px;cursor:pointer;transition:.18s var(--ease);width:100%;text-align:center;line-height:1.25}
-  .ns-btn:hover{transform:translateY(-1px)}
+  .ns-btn{border:0;border-radius:11px;font-family:inherit;font-size:1rem;font-weight:700;padding:15px 18px;width:100%;text-align:center;line-height:1.25}
   .ns-primary{background:var(--orange);color:#fff}
-  .ns-primary:hover{background:var(--orange-deep)}
   .ns-row{display:flex;gap:10px}
   .ns-row .ns-btn{flex:1}
   .ns-green{background:var(--green);color:#fff}
-  .ns-green:hover{background:#276A2A}
   .ns-grey{background:#F3F2F0;color:#2B2B2B}
-  .ns-grey:hover{background:#E7E5E2}
   .ns-feedback{display:flex;align-items:center;justify-content:center;gap:12px;color:#9A9691;font-size:.92rem;margin-top:16px;padding-top:15px;border-top:1px solid #EFEDEA}
-  .ns-thumb{background:none;border:0;cursor:pointer;color:#9A9691;padding:3px;line-height:0;border-radius:6px;transition:.18s}
-  .ns-thumb:hover{color:var(--orange);background:#FDF0E7}
-  .ns-thumb.picked{color:var(--orange)}
+  .ns-thumb{background:none;border:0;color:#9A9691;padding:3px;line-height:0}
   .ns-thumb svg{width:19px;height:19px;display:block}
-  /* compact variant for the hero mock */
   .ns-popup.compact{padding:17px;border-radius:17px}
   .ns-popup.compact .ns-mark{font-size:1.08rem}
   .ns-popup.compact .ns-pop-head{margin-bottom:12px}
@@ -221,43 +215,34 @@
   .card p{color:var(--muted);font-size:.97rem}
   @media(max-width:720px){.cards{grid-template-columns:1fr}}
 
-  /* Playground */
-  .pg-sec{background:var(--ink-deep);color:#fff}
-  .pg-sec .section-head h2{color:#fff}
-  .pg-sec .section-head p{color:rgba(255,255,255,.62)}
-  .pg{max-width:720px;margin:0 auto}
-  .pg-samples{display:flex;gap:9px;flex-wrap:wrap;justify-content:center;margin-bottom:18px}
-  .pg-sample{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);color:rgba(255,255,255,.82);font-family:inherit;font-size:.84rem;font-weight:600;padding:8px 16px;border-radius:999px;cursor:pointer;transition:.2s var(--ease)}
-  .pg-sample:hover{background:var(--orange);border-color:var(--orange);color:#fff;transform:translateY(-2px)}
-  .pg-field{position:relative;border-radius:16px;overflow:hidden;box-shadow:0 18px 44px rgba(0,0,0,.34)}
-  .pg-mirror,.pg-input{font-family:inherit;font-size:1rem;font-weight:400;line-height:1.72;letter-spacing:0;padding:20px 22px;border:1px solid rgba(255,255,255,.16);border-radius:16px;white-space:pre-wrap;overflow-wrap:break-word;word-break:break-word;min-height:168px;height:168px;margin:0}
-  .pg-mirror{position:absolute;inset:0;color:transparent;pointer-events:none;overflow:hidden;background:#fff}
-  .pg-input{position:relative;display:block;width:100%;background:transparent;color:var(--ink);resize:none;outline:none;caret-color:var(--orange);overflow:auto}
-  .pg-input:focus{border-color:var(--orange)}
-  .pg-input::placeholder{color:#A9A5A0}
-  .pg-hit{background:rgba(232,97,15,.2);box-shadow:0 1px 0 0 var(--orange);border-radius:4px;color:transparent;padding:1px 0}
-  .pg-result{margin-top:18px}
-  .pg-clean{display:flex;align-items:center;justify-content:center;gap:11px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.13);border-radius:14px;padding:22px;color:rgba(255,255,255,.72);font-weight:600;font-size:.98rem}
-  .pg-clean svg{width:19px;height:19px;color:var(--green-bright);flex:none}
-  .pg-note{text-align:center;color:rgba(255,255,255,.45);font-size:.82rem;margin-top:18px;display:flex;align-items:center;justify-content:center;gap:8px}
-  .pg-note svg{width:14px;height:14px;flex:none}
-  .pg-toast{text-align:center;color:var(--grad-top);font-size:.88rem;font-weight:600;margin-top:14px;min-height:20px;opacity:0;transition:opacity .3s}
-  .pg-toast.show{opacity:1}
-
-  /* Demo Videos */
-  .demos{background:#000;overflow:hidden}
-  .demos .section-head h2{color:#fff}
-  .demos .section-head p{color:rgba(255,255,255,.6)}
-  .video-wrap{position:relative;border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5);max-width:1060px;margin:0 auto;cursor:pointer;background:#000;aspect-ratio:16/9;transform:scale(.72);transform-origin:center center;transition:transform .12s linear;will-change:transform}
-  .demo-vid{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain;transition:opacity .35s ease}
-  .play-overlay{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:72px;height:72px;background:rgba(0,0,0,.55);border-radius:50%;display:flex;align-items:center;justify-content:center;opacity:0;transition:.2s;pointer-events:none;z-index:2}
-  .play-overlay svg{width:28px;height:28px;fill:#fff;margin-left:4px}
-  .video-wrap.paused .play-overlay{opacity:1}
-  .industry-tabs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:30px;background:#fff;padding:16px 24px;border-radius:999px;width:fit-content;margin-left:auto;margin-right:auto;box-shadow:0 10px 30px rgba(0,0,0,.3)}
-  .tab{background:transparent;border:2px solid var(--line);color:var(--ink);font-weight:600;font-size:.93rem;padding:9px 22px;border-radius:999px;cursor:pointer;transition:.2s var(--ease);font-family:inherit}
-  .tab:hover{border-color:var(--orange);color:var(--orange);transform:translateY(-2px)}
+  /* See it live */
+  .live{background:var(--ink-deep);color:#fff}
+  .live .section-head h2{color:#fff}
+  .live .section-head p{color:rgba(255,255,255,.62)}
+  .live-tabs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:28px}
+  .tab{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);color:rgba(255,255,255,.78);font-weight:600;font-size:.93rem;padding:10px 22px;border-radius:999px;cursor:pointer;transition:.2s var(--ease);font-family:inherit}
+  .tab:hover{border-color:var(--orange);color:#fff;transform:translateY(-2px)}
   .tab.active{background:var(--orange);border-color:var(--orange);color:#fff}
-  @media(max-width:720px){.industry-tabs{border-radius:20px;padding:14px}.tab{font-size:.85rem;padding:8px 16px}}
+  .live-stage{max-width:760px;margin:0 auto}
+  .live .dw-body{min-height:590px}
+  .live .dw-prompt{min-height:104px}
+  .live-cap{text-align:center;color:rgba(255,255,255,.6);font-size:.95rem;margin-top:22px;max-width:56ch;margin-left:auto;margin-right:auto;min-height:48px;transition:opacity .3s}
+  .live-cap strong{color:#fff;font-weight:600}
+  @media(max-width:640px){.tab{font-size:.85rem;padding:9px 16px}}
+
+  /* Coverage */
+  .cov-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .cov{border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;background:var(--card);transition:.26s var(--ease)}
+  .cov:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--orange-soft)}
+  .cov .ci{width:44px;height:44px;border-radius:12px;background:var(--orange-soft);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+  .cov .ci svg{width:22px;height:22px;color:var(--orange-deep)}
+  .cov h3{font-size:1.08rem;margin-bottom:9px}
+  .cov p{color:var(--muted);font-size:.93rem}
+  .cov.ai{background:linear-gradient(160deg,#fff,var(--orange-soft));border-color:var(--orange-soft)}
+  .cov.ai .ci{background:#fff}
+  .cov .pill{display:inline-block;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--indigo);background:#EEF0FE;padding:3px 9px;border-radius:999px;margin-bottom:10px}
+  @media(max-width:860px){.cov-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.cov-grid{grid-template-columns:1fr}}
 
   /* Insights / dashboard */
   .spotlight{background:var(--orange-soft)}
@@ -279,12 +264,21 @@
   @media(max-width:900px){.kpis{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:520px){.kpis{grid-template-columns:1fr}}
   .dash-cap{text-align:center;color:var(--muted);font-size:.78rem;margin-top:14px}
-  .feats{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:48px}
+  .feats{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:44px}
   .feat .dot{width:26px;height:26px;border-radius:8px;background:linear-gradient(150deg,var(--grad-top),var(--grad-bot));display:flex;align-items:center;justify-content:center;color:#fff;font-size:.8rem;font-weight:700;margin-bottom:11px}
   .feat h4{font-size:1.02rem;margin-bottom:4px}
   .feat p{color:var(--muted);font-size:.93rem}
   @media(max-width:860px){.feats{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:520px){.feats{grid-template-columns:1fr}}
+  .touch{margin-top:44px;background:#fff;border:1px solid var(--line-soft);border-radius:var(--radius);padding:34px 32px;box-shadow:var(--shadow);display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start}
+  .touch .ti{width:52px;height:52px;border-radius:14px;background:linear-gradient(150deg,var(--grad-top),var(--grad-bot));display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(226,85,26,.28);flex:none}
+  .touch .ti svg{width:26px;height:26px;color:#fff}
+  .touch h3{font-size:1.3rem;letter-spacing:-.02em;margin-bottom:9px}
+  .touch p{color:var(--muted);font-size:1rem;max-width:62ch}
+  .touch-chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+  .touch-chip{display:inline-flex;align-items:center;gap:8px;background:var(--orange-soft);color:var(--orange-deep);font-weight:600;font-size:.88rem;padding:8px 16px;border-radius:999px}
+  .touch-chip svg{width:14px;height:14px;flex:none}
+  @media(max-width:640px){.touch{grid-template-columns:1fr;padding:28px 24px}}
 
   /* Why NorthSyte */
   .why{background:var(--card)}
@@ -295,16 +289,6 @@
   .why-item h4{font-size:1.05rem;margin-bottom:3px}
   .why-item p{color:var(--muted);font-size:.94rem}
   @media(max-width:720px){.why-grid{grid-template-columns:1fr}}
-
-  /* Audience */
-  .aud-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-  .aud{border-radius:var(--radius);padding:34px 30px;border:1px solid var(--line);background:var(--card);transition:.28s var(--ease)}
-  .aud:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
-  .aud.primary{background:linear-gradient(160deg,#fff,var(--orange-soft));border-color:var(--orange-soft)}
-  .aud .tag{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--orange-deep)}
-  .aud h3{font-size:1.35rem;margin:8px 0 12px}
-  .aud p{color:var(--muted)}
-  @media(max-width:720px){.aud-grid{grid-template-columns:1fr}}
 
   /* CTA */
   .cta{background:linear-gradient(160deg,var(--orange),var(--orange-deep));color:#fff;text-align:center;position:relative;overflow:hidden}
@@ -327,7 +311,6 @@
     *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
     [data-reveal]{opacity:1;transform:none}
     .marquee-track{animation:none}
-    .video-wrap{transform:scale(1)}
   }
 </style>
 </head>
@@ -338,9 +321,9 @@
     <a href="#" class="logo"><img src="brand/NorthSyte-wordmark-on-black.png" alt="NorthSyte"></a>
     <nav class="nav-links" id="nav-links">
       <a href="#how">How it works</a>
-      <a href="#try">Try it</a>
+      <a href="#live">See it live</a>
+      <a href="#coverage">What we catch</a>
       <a href="#insights">Dashboard</a>
-      <a href="#why">Why NorthSyte</a>
       <a href="#waitlist" class="btn">Join the waitlist</a>
     </nav>
     <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false">
@@ -360,7 +343,7 @@
         <p class="sub">Your team is already using AI. NorthSyte catches sensitive data in their prompts in real time, before it ever leaves the browser. No prompt storage, no disruption to how people work.</p>
         <div class="hero-cta">
           <a href="#waitlist" class="btn">Join the waitlist</a>
-          <a href="#try" class="btn ghost">Try it live</a>
+          <a href="#live" class="btn ghost">See it live</a>
         </div>
         <div class="reassure">
           <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.4 8.4-8 9.5C7.4 20.4 4 17 4 12V6z"/></svg> Prompts never stored</span>
@@ -372,43 +355,14 @@
       <div class="demo-window" data-reveal>
         <div class="dw-bar">
           <div class="dw-dots"><i></i><i></i><i></i></div>
-          <div class="dw-url" id="dw-url">chatgpt.com</div>
+          <div class="dw-url" id="hero-url">chatgpt.com</div>
           <div class="dw-badge"><i></i> NorthSyte</div>
         </div>
         <div class="dw-body">
           <div class="dw-label">Prompt</div>
-          <div class="dw-prompt" id="dw-prompt"></div>
-          <div class="dw-scrim" id="dw-scrim"></div>
-          <div class="dw-popup-slot" id="dw-popup-slot">
-            <div class="ns-popup compact">
-              <div class="ns-pop-head">
-                <span class="ns-mark">North<span>Syte</span></span>
-                <button class="ns-close" tabindex="-1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
-              </div>
-              <div class="ns-pop-title">
-                <span class="ns-warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><line x1="12" y1="9.5" x2="12" y2="13.5"/><circle cx="12" cy="17.2" r="1" fill="currentColor" stroke="none"/></svg></span>
-                <h3>Sensitive data detected</h3>
-              </div>
-              <p class="ns-pop-sub">Review before this leaves your device.</p>
-              <div class="ns-detected">
-                <div class="ns-detected-lbl">Detected</div>
-                <div class="ns-detected-types" id="dw-types"></div>
-                <div class="ns-snips" id="dw-snips"></div>
-              </div>
-              <div class="ns-actions">
-                <button class="ns-btn ns-primary" tabindex="-1">NorthSyte Edit &ndash; Replace it for me</button>
-                <div class="ns-row">
-                  <button class="ns-btn ns-green" tabindex="-1">Cancel and edit</button>
-                  <button class="ns-btn ns-grey" tabindex="-1">Send anyway</button>
-                </div>
-              </div>
-              <div class="ns-feedback">
-                Was this accurate?
-                <button class="ns-thumb" tabindex="-1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10v11H4a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1z"/><path d="M7 10l4.2-7.2a1.6 1.6 0 0 1 3 .8V9h4.6a2 2 0 0 1 2 2.4l-1.4 7A2 2 0 0 1 17.4 20H7"/></svg></button>
-                <button class="ns-thumb" tabindex="-1" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M17 14V3h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1z"/><path d="M17 14l-4.2 7.2a1.6 1.6 0 0 1-3-.8V15H5.2a2 2 0 0 1-2-2.4l1.4-7A2 2 0 0 1 6.6 4H17"/></svg></button>
-              </div>
-            </div>
-          </div>
+          <div class="dw-prompt" id="hero-prompt"></div>
+          <div class="dw-scrim" id="hero-scrim"></div>
+          <div class="dw-popup-slot" id="hero-slot"></div>
         </div>
       </div>
     </div>
@@ -469,54 +423,72 @@
   </div>
 </section>
 
-<!-- INTERACTIVE PLAYGROUND -->
-<section id="try" class="pg-sec">
+<!-- SEE IT LIVE -->
+<section id="live" class="live">
   <div class="wrap">
     <div class="section-head" data-reveal>
-      <h2>See it catch something</h2>
-      <p>Type a prompt the way one of your employees would, or load an example. This is the same warning your team would see.</p>
+      <h2>See it live</h2>
+      <p>A real prompt, typed the way your team would type it. Pick an industry and watch what NorthSyte catches.</p>
     </div>
-    <div class="pg" data-reveal>
-      <div class="pg-samples">
-        <button class="pg-sample" data-sample="legal">Legal example</button>
-        <button class="pg-sample" data-sample="health">Healthcare example</button>
-        <button class="pg-sample" data-sample="finance">Finance example</button>
-        <button class="pg-sample" data-sample="clean">Harmless example</button>
+    <div class="live-tabs" id="live-tabs" data-reveal></div>
+    <div class="live-stage" data-reveal>
+      <div class="demo-window">
+        <div class="dw-bar">
+          <div class="dw-dots"><i></i><i></i><i></i></div>
+          <div class="dw-url" id="live-url">chatgpt.com</div>
+          <div class="dw-badge"><i></i> NorthSyte</div>
+        </div>
+        <div class="dw-body">
+          <div class="dw-label">Prompt</div>
+          <div class="dw-prompt" id="live-prompt"></div>
+          <div class="dw-scrim" id="live-scrim"></div>
+          <div class="dw-popup-slot" id="live-slot"></div>
+        </div>
       </div>
-      <div class="pg-field">
-        <div class="pg-mirror" id="pg-mirror" aria-hidden="true"></div>
-        <textarea class="pg-input" id="pg-input" spellcheck="false" placeholder="Try typing an email address, a phone number, or a client's details…"></textarea>
-      </div>
-      <div class="pg-result" id="pg-result"></div>
-      <div class="pg-toast" id="pg-toast"></div>
-      <div class="pg-note">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
-        This demo runs entirely in your browser. Nothing you type is sent anywhere.
-      </div>
+      <p class="live-cap" id="live-cap"></p>
     </div>
   </div>
 </section>
 
-<!-- DEMO VIDEOS -->
-<section id="demos" class="demos">
+<!-- WHAT WE CATCH -->
+<section id="coverage">
   <div class="wrap">
     <div class="section-head" data-reveal>
-      <h2>See North<span style="color:var(--orange)">Syte</span> in action</h2>
-      <p>Select your industry below.</p>
+      <h2>What NorthSyte catches</h2>
+      <p>Pattern rules for the things that follow a format, and an in-browser AI model for the things that don't.</p>
     </div>
-    <div class="video-wrap" id="video-wrap">
-      <video id="demo-vid-a" class="demo-vid" autoplay loop muted playsinline style="opacity:1" src="Marketing Videos/Typing Warning Animation - Legal v2.mp4"></video>
-      <video id="demo-vid-b" class="demo-vid" loop muted playsinline style="opacity:0"></video>
-      <div class="play-overlay">
-        <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+    <div class="cov-grid">
+      <div class="cov" data-reveal>
+        <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 9.5a4.5 4.5 0 1 0-4.2 4.5L8 16.3V19h3l1-1h2l1-1.5V14l-1.2-1.2a4.5 4.5 0 0 0 .7-3.3z"/><circle cx="16.4" cy="7.6" r="1.1" fill="currentColor" stroke="none"/></svg></div>
+        <h3>Credentials &amp; secrets</h3>
+        <p>API keys for AWS, OpenAI and Stripe, GitHub and Slack tokens, private keys, passwords, bearer tokens, database connection strings and internal URLs.</p>
       </div>
-    </div>
-    <div class="industry-tabs">
-      <button class="tab active" data-video="Marketing Videos/Typing Warning Animation - Legal v2.mp4">Legal</button>
-      <button class="tab" data-video="Marketing Videos/Typing Warning Animation - Healthcare.mp4">Healthcare</button>
-      <button class="tab" data-video="Marketing Videos/Typing Warning Animation - Goverment.mp4">Government</button>
-      <button class="tab" data-video="Marketing Videos/Typing Warning Animation - Finance v2.mp4">Finance</button>
-      <button class="tab" data-video="Marketing Videos/Typing Warning Animation - Engineering.mp4">Engineering</button>
+      <div class="cov" data-reveal>
+        <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5.5" width="19" height="13" rx="2.5"/><line x1="2.5" y1="10" x2="21.5" y2="10"/><line x1="6" y1="14.5" x2="10" y2="14.5"/></svg></div>
+        <h3>Financial</h3>
+        <p>Credit card numbers verified with the Luhn checksum, security codes, IBANs, US routing numbers, SWIFT/BIC codes and CRA business numbers.</p>
+      </div>
+      <div class="cov" data-reveal>
+        <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="15" rx="2.5"/><circle cx="9" cy="10.5" r="2.2"/><path d="M5.6 16.2a3.8 3.8 0 0 1 6.8 0"/><line x1="14.5" y1="9.5" x2="18.5" y2="9.5"/><line x1="14.5" y1="13" x2="18.5" y2="13"/></svg></div>
+        <h3>Government &amp; personal IDs</h3>
+        <p>Canadian Social Insurance Numbers with a Luhn check, US Social Security Numbers, Canadian and US passports, and driver's licences across select provinces and states.</p>
+      </div>
+      <div class="cov" data-reveal>
+        <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.5v15M4.5 12h15" /><rect x="2.5" y="2.5" width="19" height="19" rx="4.5"/></svg></div>
+        <h3>Healthcare</h3>
+        <p>Provincial health card numbers across Ontario, BC, Quebec, Alberta, Newfoundland and the Northwest Territories, plus US provider IDs, DEA numbers and Medicare IDs.</p>
+      </div>
+      <div class="cov" data-reveal>
+        <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5h16v11H4z"/><path d="M4 7.5l8 5.5 8-5.5"/></svg></div>
+        <h3>Personal &amp; contact info</h3>
+        <p>Email addresses, phone numbers and Canadian postal codes, alongside the names and addresses that usually travel with them.</p>
+      </div>
+      <div class="cov ai" data-reveal>
+        <span class="pill">AI layer</span>
+        <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></div>
+        <h3>People, organizations &amp; places</h3>
+        <p>A model running inside the browser reads meaning, not formats, so it catches the client name, the firm and the location that no pattern rule could ever match.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -573,6 +545,19 @@
       <div class="feat" data-reveal><span class="dot">✓</span><h4>Train with evidence</h4><p>Replace one-size-fits-all awareness sessions with data-led training built on your own usage.</p></div>
       <div class="feat" data-reveal><span class="dot">✓</span><h4>Measure progress</h4><p>Watch risky behaviour fall as employees learn, and show the improvement to leadership.</p></div>
     </div>
+
+    <div class="touch" data-reveal>
+      <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 2.5h8L19 7v14.5H6.5z"/><path d="M14 2.5V7h5"/><path d="M9.5 13.5l2 2 4-4.5"/></svg></div>
+      <div>
+        <h3>Evidence for the moments someone asks</h3>
+        <p>AI governance stops being theoretical the moment a third party wants proof. NorthSyte gives you a record to point at, showing what your team was exposed to, what you did about it, and how behaviour improved over time.</p>
+        <div class="touch-chips">
+          <span class="touch-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Annual audit</span>
+          <span class="touch-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Professional licence renewal</span>
+          <span class="touch-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> E&amp;O insurance renewal</span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -586,32 +571,10 @@
     <div class="why-grid">
       <div class="why-item" data-reveal><span class="check">✓</span><div><h4>Privacy by design</h4><p>Your prompts stay yours. We protect data without storing the content we're protecting.</p></div></div>
       <div class="why-item" data-reveal><span class="check">✓</span><div><h4>Made in Canada</h4><p>Canadian-built and Canadian-focused, aligned with data sovereignty expectations.</p></div></div>
-      <div class="why-item" data-reveal><span class="check">✓</span><div><h4>Catches what patterns miss</h4><p>AI detection finds sensitive entities that rule-based scanning walks straight past.</p></div></div>
+      <div class="why-item" data-reveal><span class="check">✓</span><div><h4>Catches what patterns miss</h4><p>AI detection finds the names, firms and places that rule-based scanning walks straight past.</p></div></div>
       <div class="why-item" data-reveal><span class="check">✓</span><div><h4>Live in hours</h4><p>A simple browser extension. No proxies, no network changes, no months-long rollout.</p></div></div>
       <div class="why-item" data-reveal><span class="check">✓</span><div><h4>A partner, not just a tool</h4><p>Training sessions and AI-use guidance built on your own usage data.</p></div></div>
       <div class="why-item" data-reveal><span class="check">✓</span><div><h4>Focused on AI</h4><p>Purpose-built for AI governance, not a sprawling platform you'll never fully use.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- WHO IT'S FOR -->
-<section id="who">
-  <div class="wrap">
-    <div class="section-head" data-reveal>
-      <h2>Who it's for</h2>
-      <p>For organizations where people handle sensitive information and AI adoption is already happening.</p>
-    </div>
-    <div class="aud-grid">
-      <div class="aud primary" data-reveal>
-        <span class="tag">Small &amp; medium-sized organizations</span>
-        <h3>Healthcare, legal, financial &amp; professional services</h3>
-        <p>Small and medium-sized organizations where employees use AI every day, client data is sensitive, and there's no large security team to stand up a complex DLP project. Get visibility and protection without the enterprise overhead.</p>
-      </div>
-      <div class="aud" data-reveal>
-        <span class="tag">Government &amp; public sector</span>
-        <h3>Canadian federal and provincial departments</h3>
-        <p>Where AI policies exist but can't be enforced, and data sovereignty matters. A made-in-Canada solution that deploys quickly and gives leaders the visibility they need.</p>
-      </div>
     </div>
   </div>
 </section>
@@ -669,7 +632,7 @@
   /* ---------- Scroll progress + active nav ---------- */
   var progress = document.getElementById('progress');
   var navAnchors = Array.prototype.slice.call(document.querySelectorAll('.nav-links a[href^="#"]:not(.btn)'));
-  function onScroll(){
+  window.addEventListener('scroll', function(){
     var h = document.documentElement;
     var max = h.scrollHeight - h.clientHeight;
     progress.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
@@ -679,9 +642,7 @@
       if (sec && sec.offsetTop <= pos) current = a;
     });
     navAnchors.forEach(function(a){ a.classList.toggle('active', a === current); });
-  }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+  }, { passive: true });
 
   /* ---------- Mobile nav ---------- */
   var navToggle = document.getElementById('nav-toggle');
@@ -708,8 +669,7 @@
     if (reduced) { el.textContent = prefix + target + suffix; return; }
     function tick(now){
       var p = Math.min(1, (now - start) / dur);
-      var eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = prefix + Math.round(target * eased) + suffix;
+      el.textContent = prefix + Math.round(target * (1 - Math.pow(1 - p, 3))) + suffix;
       if (p < 1) requestAnimationFrame(tick);
     }
     requestAnimationFrame(tick);
@@ -736,14 +696,119 @@
     ['Mistral Le Chat', 'chat.mistral.ai'],
     ['Grok', 'grok.com']
   ];
-  var track = document.getElementById('marquee-track');
   var chips = TOOLS.map(function(t){
     return '<div class="m-item"><i></i><b>' + t[0] + '</b><em>' + t[1] + '</em></div>';
   }).join('');
-  track.innerHTML = chips + chips; // duplicated for a seamless loop
+  document.getElementById('marquee-track').innerHTML = chips + chips;
 
-  /* ---------- Hero: typing + product popup ---------- */
-  var SCENARIOS = [
+  /* ---------- Shared popup markup ---------- */
+  var THUMB_UP = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10v11H4a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1z"/><path d="M7 10l4.2-7.2a1.6 1.6 0 0 1 3 .8V9h4.6a2 2 0 0 1 2 2.4l-1.4 7A2 2 0 0 1 17.4 20H7"/></svg>';
+  var THUMB_DOWN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M17 14V3h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1z"/><path d="M17 14l-4.2 7.2a1.6 1.6 0 0 1-3-.8V15H5.2a2 2 0 0 1-2-2.4l1.4-7A2 2 0 0 1 6.6 4H17"/></svg>';
+
+  function popupHTML(sc, compact){
+    var pii = sc.segs.filter(function(s){ return s.pii; });
+    var types = [];
+    pii.forEach(function(s){ if (types.indexOf(s.pii) === -1) types.push(s.pii); });
+    var snips = pii.slice(0, 4).map(function(s, i){
+      return '<div class="ns-snip" style="animation-delay:' + (i * 90) + 'ms">'
+        + '<span class="q">&ldquo;&hellip;</span> <mark>' + esc(s.t.trim()) + '</mark> '
+        + '<span class="q">&hellip;&rdquo;</span></div>';
+    }).join('');
+    if (pii.length > 4) {
+      snips += '<div class="ns-snip" style="border-left-color:#D9D5D0">+ ' + (pii.length - 4) + ' more</div>';
+    }
+    return '<div class="ns-popup' + (compact ? ' compact' : '') + '" aria-hidden="true">'
+      + '<div class="ns-pop-head"><span class="ns-mark">North<span>Syte</span></span>'
+      + '<span class="ns-close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></span></div>'
+      + '<div class="ns-pop-title"><span class="ns-warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><line x1="12" y1="9.5" x2="12" y2="13.5"/><circle cx="12" cy="17.2" r="1" fill="currentColor" stroke="none"/></svg></span>'
+      + '<h3>Sensitive data detected</h3></div>'
+      + '<p class="ns-pop-sub">Review before this leaves your device.</p>'
+      + '<div class="ns-detected"><div class="ns-detected-lbl">Detected</div>'
+      + '<div class="ns-detected-types">' + esc(types.join(', ')) + '</div>'
+      + '<div class="ns-snips">' + snips + '</div></div>'
+      + '<div class="ns-actions">'
+      + '<span class="ns-btn ns-primary">NorthSyte Edit &ndash; Replace it for me</span>'
+      + '<div class="ns-row"><span class="ns-btn ns-green">Cancel and edit</span>'
+      + '<span class="ns-btn ns-grey">Send anyway</span></div></div>'
+      + '<div class="ns-feedback">Was this accurate?'
+      + '<span class="ns-thumb">' + THUMB_UP + '</span>'
+      + '<span class="ns-thumb">' + THUMB_DOWN + '</span></div></div>';
+  }
+
+  /* ---------- Typing engine (shared by hero + See it live) ---------- */
+  function Typer(opts){
+    this.urlEl    = document.getElementById(opts.url);
+    this.promptEl = document.getElementById(opts.prompt);
+    this.scrimEl  = document.getElementById(opts.scrim);
+    this.slotEl   = document.getElementById(opts.slot);
+    this.compact  = !!opts.compact;
+    this.gen      = 0;
+  }
+
+  Typer.prototype.draw = function(sc, segIdx, charIdx, done){
+    var html = '';
+    for (var i = 0; i < sc.segs.length; i++) {
+      if (i > segIdx) break;
+      var seg = sc.segs[i];
+      var text = (i === segIdx && !done) ? seg.t.slice(0, charIdx) : seg.t;
+      if (!text) continue;
+      html += seg.pii
+        ? '<span class="tok' + ((i < segIdx || done) ? ' on' : '') + '">' + esc(text) + '</span>'
+        : esc(text);
+    }
+    this.promptEl.innerHTML = html + (done ? '' : '<span class="caret"></span>');
+  };
+
+  Typer.prototype.reset = function(){
+    this.gen++;
+    this.scrimEl.classList.remove('show');
+    this.slotEl.classList.remove('show');
+    this.promptEl.innerHTML = '';
+  };
+
+  Typer.prototype.reveal = function(sc){
+    this.slotEl.innerHTML = popupHTML(sc, this.compact);
+    this.scrimEl.classList.add('show');
+    this.slotEl.classList.add('show');
+  };
+
+  Typer.prototype.play = function(sc, onDone){
+    var self = this;
+    this.reset();
+    var gen = this.gen;
+    this.urlEl.textContent = sc.url;
+
+    function finish(){
+      if (gen !== self.gen) return;
+      self.draw(sc, sc.segs.length - 1, 0, true);
+      setTimeout(function(){
+        if (gen !== self.gen) return;
+        self.reveal(sc);
+        if (onDone) onDone();
+      }, reduced ? 0 : 420);
+    }
+
+    if (reduced) { finish(); return; }
+
+    var segIdx = 0, charIdx = 0;
+    function step(){
+      if (gen !== self.gen) return;
+      var seg = sc.segs[segIdx];
+      charIdx++;
+      self.draw(sc, segIdx, charIdx, false);
+      if (charIdx >= seg.t.length) {
+        segIdx++; charIdx = 0;
+        if (segIdx >= sc.segs.length) { finish(); return; }
+        setTimeout(step, 80);
+        return;
+      }
+      setTimeout(step, seg.pii ? 42 : 24);
+    }
+    setTimeout(step, 500);
+  };
+
+  /* ---------- Hero: auto-cycling teaser ---------- */
+  var HERO = [
     { url: 'chatgpt.com', segs: [
       { t: 'Draft a follow-up to ' },
       { t: 'Michael Brennan', pii: 'Person Name' },
@@ -754,258 +819,130 @@
       { t: ', about the delayed shipment.' }
     ]},
     { url: 'claude.ai', segs: [
-      { t: 'Summarize the chart for patient ' },
-      { t: 'Priya Raman', pii: 'Person Name' },
-      { t: ', DOB ' },
-      { t: '14/03/1979', pii: 'Date of Birth' },
-      { t: ', health card ' },
-      { t: '5312 884 991 AB', pii: 'Health Card' },
+      { t: 'Review this deploy failure: AWS key ' },
+      { t: 'AKIAIOSFODNN7EXAMPLE', pii: 'AWS Access Key' },
+      { t: ', database ' },
+      { t: 'postgres://admin:hunter2@10.0.4.22:5432/prod', pii: 'Connection String' },
       { t: '.' }
     ]},
     { url: 'gemini.google.com', segs: [
       { t: 'Chase the overdue invoice for ' },
-      { t: 'Daniel Okafor', pii: 'Person Name' },
+      { t: 'Halcyon Logistics', pii: 'Organization' },
       { t: ' on card ' },
       { t: '4539 1488 0343 6467', pii: 'Credit Card' },
-      { t: ', billing address ' },
-      { t: '118 Bank Street', pii: 'Address' },
       { t: '.' }
     ]}
   ];
 
-  var promptEl = document.getElementById('dw-prompt');
-  var scrimEl  = document.getElementById('dw-scrim');
-  var slotEl   = document.getElementById('dw-popup-slot');
-  var typesEl  = document.getElementById('dw-types');
-  var snipsEl  = document.getElementById('dw-snips');
-  var urlEl    = document.getElementById('dw-url');
-
-  function renderPrompt(sc, segIdx, charIdx, done){
-    var html = '';
-    for (var i = 0; i < sc.segs.length; i++) {
-      if (i > segIdx) break;
-      var seg = sc.segs[i];
-      var text = (i === segIdx && !done) ? seg.t.slice(0, charIdx) : seg.t;
-      if (!text) continue;
-      html += seg.pii
-        ? '<span class="tok' + ((i < segIdx || done) ? ' on' : '') + '">' + text + '</span>'
-        : text;
-    }
-    promptEl.innerHTML = html + (done ? '' : '<span class="caret"></span>');
-  }
-
-  function openPopup(sc){
-    var pii = sc.segs.filter(function(s){ return s.pii; });
-    var types = [];
-    pii.forEach(function(s){ if (types.indexOf(s.pii) === -1) types.push(s.pii); });
-    typesEl.textContent = types.join(', ');
-    snipsEl.innerHTML = pii.map(function(s, i){
-      return '<div class="ns-snip" style="animation-delay:' + (i * 90) + 'ms">'
-        + '<span class="q">&ldquo;&hellip;</span> <mark>' + esc(s.t) + '</mark> <span class="q">&hellip;&rdquo;</span></div>';
-    }).join('');
-    scrimEl.classList.add('show');
-    slotEl.classList.add('show');
-  }
-
-  function closePopup(){
-    scrimEl.classList.remove('show');
-    slotEl.classList.remove('show');
-  }
-
-  var sIdx = 0;
-  function runScenario(){
-    var sc = SCENARIOS[sIdx];
-    urlEl.textContent = sc.url;
-    closePopup();
-    promptEl.innerHTML = '';
-
-    function finish(){
-      renderPrompt(sc, sc.segs.length - 1, 0, true);
-      setTimeout(function(){ openPopup(sc); }, reduced ? 0 : 420);
+  var heroTyper = new Typer({ url:'hero-url', prompt:'hero-prompt', scrim:'hero-scrim', slot:'hero-slot', compact:true });
+  var heroIdx = 0;
+  function heroLoop(){
+    heroTyper.play(HERO[heroIdx], function(){
       setTimeout(function(){
-        sIdx = (sIdx + 1) % SCENARIOS.length;
-        runScenario();
-      }, reduced ? 7000 : 5200);
-    }
-
-    if (reduced) { finish(); return; }
-
-    var segIdx = 0, charIdx = 0;
-    function step(){
-      var seg = sc.segs[segIdx];
-      charIdx++;
-      renderPrompt(sc, segIdx, charIdx, false);
-      if (charIdx >= seg.t.length) {
-        segIdx++; charIdx = 0;
-        if (segIdx >= sc.segs.length) { finish(); return; }
-        setTimeout(step, 80);
-        return;
-      }
-      setTimeout(step, seg.pii ? 42 : 24);
-    }
-    setTimeout(step, 600);
+        heroIdx = (heroIdx + 1) % HERO.length;
+        heroLoop();
+      }, reduced ? 7000 : 4600);
+    });
   }
-  runScenario();
+  heroLoop();
 
-  /* ---------- Detection playground ---------- */
-  var DETECTORS = [
-    { label: 'Email',         re: /\b[\w.+-]+@[\w-]+\.[\w.-]{2,}\b/g,                                        redact: '[EMAIL]' },
-    { label: 'Credit Card',   re: /\b(?:\d{4}[ -]?){3}\d{4}\b/g,                                             redact: '[CARD]' },
-    { label: 'Health Card',   re: /\b\d{4}[ -]?\d{3}[ -]?\d{3}[ -]?[A-Za-z]{2}\b/g,                          redact: '[HEALTH CARD]' },
-    { label: 'SIN',           re: /\b\d{3}[ -]\d{3}[ -]\d{3}\b/g,                                            redact: '[SIN]' },
-    { label: 'Phone',         re: /(?:\+?1[ -.])?\(?\b\d{3}\)?[ -.]\d{3}[ -.]\d{4}\b/g,                      redact: '[PHONE]' },
-    { label: 'Date of Birth', re: /\b(?:0?[1-9]|[12]\d|3[01])[\/-](?:0?[1-9]|1[0-2])[\/-](?:19|20)\d{2}\b/g, redact: '[DOB]' },
-    { label: 'Postal Code',   re: /\b[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d\b/g,                                redact: '[POSTAL CODE]' },
-    { label: 'Person Name',   re: /\b(?:Mr|Mrs|Ms|Dr|Miss)\.?\s+[A-Z][a-z]+(?:\s+[A-Z][a-z]+)?/g,            redact: '[NAME]' },
-    { label: 'Person Name',   re: /\b(?:client|patient|customer|employee|applicant|for|to)\s+[A-Z][a-z]+\s+[A-Z][a-z]+/g, redact: '[NAME]' },
-    { label: 'API Key',       re: /\b(?:sk|pk|api|key)[-_][A-Za-z0-9]{12,}\b/gi,                             redact: '[API KEY]' },
-    { label: 'IP Address',    re: /\b(?:\d{1,3}\.){3}\d{1,3}\b/g,                                            redact: '[IP]' },
-    { label: 'Address',       re: /\b\d{1,5}\s+[A-Z][a-z]+\s+(?:St|Street|Ave|Avenue|Rd|Road|Blvd|Dr|Drive|Way|Cres|Crescent)\b\.?/g, redact: '[ADDRESS]' }
+  /* ---------- See it live: industry-selectable ---------- */
+  var INDUSTRIES = [
+    { name: 'Legal', url: 'chatgpt.com',
+      cap: 'In a law firm this is a <strong>privilege</strong> problem before it is a privacy one — client identifiers should never reach a third-party model.',
+      segs: [
+        { t: 'Draft a settlement letter for our client ' },
+        { t: 'Marc Delaney', pii: 'Person Name' },
+        { t: ', SIN ' },
+        { t: '046 454 286', pii: 'SIN' },
+        { t: ', of ' },
+        { t: '118 Bank Street', pii: 'Address' },
+        { t: ', regarding the claim filed in March.' }
+      ]},
+    { name: 'Healthcare', url: 'claude.ai',
+      cap: 'Patient identifiers leaving the browser is a <strong>health privacy</strong> problem before it is a security one.',
+      segs: [
+        { t: 'Summarize the chart for ' },
+        { t: 'Priya Raman', pii: 'Person Name' },
+        { t: ', DOB ' },
+        { t: '14/03/1979', pii: 'Date of Birth' },
+        { t: ', Ontario health card ' },
+        { t: '5312 884 991 AB', pii: 'Health Card' },
+        { t: ', and flag anything urgent.' }
+      ]},
+    { name: 'Government', url: 'copilot.microsoft.com',
+      cap: 'Identity documents and file numbers from an <strong>access-to-information</strong> request should not pass through a commercial AI service.',
+      segs: [
+        { t: 'Draft a response to the ATIP request from ' },
+        { t: 'Daniel Okafor', pii: 'Person Name' },
+        { t: ', passport ' },
+        { t: 'HB472819', pii: 'Passport' },
+        { t: ', reachable at ' },
+        { t: '613-555-0142', pii: 'Phone' },
+        { t: '.' }
+      ]},
+    { name: 'Finance', url: 'gemini.google.com',
+      cap: 'Card and account data in a prompt is a <strong>PCI exposure</strong> your processor will eventually ask about.',
+      segs: [
+        { t: 'Reconcile this payment for ' },
+        { t: 'Halcyon Logistics', pii: 'Organization' },
+        { t: ': card ' },
+        { t: '4539 1488 0343 6467', pii: 'Credit Card' },
+        { t: ', CVV ' },
+        { t: '884', pii: 'Security Code' },
+        { t: ', account ' },
+        { t: 'CA89 3704 0044 0532 0130 00', pii: 'Bank Account' },
+        { t: '.' }
+      ]},
+    { name: 'Engineering', url: 'grok.com',
+      cap: 'A pasted key is a <strong>production incident</strong> waiting to happen, and the fastest secret to leak is the one nobody logged.',
+      segs: [
+        { t: 'Debug this failing deploy. AWS key ' },
+        { t: 'AKIAIOSFODNN7EXAMPLE', pii: 'AWS Access Key' },
+        { t: ', database ' },
+        { t: 'postgres://admin:hunter2@10.0.4.22:5432/prod', pii: 'Connection String' },
+        { t: ', host ' },
+        { t: '10.0.4.22', pii: 'IP Address' },
+        { t: '.' }
+      ]}
   ];
 
-  var SAMPLES = {
-    legal:   "Draft a settlement letter for client Marc Delaney, SIN 046 454 286, living at 118 Bank Street, re: the claim filed in March.",
-    health:  "Summarize the chart for patient Priya Raman, phone 613-555-0142, health card 5312 884 991 AB, and flag anything urgent.",
-    finance: "Write a payment reminder to accounts@brightline.ca for the overdue invoice on card 4539 1488 0343 6467.",
-    clean:   "Draft a friendly company-wide announcement about our new flexible work-from-home policy starting next quarter."
-  };
+  var liveTyper = new Typer({ url:'live-url', prompt:'live-prompt', scrim:'live-scrim', slot:'live-slot' });
+  var liveTabs = document.getElementById('live-tabs');
+  var liveCap  = document.getElementById('live-cap');
 
-  var pgInput  = document.getElementById('pg-input');
-  var pgMirror = document.getElementById('pg-mirror');
-  var pgResult = document.getElementById('pg-result');
-  var pgToast  = document.getElementById('pg-toast');
-  var dismissed = false;
+  liveTabs.innerHTML = INDUSTRIES.map(function(ind, i){
+    return '<button class="tab' + (i === 0 ? ' active' : '') + '" data-i="' + i + '">' + ind.name + '</button>';
+  }).join('');
 
-  function findMatches(text){
-    var hits = [];
-    DETECTORS.forEach(function(d){
-      d.re.lastIndex = 0;
-      var m;
-      while ((m = d.re.exec(text)) !== null) {
-        if (m[0].length === 0) { d.re.lastIndex++; continue; }
-        // Trim a leading cue word ("client Marc Delaney" -> "Marc Delaney")
-        var start = m.index, val = m[0];
-        var cue = val.match(/^(?:client|patient|customer|employee|applicant|for|to)\s+/i);
-        if (cue) { start += cue[0].length; val = val.slice(cue[0].length); }
-        hits.push({ start: start, end: start + val.length, label: d.label, redact: d.redact });
-      }
+  function playIndustry(i){
+    var ind = INDUSTRIES[i];
+    Array.prototype.forEach.call(liveTabs.children, function(b, bi){
+      b.classList.toggle('active', bi === i);
     });
-    hits.sort(function(a, b){
-      return a.start - b.start || (b.end - b.start) - (a.end - a.start);
-    });
-    var kept = [], lastEnd = -1;
-    hits.forEach(function(h){ if (h.start >= lastEnd) { kept.push(h); lastEnd = h.end; } });
-    return kept;
-  }
-
-  function showToast(msg){
-    pgToast.textContent = msg;
-    pgToast.classList.add('show');
-    setTimeout(function(){ pgToast.classList.remove('show'); }, 2600);
-  }
-
-  function popupMarkup(hits){
-    var types = [];
-    hits.forEach(function(h){ if (types.indexOf(h.label) === -1) types.push(h.label); });
-    var shown = hits.slice(0, 4);
-    var snips = shown.map(function(h, i){
-      return '<div class="ns-snip" style="animation-delay:' + (i * 70) + 'ms">'
-        + '<span class="q">&ldquo;&hellip;</span> <mark>' + esc(pgInput.value.slice(h.start, h.end))
-        + '</mark> <span class="q">&hellip;&rdquo;</span></div>';
-    }).join('');
-    var more = hits.length > shown.length
-      ? '<div class="ns-snip" style="border-left-color:#D9D5D0">+ ' + (hits.length - shown.length) + ' more</div>'
-      : '';
-
-    return '<div class="ns-popup">'
-      + '<div class="ns-pop-head"><span class="ns-mark">North<span>Syte</span></span>'
-      + '<button class="ns-close" id="pg-close" aria-label="Dismiss"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button></div>'
-      + '<div class="ns-pop-title"><span class="ns-warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><line x1="12" y1="9.5" x2="12" y2="13.5"/><circle cx="12" cy="17.2" r="1" fill="currentColor" stroke="none"/></svg></span>'
-      + '<h3>Sensitive data detected</h3></div>'
-      + '<p class="ns-pop-sub">Review before this leaves your device.</p>'
-      + '<div class="ns-detected"><div class="ns-detected-lbl">Detected</div>'
-      + '<div class="ns-detected-types">' + esc(types.join(', ')) + '</div>'
-      + '<div class="ns-snips">' + snips + more + '</div></div>'
-      + '<div class="ns-actions">'
-      + '<button class="ns-btn ns-primary" id="pg-replace">NorthSyte Edit &ndash; Replace it for me</button>'
-      + '<div class="ns-row"><button class="ns-btn ns-green" id="pg-cancel">Cancel and edit</button>'
-      + '<button class="ns-btn ns-grey" id="pg-send">Send anyway</button></div></div>'
-      + '<div class="ns-feedback">Was this accurate?'
-      + '<button class="ns-thumb" data-vote="up" aria-label="Accurate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10v11H4a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1z"/><path d="M7 10l4.2-7.2a1.6 1.6 0 0 1 3 .8V9h4.6a2 2 0 0 1 2 2.4l-1.4 7A2 2 0 0 1 17.4 20H7"/></svg></button>'
-      + '<button class="ns-thumb" data-vote="down" aria-label="Not accurate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M17 14V3h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1z"/><path d="M17 14l-4.2 7.2a1.6 1.6 0 0 1-3-.8V15H5.2a2 2 0 0 1-2-2.4l1.4-7A2 2 0 0 1 6.6 4H17"/></svg></button>'
-      + '</div></div>';
-  }
-
-  function render(){
-    var text = pgInput.value;
-    var hits = findMatches(text);
-
-    var html = '', cursor = 0;
-    hits.forEach(function(h){
-      html += esc(text.slice(cursor, h.start));
-      html += '<span class="pg-hit">' + esc(text.slice(h.start, h.end)) + '</span>';
-      cursor = h.end;
-    });
-    pgMirror.innerHTML = html + esc(text.slice(cursor)) + '\n';
-    pgMirror.scrollTop = pgInput.scrollTop;
-
-    if (!hits.length) {
-      pgResult.innerHTML = '<div class="pg-clean">'
-        + '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>'
-        + (text.trim() ? 'Looks clean — nothing sensitive detected.' : 'Nothing sensitive detected yet.')
-        + '</div>';
-      return;
-    }
-    if (dismissed) {
-      pgResult.innerHTML = '<div class="pg-clean" style="color:rgba(255,255,255,.5)">'
-        + hits.length + ' item' + (hits.length === 1 ? '' : 's') + ' still flagged — keep typing to re-check.</div>';
-      return;
-    }
-
-    pgResult.innerHTML = popupMarkup(hits);
-
-    document.getElementById('pg-replace').addEventListener('click', function(){
-      var current = findMatches(pgInput.value);
-      var out = pgInput.value;
-      for (var i = current.length - 1; i >= 0; i--) {
-        out = out.slice(0, current[i].start) + current[i].redact + out.slice(current[i].end);
-      }
-      pgInput.value = out;
-      render();
-      showToast('Rewritten — ' + current.length + ' item' + (current.length === 1 ? '' : 's') + ' replaced. Safe to send.');
-    });
-    document.getElementById('pg-cancel').addEventListener('click', function(){
-      pgInput.focus();
-      pgInput.setSelectionRange(pgInput.value.length, pgInput.value.length);
-    });
-    document.getElementById('pg-send').addEventListener('click', function(){
-      dismissed = true; render();
-      showToast('Sent anyway — logged for the dashboard, prompt content never stored.');
-    });
-    document.getElementById('pg-close').addEventListener('click', function(){
-      dismissed = true; render();
-    });
-    pgResult.querySelectorAll('.ns-thumb').forEach(function(b){
-      b.addEventListener('click', function(){
-        pgResult.querySelectorAll('.ns-thumb').forEach(function(x){ x.classList.remove('picked'); });
-        b.classList.add('picked');
-        showToast('Thanks — feedback like this is what tunes detection.');
-      });
+    liveCap.style.opacity = '0';
+    liveTyper.play(ind, function(){
+      liveCap.innerHTML = ind.cap;
+      liveCap.style.opacity = '1';
     });
   }
 
-  pgInput.addEventListener('input', function(){ dismissed = false; render(); });
-  pgInput.addEventListener('scroll', function(){ pgMirror.scrollTop = pgInput.scrollTop; });
-  document.querySelectorAll('.pg-sample').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      pgInput.value = SAMPLES[btn.dataset.sample];
-      dismissed = false;
-      render();
-      pgInput.focus();
-    });
+  liveTabs.addEventListener('click', function(e){
+    var btn = e.target.closest('.tab');
+    if (btn) playIndustry(+btn.dataset.i);
   });
-  pgInput.value = SAMPLES.legal;
-  render();
+
+  var liveStarted = false;
+  if ('IntersectionObserver' in window) {
+    var lo = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting && !liveStarted) { liveStarted = true; playIndustry(0); }
+      });
+    }, { threshold: .25 });
+    lo.observe(document.getElementById('live'));
+  } else {
+    playIndustry(0);
+  }
 
   /* ---------- Waitlist form ---------- */
   document.getElementById('demo-form').addEventListener('submit', async function(e){
@@ -1022,45 +959,6 @@
     } else {
       alert('Something went wrong — please email us directly at hello@northsyte.com');
     }
-  });
-
-  /* ---------- Industry video player ---------- */
-  var videoWrap = document.getElementById('video-wrap');
-  var tabs = document.querySelectorAll('.tab');
-  var vidA = document.getElementById('demo-vid-a');
-  var vidB = document.getElementById('demo-vid-b');
-  var demoSection = document.getElementById('demos');
-
-  function updateVideoScale(){
-    if (reduced) return;
-    var rect = demoSection.getBoundingClientRect();
-    var p = Math.min(1, Math.max(0, (window.innerHeight - rect.top) / (window.innerHeight * .65)));
-    videoWrap.style.transform = 'scale(' + (0.72 + 0.28 * p) + ')';
-  }
-  window.addEventListener('scroll', updateVideoScale, { passive: true });
-  updateVideoScale();
-
-  videoWrap.addEventListener('click', function(){
-    if (vidA.paused) { vidA.play(); videoWrap.classList.remove('paused'); }
-    else { vidA.pause(); videoWrap.classList.add('paused'); }
-  });
-
-  tabs.forEach(function(tab){
-    tab.addEventListener('click', function(){
-      if (tab.classList.contains('active')) return;
-      tabs.forEach(function(t){ t.classList.remove('active'); });
-      tab.classList.add('active');
-      vidB.src = tab.dataset.video;
-      vidB.load();
-      vidB.addEventListener('canplay', function onCanPlay(){
-        vidB.removeEventListener('canplay', onCanPlay);
-        vidB.play();
-        vidB.style.opacity = '1';
-        vidA.style.opacity = '0';
-        videoWrap.classList.remove('paused');
-        var tmp = vidA; vidA = vidB; vidB = tmp;
-      });
-    });
   });
 })();
 </script>
