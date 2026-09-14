@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Source of record: AI_Company/docs/privacy-policy.md. Change both together,
+     and in the same PR as any change to what the extension or backend collects.
+     The version below must match CONSENT_VERSION on welcome.html and the pilot page. -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Privacy Policy — NorthSyte</title>
+<meta name="description" content="What the NorthSyte extension and website collect, what they never collect, and your rights." />
+<link rel="icon" type="image/png" href="/brand/NorthSyte-app-icon.png" />
+<style>
+  :root{
+    --orange:#E8610F;--orange-deep:#C44D0A;--orange-soft:#F9EAE0;
+    --ink:#2B2B2B;--muted:#6B6868;--line:#D5D3CE;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#fff;color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+  header{background:rgba(43,43,43,.96)}
+  .nav{display:flex;align-items:center;padding:16px 24px;max-width:1080px;margin:0 auto}
+  .nav img{height:36px;width:auto;display:block}
+  main{max-width:760px;margin:0 auto;padding:48px 24px 72px}
+  h1{font-size:clamp(1.9rem,4vw,2.5rem);line-height:1.15;letter-spacing:-.02em;margin-bottom:8px}
+  .meta{color:var(--muted);font-size:.92rem;margin-bottom:32px}
+  .short{background:var(--orange-soft);border-radius:14px;padding:20px 22px;margin-bottom:40px}
+  .short strong{display:block;margin-bottom:6px}
+  h2{font-size:1.3rem;letter-spacing:-.01em;margin:40px 0 12px;padding-top:8px;border-top:1px solid var(--line)}
+  h3{font-size:1.05rem;margin:24px 0 8px}
+  p,ul{margin-bottom:14px}
+  ul{padding-left:22px}
+  li{margin-bottom:6px}
+  a{color:var(--orange-deep);font-weight:600}
+  .table-wrap{overflow-x:auto;margin-bottom:16px}
+  table{border-collapse:collapse;width:100%;font-size:.93rem}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-weight:600;background:#faf9f7}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88em;background:#f3f2ef;padding:1px 5px;border-radius:4px}
+  footer{padding:28px 24px;border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:.85rem}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="/"><img src="/brand/NorthSyte-wordmark-on-black.png" alt="NorthSyte" /></a>
+  </div>
+</header>
+
+<main>
+  <h1>Privacy Policy</h1>
+  <p class="meta">Version 2026-09-14 · Last updated September 14, 2026</p>
+
+  <div class="short">
+    <strong>The short version</strong>
+    Your prompts never leave your device. NorthSyte scans what you type into AI
+    tools inside your browser. We never receive the text you type or the
+    sensitive values we detect — only a short record that a detection happened
+    and what <em>kind</em> of data it was. To activate the extension we ask for
+    your email address. We don't sell your data.
+  </div>
+
+  <h2>1. Who we are</h2>
+  <p>NorthSyte is operated by Ethan Russett, its founder, in Ottawa, Ontario,
+  Canada. NorthSyte is in the process of incorporating; when it does, this
+  policy will be updated to name the company as the organization responsible
+  for your data.</p>
+  <p>For privacy questions or requests, email
+  <a href="mailto:privacy@northsyte.com">privacy@northsyte.com</a>.</p>
+
+  <p>This policy covers the <strong>NorthSyte browser extension</strong>
+  ("NorthSyte — AI Privacy Guard"), the setup page it opens, and
+  <strong>northsyte.com</strong>. If you use NorthSyte through your employer,
+  see section 10.</p>
+
+  <h2>2. How the extension works</h2>
+  <p>On supported AI tools (such as ChatGPT, Claude and Gemini), NorthSyte checks
+  what you have typed <strong>before</strong> it is sent, using pattern rules and
+  an AI model that both run inside your browser. If it finds something
+  sensitive, it warns you. You always decide whether to send.</p>
+  <p>The scan itself makes no network request. The extension only runs on the
+  AI sites listed in its permissions; it does not read other sites you visit.</p>
+
+  <h2>3. What we collect</h2>
+
+  <h3>3.1 Your installation record</h3>
+  <p>When you install NorthSyte, our server creates a random installation ID and
+  a secret access token for your copy of the extension. We store the ID, a
+  one-way hash of the token (never the token itself), the extension version,
+  when it was installed, and when it last contacted us.</p>
+
+  <h3>3.2 Your email address</h3>
+  <p>NorthSyte asks for your email address on a setup page at northsyte.com, and
+  protection switches on once you provide it. We store the address and when you
+  gave it. It identifies your installation and lets us send you service messages
+  about it — for example, if a site we protect changes and your coverage is
+  affected.</p>
+  <p>Separately, there is an <strong>optional</strong> box to receive product
+  news. If you tick it, we record that you consented, when, and which version of
+  this policy was in effect. If you don't, we will not send you marketing.</p>
+
+  <h3>3.3 Detection events</h3>
+  <p>Each time you submit a prompt on a supported AI tool, the extension sends a
+  short record to our servers containing <strong>only</strong>:</p>
+  <div class="table-wrap">
+  <table>
+    <tr><th>What</th><th>Example</th></tr>
+    <tr><td>The AI tool you used</td><td><code>chatgpt</code></td></tr>
+    <tr><td>When you submitted</td><td>a timestamp</td></tr>
+    <tr><td>Categories of sensitive data found, if any</td><td><code>pii.email</code>, <code>pii.credit_card</code></td></tr>
+    <tr><td>How confident the AI model was, for each category</td><td><code>0.97</code></td></tr>
+    <tr><td>Whether you were warned, and whether you sent anyway</td><td>yes / no</td></tr>
+    <tr><td>Whether only the AI model (not the pattern rules) caught it</td><td>yes / no</td></tr>
+    <tr><td>Your installation ID</td><td>a random ID</td></tr>
+  </table>
+  </div>
+  <p>A record is sent for every submitted prompt, including prompts where nothing
+  was found and prompts where you have switched warnings off — so we can measure
+  how often the product helps. From the categories, our server calculates a
+  severity rating.</p>
+  <p><strong>These records are not anonymous.</strong> They carry your
+  installation ID, and your installation record holds your email address, so we
+  can connect your detection events to you. We use them to understand whether
+  NorthSyte works — how many people use it, whether warnings are useful, and
+  where detection is too eager or misses things — and to find your data if you
+  ask us to show or delete it.</p>
+
+  <h3>3.4 Security logs</h3>
+  <p>Our firewall records technical details of requests to our servers — such as
+  IP address, time, the address requested and browser headers — to detect abuse.
+  These logs are kept for 30 days.</p>
+
+  <h3>3.5 On your device</h3>
+  <p>The extension keeps its settings, detection rules, installation ID and access
+  token in your browser's extension storage. Websites can't read it. Some of it
+  (your installation ID and settings) syncs across your Chrome browsers if you use
+  Chrome sync.</p>
+
+  <h3>3.6 The website</h3>
+  <p>If you use the waitlist or demo form on northsyte.com, we receive what you
+  enter in it, and use it only to respond to you. The site has no analytics or
+  advertising trackers.</p>
+
+  <h2>4. What we never collect</h2>
+  <ul>
+    <li><strong>The text of your prompts.</strong> Not sent, not stored, not logged.</li>
+    <li><strong>The sensitive values we detect.</strong> We record that a card number was found — never the number.</li>
+    <li><strong>AI tools' responses</strong>, or any other page content.</li>
+    <li><strong>Your browsing history</strong>, or activity on sites outside the supported AI tools.</li>
+    <li><strong>Payment details.</strong></li>
+  </ul>
+
+  <h2>5. Who else is involved</h2>
+  <p>We use a small number of service providers. None of them receives your prompts.</p>
+  <ul>
+    <li><strong>Amazon Web Services</strong> hosts our servers and database in
+    <strong>Canada</strong> (Montréal region). Your installation record, email
+    address and detection events are stored there.</li>
+    <li><strong>Hugging Face</strong> hosts the AI detection model. The first time
+    the extension runs, your browser downloads the model from Hugging Face, which
+    sees a normal download request (including your IP address). After that the
+    model runs on your device.</li>
+    <li><strong>GitHub</strong> hosts northsyte.com, including the setup page, and
+    receives standard web request information when you visit.</li>
+    <li><strong>Google</strong> provides the fonts on northsyte.com (your browser
+    requests them from Google) and our email (Google Workspace), which handles
+    messages you send us and any we send you.</li>
+    <li><strong>Web3Forms</strong> receives and forwards to us what you submit in
+    the website's waitlist form.</li>
+  </ul>
+  <p><strong>We do not sell your personal information, and we do not share it with
+  advertisers or data brokers.</strong> We may disclose information if required by
+  law.</p>
+  <p>Some providers may process data outside Canada, including in the United
+  States, where it may be accessible to authorities under local law.</p>
+
+  <h2>6. Why we are allowed to use it</h2>
+  <p>In Canada we rely on your consent, given when you install NorthSyte and
+  provide your email on the setup page, for the purposes described here.
+  Marketing emails are sent only with the express consent required by Canada's
+  Anti-Spam Legislation (CASL).</p>
+  <p>If you are in the EU or UK, our legal bases under the GDPR are:</p>
+  <ul>
+    <li><strong>Providing the extension</strong> (installation record, email for
+    service messages): performance of our agreement with you.</li>
+    <li><strong>Detection events and security logs:</strong> our legitimate
+    interest in running, securing and improving a privacy product. They contain
+    no prompt text and no detected values.</li>
+    <li><strong>Product news:</strong> your consent, which you can withdraw at any
+    time.</li>
+  </ul>
+  <p>Canada is recognized by the European Commission as providing adequate
+  protection for personal data transferred from the EU.</p>
+
+  <h2>7. How long we keep it</h2>
+  <ul>
+    <li><strong>Detection events:</strong> 24 months, then deleted automatically.</li>
+    <li><strong>Installations that never provided an email:</strong> deleted
+    automatically after 24 months without contacting us.</li>
+    <li><strong>Your email address and installation record:</strong> kept while
+    you use NorthSyte, and deleted within 30 days of your request. Uninstalling
+    the extension stops collection but does not by itself tell us to delete your
+    data — email us for that.</li>
+    <li><strong>Proof of consent:</strong> if you consented to product news and
+    later unsubscribe or ask us to delete your data, we may keep a minimal record
+    that consent was given and withdrawn (dates and policy version) for as long as
+    needed to show we followed anti-spam law.</li>
+    <li><strong>Security logs:</strong> 30 days.</li>
+  </ul>
+
+  <h2>8. Your rights and choices</h2>
+  <p>Email <a href="mailto:privacy@northsyte.com">privacy@northsyte.com</a> to:</p>
+  <ul>
+    <li>see the data linked to your installation, including a portable copy</li>
+    <li>correct your email address</li>
+    <li>delete your data, including your detection events</li>
+    <li>withdraw consent to product news (or use the unsubscribe link in any such email)</li>
+    <li>object to or ask us to restrict how we use your data</li>
+  </ul>
+  <p>We'll respond within 30 days, and may ask you to confirm you control the
+  email address on the installation.</p>
+  <p>You can stop all collection at any time by removing the extension. You can
+  also switch off warnings in the extension, but as described in 3.3, detection
+  records are still sent while it is installed.</p>
+  <p>If you're unhappy with our response, you can complain to the
+  <a href="https://www.priv.gc.ca/" target="_blank" rel="noopener">Office of the
+  Privacy Commissioner of Canada</a>, or, in the EU or UK, to your data protection
+  authority.</p>
+
+  <h2>9. Security</h2>
+  <p>Data is encrypted in transit and at rest. Access tokens are stored only as
+  one-way hashes, and our database is not reachable from the internet. The
+  strongest protection is the design itself: prompts are never sent to us, so
+  there is no store of prompts to breach. No system is perfectly secure; if a
+  breach creates a real risk of significant harm to you, we will notify you and
+  the relevant regulator as the law requires.</p>
+
+  <h2>10. If your employer provides NorthSyte</h2>
+  <p>The business edition of NorthSyte is deployed by organizations for their
+  employees. In that case your employer decides how it is used, and we process
+  the data on their behalf under our agreement with them — questions should go
+  to your employer first. The same core rule applies: prompt text never leaves
+  your device.</p>
+
+  <h2>11. Children</h2>
+  <p>NorthSyte is not intended for anyone under 16, and we don't knowingly collect
+  their data. If you believe a child has given us their information, email us and
+  we'll delete it.</p>
+
+  <h2>12. Changes to this policy</h2>
+  <p>We'll post changes here and update the version and date above. If we make a
+  material change — especially to how we use your email address — we'll tell you
+  by email or in the extension before it takes effect and, where the law
+  requires, ask for your consent again.</p>
+
+  <h2>13. Contact</h2>
+  <p>NorthSyte · Ottawa, Ontario, Canada<br />
+  <a href="mailto:privacy@northsyte.com">privacy@northsyte.com</a></p>
+</main>
+
+<footer>Ottawa, Canada · © 2026 NorthSyte</footer>
+
+</body>
+</html>
