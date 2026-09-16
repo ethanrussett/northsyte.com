@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>NorthSyte | Use AI without oversharing</title>
+<title>NorthSyte for Teams | Make AI safe to use at work</title>
 <link rel="icon" type="image/png" href="brand/NorthSyte-app-icon.png" />
-<meta name="description" content="NorthSyte spots personal details, passwords, and card numbers in your prompts before they reach AI. It runs entirely in your browser, never stores your info, and stays out of your way. Free for individuals, built for teams." />
-<meta property="og:title" content="NorthSyte | Use AI without oversharing" />
-<meta property="og:description" content="NorthSyte spots personal details, passwords, and card numbers in your prompts before they reach AI." />
+<meta name="description" content="NorthSyte detects sensitive data in AI prompts in real time, before it leaves your team's browser. Real-time protection, zero prompt storage, no disruption. Canadian-built AI governance for mid-market and government." />
+<meta property="og:title" content="NorthSyte for Teams | Make AI safe to use at work" />
+<meta property="og:description" content="NorthSyte catches sensitive data in AI prompts in real time, before it ever leaves the browser." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://northsyte.com/" />
+<meta property="og:url" content="https://northsyte.com/teams" />
 <meta property="og:image" content="https://northsyte.com/brand/NorthSyte-app-icon.png" />
 <meta name="theme-color" content="#2B2B2B" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -112,25 +112,25 @@
   .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
   .nav-toggle.open span:nth-child(2){opacity:0}
   .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-  @media(max-width:1000px){
+  @media(max-width:1100px){
     .nav-toggle{display:block}
     .nav-links{position:absolute;top:100%;left:0;right:0;background:rgba(28,28,28,.99);backdrop-filter:blur(14px);flex-direction:column;align-items:stretch;gap:0;padding:8px 24px 20px;border-bottom:1px solid rgba(255,255,255,.09);display:none}
     .nav-links.open{display:flex}
     .nav-links a:not(.btn){padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08)}
     .nav-links .btn{margin-top:14px;text-align:center}
   }
-  /* "For teams" is a way out to another page, not a section link or the
+  /* "For individuals" is a way out to another page, not a section link or the
      page's main action, so it gets its own chip between the two. */
   .nav-sep{width:1px;height:22px;background:rgba(255,255,255,.16)}
   /* Teams chip and waitlist button share one size so they read as a pair */
-  .nav-links a.nav-teams,.nav-links .btn{display:inline-flex;align-items:center;justify-content:center;min-width:176px;padding:11px 20px;font-size:.95rem;line-height:1.5}
+  .nav-links a.nav-teams,.nav-links .btn{display:inline-flex;align-items:center;justify-content:center;min-width:192px;padding:11px 20px;font-size:.95rem;line-height:1.5}
   .nav-links a.nav-teams{gap:7px;color:#fff;font-weight:600;margin-right:-12px;border-radius:999px;background:rgba(255,255,255,.07);box-shadow:inset 0 0 0 1px rgba(255,255,255,.24)}
   .nav-links a.nav-teams:hover{color:#fff;background:rgba(244,122,30,.14);box-shadow:inset 0 0 0 1px var(--orange-bright)}
   .nav-links a.nav-teams::after{display:none}
   .nav-teams svg{width:16px;height:16px;color:var(--orange-bright);flex:none}
   .nav-teams .arr{color:var(--orange-bright);transition:transform .2s var(--ease)}
   .nav-teams:hover .arr{transform:translateX(3px)}
-  @media(max-width:1000px){
+  @media(max-width:1100px){
     .nav-sep{display:none}
     .nav-links a.nav-teams,.nav-links .btn{padding:14px 20px;font-size:1rem}
     .nav-links a.nav-teams{margin:14px 0 0;border-bottom:0}
@@ -146,9 +146,6 @@
   .reassure{margin-top:22px;color:var(--fg2);font-size:.88rem;display:flex;gap:18px;flex-wrap:wrap}
   .reassure span{display:inline-flex;align-items:center;gap:7px}
   .reassure svg{width:15px;height:15px;color:var(--orange-bright);flex:none}
-  .teams-note{margin-top:18px;color:var(--fg2);font-size:.9rem}
-  .teams-note a{color:var(--orange-bright);font-weight:600}
-  .teams-note a:hover{text-decoration:underline}
   @media(max-width:960px){
     .hero-grid{grid-template-columns:1fr;gap:44px}
     .hero{padding:58px 0 50px;text-align:center}
@@ -288,21 +285,18 @@
   .m-item em{font-style:normal;font-size:.82rem;color:rgba(255,255,255,.55)}
 
   /* Section heads */
-  .section-head{text-align:center;max-width:900px;margin:0 auto 48px}
-  .section-head h2{text-wrap:balance;font-size:clamp(1.7rem,3.5vw,2.4rem);letter-spacing:-.025em;margin-bottom:14px;font-weight:800;color:var(--fg)}
-  .section-head p{color:var(--fg2);font-size:1.06rem;max-width:62ch;margin:0 auto}
-  .section-head h2 .accent{color:var(--orange-bright)}
+  .section-head{text-align:center;max-width:62ch;margin:0 auto 48px}
+  .section-head h2{font-size:clamp(1.7rem,3.5vw,2.4rem);letter-spacing:-.025em;margin-bottom:14px;font-weight:800;color:var(--fg)}
+  .section-head p{color:var(--fg2);font-size:1.06rem}
 
-  /* Problem: scenario cards */
-  .scenarios{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .scn{background:var(--cardbg);border:1.5px solid rgba(244,122,30,.7);border-radius:var(--radius);padding:26px 24px;display:flex;flex-direction:column;gap:16px;box-shadow:0 0 0 4px rgba(232,97,15,.08),0 0 28px rgba(232,97,15,.12);transition:.25s var(--ease)}
-  .scn:hover{transform:translateY(-4px);background:var(--cardbg-hi);border-color:var(--orange-bright);box-shadow:0 0 0 4px rgba(232,97,15,.14),0 10px 34px rgba(232,97,15,.24)}
-  .scn-ask{align-self:flex-start;background:rgba(255,255,255,.1);color:#fff;font-weight:600;font-size:1.04rem;line-height:1.4;padding:11px 15px;border-radius:16px 16px 16px 4px}
-  .scn-paste{background:#fff;color:var(--ink);border-radius:12px;padding:14px 15px;font-size:.88rem;line-height:1.7;border-left:3px solid var(--line)}
-  .scn-paste mark{background:transparent;color:inherit;border-radius:4px;padding:1px 2px;transition:background .5s var(--ease),box-shadow .5s var(--ease)}
-  .scn.in .scn-paste mark{background:rgba(232,97,15,.18);box-shadow:0 1px 0 0 var(--orange);transition-delay:.7s}
-  .scn-cap{color:var(--fg2);font-size:.95rem;margin-top:auto}
-  @media(max-width:860px){.scenarios{grid-template-columns:1fr;max-width:520px;margin:0 auto}}
+  /* Problem */
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .stat{background:var(--cardbg);border:1px solid var(--cardline);border-radius:var(--radius);padding:32px 26px;text-align:center;transition:.25s var(--ease)}
+  .stat:hover{transform:translateY(-4px);background:var(--cardbg-hi)}
+  .stat .num{font-size:2.8rem;font-weight:800;color:var(--orange-bright);line-height:1;letter-spacing:-.02em}
+  .stat .lbl{color:var(--fg2);margin-top:12px;font-size:.97rem}
+  .src{text-align:center;color:var(--fg2);font-size:.82rem;margin-top:26px;font-weight:500}
+  @media(max-width:720px){.stats{grid-template-columns:1fr}}
 
   /* How it works */
   .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
@@ -335,11 +329,6 @@
   }
   .live-cap{text-align:center;color:var(--fg2);font-size:.95rem;margin-top:22px;max-width:56ch;margin-left:auto;margin-right:auto;min-height:48px;transition:opacity .3s}
   .live-cap strong{color:#fff;font-weight:700}
-  .live-legend{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-top:18px;font-size:.82rem;color:var(--fg2)}
-  .live-legend span{display:inline-flex;align-items:center;gap:8px}
-  .live-legend i{width:18px;height:10px;border-radius:3px;display:inline-block}
-  .lg-rule{background:rgba(232,97,15,.4);box-shadow:0 2px 0 0 var(--orange)}
-  .lg-ai{background:rgba(129,122,255,.4);box-shadow:0 2px 0 0 #8B84FF}
   @media(max-width:640px){.tab{font-size:.85rem;padding:9px 16px}}
 
   /* Coverage */
@@ -356,12 +345,46 @@
   @media(max-width:860px){.cov-grid{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:560px){.cov-grid{grid-template-columns:1fr}}
 
-  /* For teams band */
-  .teams-band{display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;background:var(--cardbg);border:1px solid var(--cardline);border-radius:var(--radius);padding:38px 40px}
-  .teams-kicker{display:block;color:var(--orange-bright);font-weight:700;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
-  .teams-band h2{font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-.02em;font-weight:800;color:var(--fg);margin-bottom:10px}
-  .teams-band p{color:var(--fg2);max-width:60ch}
-  @media(max-width:760px){.teams-band{grid-template-columns:1fr;padding:30px 24px;text-align:center}.teams-band p{margin:0 auto}}
+  /* Insights / dashboard */
+  .dash{background:#fff;border:1px solid #E8E6E3;border-radius:18px;padding:22px;box-shadow:var(--shadow-lg)}
+  .dash-banner{display:flex;align-items:flex-start;gap:13px;background:var(--green-bg);border:1px solid var(--green-line);border-radius:11px;padding:16px 18px;margin-bottom:18px}
+  .dash-banner .ring{flex:none;width:26px;height:26px;border-radius:50%;background:#DCFCE7;display:flex;align-items:center;justify-content:center;margin-top:1px}
+  .dash-banner .ring i{width:9px;height:9px;border-radius:50%;background:var(--green);display:block}
+  .dash-banner h4{font-size:1.12rem;font-weight:700;color:#166534;letter-spacing:-.01em}
+  .dash-banner p{font-size:.92rem;color:#3F7A52;margin-top:1px}
+  .kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+  .kpi{border:1px solid #E8E6E3;border-radius:11px;padding:16px 17px;background:#fff;transition:.22s var(--ease)}
+  .kpi:hover{border-color:var(--line);box-shadow:0 8px 20px rgba(43,43,43,.08);transform:translateY(-3px)}
+  .kpi .k{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#8C8781;line-height:1.35}
+  .kpi.crit .k{color:var(--red)}
+  .kpi .v{font-size:2.05rem;font-weight:800;color:#161616;line-height:1.15;margin-top:9px;letter-spacing:-.02em}
+  .kpi .v.up{color:var(--green-bright)}
+  .kpi .v.ai{color:var(--indigo)}
+  .kpi .s{font-size:.76rem;color:#8C8781;margin-top:4px}
+  @media(max-width:900px){.kpis{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.kpis{grid-template-columns:1fr}}
+  .dash-cap{text-align:center;color:var(--fg2);font-size:.8rem;margin-top:14px;font-weight:500}
+  .feats{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:44px}
+  .feat .dot{width:26px;height:26px;border-radius:8px;background:linear-gradient(150deg,var(--orange-bright),var(--orange));display:flex;align-items:center;justify-content:center;color:#fff;font-size:.8rem;font-weight:700;margin-bottom:11px}
+  .feat h4{font-size:1.02rem;margin-bottom:4px;color:var(--fg)}
+  .feat p{color:var(--fg2);font-size:.93rem}
+  @media(max-width:860px){.feats{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.feats{grid-template-columns:1fr}}
+  .touch{margin-top:44px;background:var(--cardbg);border:1px solid var(--cardline);border-radius:var(--radius);padding:34px 32px;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start}
+  .touch .ti{width:52px;height:52px;border-radius:14px;background:linear-gradient(150deg,var(--orange-bright),var(--orange));display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(232,97,15,.3);flex:none}
+  .touch .ti svg{width:26px;height:26px;color:#fff}
+  .touch h3{font-size:1.3rem;letter-spacing:-.02em;margin-bottom:9px;color:var(--fg)}
+  .touch p{color:var(--fg2);font-size:1rem;max-width:62ch}
+  @media(max-width:640px){.touch{grid-template-columns:1fr;padding:28px 24px}}
+
+  /* Why NorthSyte */
+  .why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 24px;max-width:900px;margin:0 auto}
+  .why-item{display:flex;gap:16px;align-items:flex-start;padding:18px;border-radius:14px;transition:.25s var(--ease)}
+  .why-item:hover{background:var(--cardbg);transform:translateX(4px)}
+  .why-item .check{flex:none;width:28px;height:28px;border-radius:50%;background:var(--orange);color:var(--near-black);display:flex;align-items:center;justify-content:center;font-size:.9rem;font-weight:800;margin-top:3px}
+  .why-item h4{font-size:1.05rem;margin-bottom:3px;color:var(--fg)}
+  .why-item p{color:var(--fg2);font-size:.94rem}
+  @media(max-width:720px){.why-grid{grid-template-columns:1fr}}
 
   /* CTA */
   .cta{text-align:center}
@@ -388,13 +411,14 @@
 
 <header>
   <div class="nav">
-    <a href="#" class="logo"><img src="brand/NorthSyte-wordmark-on-black.png" alt="NorthSyte"></a>
+    <a href="/" class="logo"><img src="brand/NorthSyte-wordmark-on-black.png" alt="NorthSyte"></a>
     <nav class="nav-links" id="nav-links">
       <a href="#how">How it works</a>
       <a href="#live">See it live</a>
       <a href="#coverage">What we catch</a>
+      <a href="#insights">Dashboard</a>
       <span class="nav-sep" aria-hidden="true"></span>
-      <a href="/teams" class="nav-teams"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 4.6a3.2 3.2 0 0 1 0 6.2"/><path d="M18 14.3A6 6 0 0 1 21 20"/></svg>For teams<span class="arr" aria-hidden="true">&rarr;</span></a>
+      <a href="/" class="nav-teams"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.6"/><path d="M5 20.5a7 7 0 0 1 14 0"/></svg>For individuals<span class="arr" aria-hidden="true">&rarr;</span></a>
       <a href="#waitlist" class="btn">Join the waitlist</a>
     </nav>
     <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false">
@@ -409,19 +433,18 @@
   <div class="wrap">
     <div class="hero-grid">
       <div data-clear>
-        <span class="eyebrow"><i></i> Privacy for your AI chats</span>
-        <h1>Use AI without <span class="accent">oversharing</span></h1>
-        <p class="sub">NorthSyte spots personal details, passwords, and card numbers in your prompts before they reach AI. It runs entirely in your browser, never stores your info, and stays out of your way. Free for individuals, built for teams.</p>
+        <span class="eyebrow"><i></i> NorthSyte for Teams</span>
+        <h1>Make AI <span class="accent">safe to use</span> at work.</h1>
+        <p class="sub">Your team is already using AI. NorthSyte catches sensitive data in their prompts in real time, before it ever leaves the browser. No prompt storage, no disruption to how people work.</p>
         <div class="hero-cta">
           <a href="#waitlist" class="btn">Join the waitlist</a>
           <a href="#live" class="btn ghost">See it live</a>
         </div>
         <div class="reassure">
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.4 8.4-8 9.5C7.4 20.4 4 17 4 12V6z"/></svg> Runs in your browser</span>
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Never stores your info</span>
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Free for individuals</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.4 8.4-8 9.5C7.4 20.4 4 17 4 12V6z"/></svg> Prompts never stored</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Live in hours</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Built in Canada</span>
         </div>
-        <p class="teams-note">Using AI at work? <a href="/teams">See NorthSyte for Teams &rarr;</a></p>
       </div>
 
       <div class="demo-window" data-reveal>
@@ -445,7 +468,7 @@
 
 <!-- COVERAGE MARQUEE -->
 <div class="marquee-sec">
-  <div class="marquee-lbl">Works with the AI tools you already use</div>
+  <div class="marquee-lbl">Protection built for the AI tools your team already uses</div>
   <div class="marquee">
     <div class="marquee-track" id="marquee-track"></div>
   </div>
@@ -457,26 +480,15 @@
 <section class="sec sec-a" data-pipe>
   <div class="wrap">
     <div class="section-head" data-reveal data-clear>
-      <h2>AI chats feel private. <span class="accent">They aren't.</span></h2>
-      <p>We ask AI for help with the personal stuff: taxes, health questions, a tricky email, a login that won't work. It's easy to paste in more than you meant to, and once it's sent, you can't take it back.</p>
+      <h2>Policies on paper aren't protection.</h2>
+      <p>Employees paste client records, personal information, and confidential data into AI tools every day, usually without realizing the risk. Most organizations have no way to see it, let alone guide it.</p>
     </div>
-    <div class="scenarios">
-      <div class="scn" data-reveal>
-        <div class="scn-ask">&ldquo;Can you help me fill out this form?&rdquo;</div>
-        <div class="scn-paste">Applicant: James R. Morin<br>SIN: <mark>046 454 286</mark><br>Marital status: Single</div>
-        <p class="scn-cap">Pasted with your SIN or SSN still in it.</p>
-      </div>
-      <div class="scn" data-reveal>
-        <div class="scn-ask">&ldquo;What does this blood test mean?&rdquo;</div>
-        <div class="scn-paste">Patient: <mark>Morin, Sarah</mark><br>Health Card: <mark>1234-567-890-AB</mark><br>Ferritin: 8 ug/L (L)</div>
-        <p class="scn-cap">Your name, health card number, and results, all in one prompt.</p>
-      </div>
-      <div class="scn" data-reveal>
-        <div class="scn-ask">&ldquo;Make this email sound nicer.&rdquo;</div>
-        <div class="scn-paste">tell the contractor to call my mom at <mark>613-555-0107</mark>, she's home all day at <mark>42 Elm St</mark></div>
-        <p class="scn-cap">Someone else's phone number and home address included.</p>
-      </div>
+    <div class="stats">
+      <div class="stat" data-reveal><div class="num" data-count="77" data-suffix="%">0%</div><div class="lbl">of employees paste data into generative AI tools</div></div>
+      <div class="stat" data-reveal><div class="num" data-count="40" data-suffix="%">0%</div><div class="lbl">of files uploaded to AI tools contain personal or payment card data</div></div>
+      <div class="stat" data-reveal><div class="num" data-count="82" data-suffix="%">0%</div><div class="lbl">of that pasting happens through unmanaged personal accounts, invisible to IT</div></div>
     </div>
+    <p class="src" data-clear>Source: LayerX, <em>Enterprise AI and SaaS Data Security Report 2025</em>.</p>
   </div>
 </section>
 
@@ -486,27 +498,27 @@
 <section id="how" class="sec sec-b" data-pipe>
   <div class="wrap">
     <div class="section-head" data-reveal data-clear>
-      <h2>Protection that works the way you do</h2>
-      <p>A lightweight browser extension that has your back, without slowing you down.</p>
+      <h2>Protection that works the way your team does</h2>
+      <p>A lightweight browser extension that guides employees in the moment, instead of slowing them down.</p>
     </div>
     <div class="cards">
       <div class="card" data-reveal>
         <span class="step">01</span>
         <div class="ico"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M50 10 L83 23 V49 C83 70 69 85 50 91 C31 85 17 70 17 49 V23 Z"/><path d="M30 52 H42 L48 38 L55 66 L60 52 H70"/><circle cx="50" cy="50" r="2.5" fill="currentColor" stroke="none"/></svg></div>
-        <h3>Catch it in real time</h3>
-        <p>Personal details, passwords, and card numbers are flagged in your prompt before anything reaches the AI.</p>
+        <h3>Detect in real time</h3>
+        <p>Sensitive information is flagged in the prompt the moment it's typed, before it's ever sent to an external AI service.</p>
       </div>
       <div class="card" data-reveal>
         <span class="step">02</span>
         <div class="ico"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 24 H78 a8 8 0 0 1 8 8 V60 a8 8 0 0 1 -8 8 H46 L30 83 V68 H22 a8 8 0 0 1 -8 -8 V32 a8 8 0 0 1 8 -8 Z"/><line x1="50" y1="36" x2="50" y2="50"/><circle cx="50" cy="59" r="3" fill="currentColor" stroke="none"/></svg></div>
-        <h3>Fix it in one click</h3>
-        <p>No lectures, no blocking. NorthSyte shows you what it found and rewrites the prompt for you, so you can keep going.</p>
+        <h3>Warn, don't block</h3>
+        <p>Employees are gently guided, not punished. One click rewrites the prompt for them, so good habits cost nothing.</p>
       </div>
       <div class="card" data-reveal>
         <span class="step">03</span>
-        <div class="ico"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><rect x="22" y="44" width="56" height="42" rx="8"/><path d="M34 44 V32 a16 16 0 0 1 32 0 V44"/><circle cx="50" cy="63" r="4" fill="currentColor" stroke="none"/><line x1="50" y1="66" x2="50" y2="74"/></svg></div>
-        <h3>Keep it private</h3>
-        <p>Everything runs right in your browser. Your prompts are never stored or sent to us.</p>
+        <div class="ico"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 84 H86"/><line x1="32" y1="72" x2="32" y2="58"/><line x1="50" y1="72" x2="50" y2="44"/><line x1="68" y1="72" x2="68" y2="52"/><path d="M28 42 L48 26 L62 36 L84 16"/><path d="M70 16 H84 V30"/></svg></div>
+        <h3>See and improve</h3>
+        <p>A management dashboard turns everyday AI use into clear insight, and powers data-led training that actually changes behaviour.</p>
       </div>
     </div>
   </div>
@@ -519,7 +531,7 @@
   <div class="wrap">
     <div class="section-head" data-reveal data-clear>
       <h2>See it live</h2>
-      <p>A real prompt, typed the way you'd type it. Pick a situation and watch what NorthSyte catches.</p>
+      <p>A real prompt, typed the way your team would type it. Pick an industry and watch what NorthSyte catches.</p>
     </div>
     <div class="live-tabs" id="live-tabs" data-reveal></div>
     <div class="live-stage" data-reveal>
@@ -536,7 +548,6 @@
           <div class="dw-popup-slot" id="live-slot"></div>
         </div>
       </div>
-      <p class="live-legend" data-clear><span><i class="lg-rule"></i> Caught by pattern rules</span><span><i class="lg-ai"></i> Caught by the in-browser AI layer</span></p>
       <p class="live-cap" id="live-cap" data-clear></p>
     </div>
   </div>
@@ -581,7 +592,7 @@
         <span class="pill">AI layer</span>
         <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></div>
         <h3>People, organizations &amp; places</h3>
-        <p>A model running inside the browser reads meaning, not formats, so it catches the names and street addresses that no pattern rule could ever match.</p>
+        <p>A model running inside the browser reads meaning, not formats, so it catches the client name, the firm and the location that no pattern rule could ever match.</p>
       </div>
     </div>
   </div>
@@ -589,16 +600,85 @@
 
 <div class="divider"></div>
 
-<!-- FOR TEAMS -->
-<section id="teams" class="sec sec-a" data-pipe>
+<!-- INSIGHTS / DASHBOARD -->
+<section id="insights" class="sec sec-a" data-pipe>
   <div class="wrap">
-    <div class="teams-band" data-reveal>
-      <div>
-        <span class="teams-kicker">NorthSyte for Teams</span>
-        <h2>Bringing AI to work?</h2>
-        <p>The same protection for your whole team, plus a dashboard that shows where sensitive data shows up and training built on your own usage. Prompts are never stored.</p>
+    <div class="section-head" data-reveal data-clear>
+      <h2>See and improve how your team uses AI</h2>
+      <p>NorthSyte turns everyday AI activity into clear, actionable insight, so you can move from guessing to knowing, and from generic policy to training that actually works.</p>
+    </div>
+
+    <div class="dash" data-reveal>
+      <div class="dash-banner">
+        <span class="ring"><i></i></span>
+        <div>
+          <h4>No critical exposure this period</h4>
+          <p>No critical or high-severity events in the selected range.</p>
+        </div>
       </div>
-      <a href="/teams" class="btn ghost">Explore NorthSyte for Teams</a>
+      <div class="kpis">
+        <div class="kpi crit">
+          <div class="k">Critical events</div>
+          <div class="v">0</div>
+          <div class="s">highest-severity exposures &rarr;</div>
+        </div>
+        <div class="kpi">
+          <div class="k">Total detections</div>
+          <div class="v" data-count="124">0</div>
+          <div class="s">Last 30 days</div>
+        </div>
+        <div class="kpi">
+          <div class="k">Employees with detections</div>
+          <div class="v" data-count="18">0</div>
+          <div class="s">distinct (count only)</div>
+        </div>
+        <div class="kpi">
+          <div class="k">Trend vs previous period</div>
+          <div class="v up" data-count="42" data-prefix="&darr;" data-suffix="%">&darr;0%</div>
+          <div class="s">prev: 214</div>
+        </div>
+        <div class="kpi">
+          <div class="k">Caught only by AI detection</div>
+          <div class="v ai" data-count="31">0</div>
+          <div class="s">entities pattern-matching would miss</div>
+        </div>
+      </div>
+    </div>
+    <p class="dash-cap" data-clear>Sample data shown for illustration.</p>
+
+    <div class="feats">
+      <div class="feat" data-reveal data-clear><span class="dot">✓</span><h4>Full visibility</h4><p>See which AI tools your team uses and where sensitive data shows up, without ever storing the prompts themselves.</p></div>
+      <div class="feat" data-reveal data-clear><span class="dot">✓</span><h4>Spot what matters</h4><p>Surface high-risk patterns and the teams that need support the most.</p></div>
+      <div class="feat" data-reveal data-clear><span class="dot">✓</span><h4>Train with evidence</h4><p>Replace one-size-fits-all awareness sessions with data-led training built on your own usage.</p></div>
+      <div class="feat" data-reveal data-clear><span class="dot">✓</span><h4>Measure progress</h4><p>Watch risky behaviour fall as employees learn, and show the improvement to leadership.</p></div>
+    </div>
+
+    <div class="touch" data-reveal>
+      <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 2.5h8L19 7v14.5H6.5z"/><path d="M14 2.5V7h5"/><path d="M9.5 13.5l2 2 4-4.5"/></svg></div>
+      <div>
+        <h3>Evidence for the moments someone asks</h3>
+        <p>AI governance stops being theoretical the moment a third party wants proof. NorthSyte gives you a record to point at, showing what your team was exposed to, what you did about it, and how behaviour improved over time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WHY NORTHSYTE -->
+<section id="why" class="sec sec-b" data-pipe>
+  <div class="wrap">
+    <div class="section-head" data-reveal data-clear>
+      <h2>Why teams choose North<span style="color:var(--orange-bright)">Syte</span></h2>
+      <p>Built for organizations that want real AI governance without an enterprise-sized budget or project.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-item" data-reveal data-clear><span class="check">✓</span><div><h4>Privacy by design</h4><p>Your prompts stay yours. We protect data without storing the content we're protecting.</p></div></div>
+      <div class="why-item" data-reveal data-clear><span class="check">✓</span><div><h4>Made in Canada</h4><p>Canadian-built and Canadian-focused, aligned with data sovereignty expectations.</p></div></div>
+      <div class="why-item" data-reveal data-clear><span class="check">✓</span><div><h4>Catches what patterns miss</h4><p>AI detection finds the names, firms and places that rule-based scanning walks straight past.</p></div></div>
+      <div class="why-item" data-reveal data-clear><span class="check">✓</span><div><h4>Live in hours</h4><p>A simple browser extension. No proxies, no network changes, no months-long rollout.</p></div></div>
+      <div class="why-item" data-reveal data-clear><span class="check">✓</span><div><h4>A partner, not just a tool</h4><p>Training sessions and AI-use guidance built on your own usage data.</p></div></div>
+      <div class="why-item" data-reveal data-clear><span class="check">✓</span><div><h4>Focused on AI</h4><p>Purpose-built for AI governance, not a sprawling platform you'll never fully use.</p></div></div>
     </div>
   </div>
 </section>
@@ -606,13 +686,13 @@
 <div class="divider"></div>
 
 <!-- CTA / WAITLIST -->
-<section id="waitlist" class="sec sec-b cta" data-pipe>
+<section id="waitlist" class="sec sec-a cta" data-pipe>
   <div class="wrap">
-    <h2 data-clear>Be the first to try it</h2>
-    <p data-clear>Join the waitlist and we'll let you know as soon as NorthSyte is ready to install. Free for individuals.</p>
+    <h2 data-clear>Be the first to know</h2>
+    <p data-clear>Join the teams waitlist and we'll reach out as soon as NorthSyte is ready for your organization.</p>
     <form class="form" id="demo-form" data-clear action="https://api.web3forms.com/submit" method="post">
       <input type="hidden" name="access_key" value="b8881090-d815-4602-ae50-4746c5917413" />
-      <input type="hidden" name="subject" value="New waitlist member (individual)" />
+      <input type="hidden" name="subject" value="New waitlist member (teams)" />
       <input type="email" name="email" placeholder="Your email" required />
       <button type="submit" class="btn">Join the waitlist</button>
     </form>
@@ -627,7 +707,7 @@
   <div class="wrap">
     <div class="logo" style="justify-content:center;margin-bottom:8px"><img src="brand/NorthSyte-wordmark-on-black.png" alt="NorthSyte" style="height:30px;width:auto"></div>
     <div>Ottawa, Canada</div>
-    <div style="margin-top:8px">© 2026 NorthSyte · <a href="/teams" style="color:inherit">For teams</a> · <a href="/privacy" style="color:inherit">Privacy</a></div>
+    <div style="margin-top:8px">© 2026 NorthSyte · <a href="/" style="color:inherit">For individuals</a> · <a href="/privacy" style="color:inherit">Privacy</a></div>
   </div>
 </footer>
 
@@ -899,6 +979,32 @@
       navToggle.setAttribute('aria-expanded', 'false');
     }
   });
+
+  /* ---------- Count-up numbers ---------- */
+  function countUp(el){
+    var target = parseFloat(el.dataset.count);
+    var prefix = el.dataset.prefix || '';
+    var suffix = el.dataset.suffix || '';
+    var dur = 1400, start = performance.now();
+    if (reduced) { el.textContent = prefix + target + suffix; return; }
+    function tick(now){
+      var p = Math.min(1, (now - start) / dur);
+      el.textContent = prefix + Math.round(target * (1 - Math.pow(1 - p, 3))) + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  var counters = document.querySelectorAll('[data-count]');
+  if ('IntersectionObserver' in window) {
+    var co = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting) { countUp(en.target); co.unobserve(en.target); }
+      });
+    }, { threshold: .5 });
+    counters.forEach(function(el){ co.observe(el); });
+  } else {
+    counters.forEach(countUp);
+  }
 
   /* ---------- Coverage marquee (supported sites) ---------- */
   var TOOLS = [
@@ -1217,26 +1323,27 @@
   /* ---------- Hero: auto-cycling teaser ---------- */
   var HERO = [
     { url: 'chatgpt.com', segs: [
-      { t: 'is this charge a scam? never heard of this store\n\n' },
-      { t: 'SHOPNOVA*ONLINE  TORONTO ON  $212.00\nCard: ', paste: true },
-      { t: '4539 1488 0343 6467', pii: 'Credit Card' }
+      { t: 'draft a follow-up about the delayed shipment to this contact\n\n' },
+      { t: 'Michael Brennan', pii: 'Person Name', paste: true },
+      { t: '\n' },
+      { t: 'm.brennan@halcyonlogistics.com', pii: 'Email' },
+      { t: '\n' },
+      { t: '(416) 555-0184', pii: 'Phone' }
     ]},
     { url: 'claude.ai', segs: [
-      { t: 'help me fill out this benefits form\n\n' },
-      { t: 'Name: ', paste: true },
-      { t: 'Sarah Morin', pii: 'Person Name', ai: true },
-      { t: '\nSIN: ' },
-      { t: '046 454 286', pii: 'SIN' },
-      { t: '\nCell: ' },
-      { t: '613-555-0188', pii: 'Phone' }
+      { t: 'why is this deploy failing?\n\n' },
+      { t: 'Error: authentication failed\nAWS_ACCESS_KEY_ID=', paste: true },
+      { t: 'AKIAIOSFODNN7EXAMPLE', pii: 'AWS Access Key' },
+      { t: '\nDATABASE_URL=' },
+      { t: 'postgres://admin:hunter2@10.0.4.22:5432/prod', pii: 'Connection String' }
     ]},
     { url: 'gemini.google.com', segs: [
-      { t: 'write a short intro for the school parents group\n\n' },
-      { t: 'Sarah Morin', pii: 'Person Name', ai: true, paste: true },
-      { t: ', mom of two\n' },
-      { t: 'sarah.morin88@gmail.com', pii: 'Email' },
-      { t: ' | ' },
-      { t: '613-555-0107', pii: 'Phone' }
+      { t: 'write a polite reminder about this overdue invoice\n\n' },
+      { t: 'Invoice #2291 \u00b7 ', paste: true },
+      { t: 'Halcyon Logistics', pii: 'Organization' },
+      { t: '\nCard on file: ' },
+      { t: '4539 1488 0343 6467', pii: 'Credit Card' },
+      { t: '\nAmount due: $4,860.00' }
     ]}
   ];
 
@@ -1252,68 +1359,69 @@
   }
   heroLoop();
 
-  /* ---------- See it live: everyday situations ----------
-     Typed question, then a pasted block. Highlights match what the detector
-     actually flags: pattern rules (orange) vs the in-browser AI layer (ai: true). */
-  var SITUATIONS = [
-    { name: 'Taxes', url: 'chatgpt.com',
-      reply: 'Here\'s where each T4 amount goes on your return:\n\n• Box 14, employment income (58,432.10) goes on line 10100.\n• Box 22, income tax deducted (9,871.44) goes on line 43700.\n\nThe name [NAME HERE] and SIN [SIN HERE] just identify the slip, so you don\'t enter them again.',
-      cap: 'Pattern rules catch the <strong>SIN</strong> from the label next to it. The in-browser AI layer flags the name.',
+  /* ---------- See it live: industry-selectable ---------- */
+  var INDUSTRIES = [
+    { name: 'Legal', url: 'chatgpt.com',
+      reply: 'Here\'s a draft:\n\nRe: Settlement of claim filed March 2026\n\nDear [NAME HERE],\n\nFurther to the claim filed in March, we write on your behalf to set out the proposed terms of settlement. Please review the enclosed terms and contact our office to discuss next steps.\n\nThis letter will be sent to [ADDRESS HERE].',
+      cap: 'In a law firm this is a <strong>privilege</strong> problem before it is a privacy one — client identifiers should never reach a third-party model.',
       segs: [
-        { t: 'what box does this go in on my return?\n\n' },
-        { t: 'Statement of Remuneration Paid (T4) 2025\nEmployee: ', paste: true },
-        { t: 'JAMES R MORIN', pii: 'Person Name', ai: true },
-        { t: '\nSIN: ' },
+        { t: 'Draft a settlement letter for our client ' },
+        { t: 'Marc Delaney', pii: 'Person Name' },
+        { t: ', SIN ' },
         { t: '046 454 286', pii: 'SIN' },
-        { t: '\n14 Employment income: 58,432.10\n22 Income tax deducted: 9,871.44' }
+        { t: ', of ' },
+        { t: '118 Bank Street', pii: 'Address' },
+        { t: ', regarding the claim filed in March.' }
       ]},
-    { name: 'Health', url: 'claude.ai',
-      reply: 'Here\'s what those results mean in plain words:\n\n• Ferritin 8 ug/L (low): your body\'s iron stores are running low.\n• Hemoglobin 112 g/L (low): you have a bit less oxygen-carrying blood than usual, which can make you feel tired.\n\nTogether these often point to low iron. It\'s worth calling your doctor\'s office to ask if anything should start before your appointment.',
-      cap: 'The <strong>Ontario health card number</strong> is caught by its label. The AI layer flags the patient\'s name.',
+    { name: 'Healthcare', url: 'claude.ai',
+      reply: 'Happy to help. Paste the chart notes for [NAME HERE] (DOB [DATE OF BIRTH HERE]) and I\'ll summarize them, flagging anything urgent such as abnormal vitals, new medications or overdue follow-ups.',
+      cap: 'Patient identifiers leaving the browser is a <strong>health privacy</strong> problem before it is a security one.',
       segs: [
-        { t: 'can you explain these results in normal words, doctor wont see me til next month\n\n' },
-        { t: 'Patient: ', paste: true },
-        { t: 'Morin, Sarah', pii: 'Person Name', ai: true },
-        { t: ' DOB: 1991-03-14\nHealth Card: ' },
-        { t: '1234-567-890-AB', pii: 'Health Card' },
-        { t: '\nFerritin: 8 ug/L (L) Hemoglobin: 112 g/L (L)' }
+        { t: 'Summarize the chart for ' },
+        { t: 'Priya Raman', pii: 'Person Name' },
+        { t: ', DOB ' },
+        { t: '14/03/1979', pii: 'Date of Birth' },
+        { t: ', Ontario health card ' },
+        { t: '5312 884 991 AB', pii: 'Health Card' },
+        { t: ', and flag anything urgent.' }
       ]},
-    { name: 'Money', url: 'gemini.google.com',
-      reply: 'Here\'s a calmer, professional version that still clearly asks for the refund:\n\nHi,\n\nI noticed that I was charged twice for order #112-4839201. My card ending in [CARD NUMBER HERE] was charged $89.99 on both September 3 and September 4.\n\nCould you please look into this and arrange a refund for the duplicate charge?\n\nThank you for your help.',
-      cap: 'The <strong>card number</strong> passes a checksum, so it\'s flagged. The order number and dollar amounts aren\'t personal, so NorthSyte leaves them alone.',
+    { name: 'Government', url: 'copilot.microsoft.com',
+      reply: 'Here\'s a draft response:\n\nDear [NAME HERE],\n\nThank you for your access to information request. We confirm it has been received and will be processed within the legislated time limit. If we need to verify your identity, we will contact you at [PHONE HERE].\n\nSincerely,',
+      cap: 'Identity documents from an <strong>access-to-information</strong> request should not pass through a commercial AI service.',
       segs: [
-        { t: 'rewrite this so it sounds less angry\n\n' },
-        { t: 'I was charged twice for order #112-4839201. Card ending ', paste: true },
-        { t: '4111 1111 1111 1111', pii: 'Credit Card' },
-        { t: ', charged $89.99 on Sept 3 AND Sept 4. I want my money back.' }
-      ]},
-    { name: 'Email', url: 'copilot.microsoft.com',
-      reply: 'Here\'s a more professional version:\n\nHi Dave,\n\nCould you please send the lease documents to my new address: [ADDRESS HERE], Ottawa [POSTAL CODE HERE]?\n\nIf anything comes up, you can reach me at [PHONE HERE].\n\nThanks!',
-      cap: 'The <strong>phone number and postal code</strong> are caught by pattern rules. The AI layer picks up the street address.',
-      segs: [
-        { t: 'make this sound more professional\n\n' },
-        { t: 'hey Dave, can u send the lease stuff to my new place, ', paste: true },
-        { t: '18 Maple Ave apt 3', pii: 'Address', ai: true },
-        { t: ', Ottawa ' },
-        { t: 'K2P 1L4', pii: 'Postal Code' },
-        { t: '. my cell is ' },
+        { t: 'Draft a response to the ATIP request from ' },
+        { t: 'Daniel Okafor', pii: 'Person Name' },
+        { t: ', passport ' },
+        { t: 'HB472819', pii: 'Passport' },
+        { t: ', reachable at ' },
         { t: '613-555-0142', pii: 'Phone' },
-        { t: ' if anything comes up' }
+        { t: '.' }
       ]},
-    { name: 'Job search', url: 'chatgpt.com',
-      reply: 'Here\'s a cleaner header:\n\n[NAME HERE]\n[ADDRESS HERE], Ottawa ON [POSTAL CODE HERE]\n[PHONE HERE]  ·  [EMAIL HERE]\n\nPut your name on its own line in a larger font, and keep the contact details on one line underneath.',
-      cap: 'Your <strong>email, phone, and postal code</strong> are caught instantly. The AI layer flags your name and street address.',
+    { name: 'Finance', url: 'gemini.google.com',
+      reply: 'To reconcile the payment for [ORGANIZATION HERE]:\n\n1. Match the charge on [CARD NUMBER HERE] to the open invoice amount.\n2. Confirm the settlement landed in [ACCOUNT NUMBER HERE].\n3. Record any difference as a processing fee or timing variance.',
+      cap: 'Card and account data in a prompt is a <strong>PCI exposure</strong> your processor will eventually ask about.',
       segs: [
-        { t: 'fix the formatting on my resume header\n\n' },
-        { t: 'Jessica Tran', pii: 'Person Name', ai: true, paste: true },
-        { t: '\n' },
-        { t: '245 Rideau St', pii: 'Address', ai: true },
-        { t: ', Ottawa ON ' },
-        { t: 'K1N 5Y2', pii: 'Postal Code' },
-        { t: ' | ' },
-        { t: '613-555-0188', pii: 'Phone' },
-        { t: ' | ' },
-        { t: 'jtran.91@gmail.com', pii: 'Email' }
+        { t: 'Reconcile this payment for ' },
+        { t: 'Halcyon Logistics', pii: 'Organization' },
+        { t: ': card ' },
+        { t: '4539 1488 0343 6467', pii: 'Credit Card' },
+        { t: ', CVV ' },
+        { t: '884', pii: 'Security Code' },
+        { t: ', account ' },
+        { t: 'CA89 3704 0044 0532 0130 00', pii: 'Bank Account' },
+        { t: '.' }
+      ]},
+    { name: 'Engineering', url: 'grok.com',
+      reply: 'A few things to check on the failing deploy:\n\n1. Confirm [API KEY HERE] still has deploy permissions and hasn\'t been rotated.\n2. Test [CONNECTION STRING HERE] from the build runner.\n3. Make sure [IP ADDRESS HERE] is reachable from the runner\'s subnet.',
+      cap: 'A pasted key is a <strong>production incident</strong> waiting to happen, and the fastest secret to leak is the one nobody logged.',
+      segs: [
+        { t: 'Debug this failing deploy. AWS key ' },
+        { t: 'AKIAIOSFODNN7EXAMPLE', pii: 'AWS Access Key' },
+        { t: ', database ' },
+        { t: 'postgres://admin:hunter2@10.0.4.22:5432/prod', pii: 'Connection String' },
+        { t: ', host ' },
+        { t: '10.0.4.22', pii: 'IP Address' },
+        { t: '.' }
       ]}
   ];
 
@@ -1321,37 +1429,37 @@
   var liveTabs = document.getElementById('live-tabs');
   var liveCap  = document.getElementById('live-cap');
 
-  liveTabs.innerHTML = SITUATIONS.map(function(sit, i){
-    return '<button class="tab' + (i === 0 ? ' active' : '') + '" data-i="' + i + '">' + sit.name + '</button>';
+  liveTabs.innerHTML = INDUSTRIES.map(function(ind, i){
+    return '<button class="tab' + (i === 0 ? ' active' : '') + '" data-i="' + i + '">' + ind.name + '</button>';
   }).join('');
 
-  function playSituation(i){
-    var sit = SITUATIONS[i];
+  function playIndustry(i){
+    var ind = INDUSTRIES[i];
     Array.prototype.forEach.call(liveTabs.children, function(b, bi){
       b.classList.toggle('active', bi === i);
     });
     liveCap.style.opacity = '0';
-    liveTyper.play(sit, function(){
-      liveCap.innerHTML = sit.cap;
+    liveTyper.play(ind, function(){
+      liveCap.innerHTML = ind.cap;
       liveCap.style.opacity = '1';
     });
   }
 
   liveTabs.addEventListener('click', function(e){
     var btn = e.target.closest('.tab');
-    if (btn) playSituation(+btn.dataset.i);
+    if (btn) playIndustry(+btn.dataset.i);
   });
 
   var liveStarted = false;
   if ('IntersectionObserver' in window) {
     var lo = new IntersectionObserver(function(entries){
       entries.forEach(function(en){
-        if (en.isIntersecting && !liveStarted) { liveStarted = true; playSituation(0); }
+        if (en.isIntersecting && !liveStarted) { liveStarted = true; playIndustry(0); }
       });
     }, { threshold: .25 });
     lo.observe(document.getElementById('live'));
   } else {
-    playSituation(0);
+    playIndustry(0);
   }
 
   /* ---------- Waitlist form ---------- */
