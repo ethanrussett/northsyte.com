@@ -49,7 +49,7 @@
 
 <main>
   <h1>Privacy Policy</h1>
-  <p class="meta">Version 2026-09-14 · Last updated September 14, 2026</p>
+  <p class="meta">Version 2026-09-15 · Last updated September 15, 2026</p>
 
   <div class="short">
     <strong>The short version</strong>
@@ -136,7 +136,26 @@
   (your installation ID and settings) syncs across your Chrome browsers if you use
   Chrome sync.</p>
 
-  <h3>3.6 The website</h3>
+  <h3>3.6 Problem reports</h3>
+  <p>If you use <strong>Report a problem</strong> in the extension, we receive what
+  you write in the description and, only if you choose to give one, an email
+  address to reply to. The extension adds:</p>
+  <div class="table-wrap">
+  <table>
+    <tr><th>What</th><th>Example</th></tr>
+    <tr><td>The AI tool you were on, if any, and whether NorthSyte could still find its message box</td><td><code>gemini</code>, <code>adapter-drift</code></td></tr>
+    <tr><td>The extension version, your browser and operating system</td><td><code>0.2.0</code>, <code>Chrome 128</code>, <code>macOS</code></td></tr>
+    <tr><td>Whether the AI detection model is switched on</td><td>on / off</td></tr>
+    <tr><td>The categories found in your most recent detection, and when</td><td><code>pii.ssn</code></td></tr>
+    <tr><td>Your installation ID</td><td>a random ID</td></tr>
+  </table>
+  </div>
+  <p>It never adds your prompts, the page you were on, or the sensitive values that
+  were detected. Please don't paste them into the description — the extension
+  checks it for obvious sensitive data before sending and asks you to remove it.
+  Reports are emailed to the NorthSyte team so we can look into them.</p>
+
+  <h3>3.7 The website</h3>
   <p>If you use the waitlist or demo form on northsyte.com, we receive what you
   enter in it, and use it only to respond to you. The site has no analytics or
   advertising trackers.</p>
@@ -155,7 +174,9 @@
   <ul>
     <li><strong>Amazon Web Services</strong> hosts our servers and database in
     <strong>Canada</strong> (Montréal region). Your installation record, email
-    address and detection events are stored there.</li>
+    address, detection events and problem reports are stored there, and problem
+    reports are emailed to our team through Amazon's email service in the same
+    region.</li>
     <li><strong>Hugging Face</strong> hosts the AI detection model. The first time
     the extension runs, your browser downloads the model from Hugging Face, which
     sees a normal download request (including your IP address). After that the
@@ -186,6 +207,8 @@
     <li><strong>Detection events and security logs:</strong> our legitimate
     interest in running, securing and improving a privacy product. They contain
     no prompt text and no detected values.</li>
+    <li><strong>Problem reports:</strong> our legitimate interest in fixing the
+    problem you asked us to look at.</li>
     <li><strong>Product news:</strong> your consent, which you can withdraw at any
     time.</li>
   </ul>
@@ -205,6 +228,9 @@
     later unsubscribe or ask us to delete your data, we may keep a minimal record
     that consent was given and withdrawn (dates and policy version) for as long as
     needed to show we followed anti-spam law.</li>
+    <li><strong>Problem reports</strong>, including any reply address you gave:
+    12 months in our database, then deleted automatically. A copy is emailed to our
+    team; ask us and we'll delete both sooner.</li>
     <li><strong>Security logs:</strong> 30 days.</li>
   </ul>
 
