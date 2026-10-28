@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>NorthSyte | Use AI without oversharing</title>
+<title>NorthSyte | Private, managed AI for regulated businesses</title>
 <link rel="icon" type="image/png" href="brand/NorthSyte-app-icon.png" />
-<meta name="description" content="NorthSyte spots personal details, passwords, and card numbers in your prompts before they reach AI. It runs entirely in your browser, never stores your info, and stays out of your way. Free for individuals, built for teams." />
-<meta property="og:title" content="NorthSyte | Use AI without oversharing" />
-<meta property="og:description" content="NorthSyte spots personal details, passwords, and card numbers in your prompts before they reach AI." />
+<meta name="description" content="NorthSyte delivers private, managed AI for small and mid-sized businesses in regulated industries. Your data stays yours, and your team finally gets to use AI." />
+<meta property="og:title" content="NorthSyte | Private, managed AI for regulated businesses" />
+<meta property="og:description" content="Private, managed AI for small and mid-sized businesses in regulated industries. Your data stays yours, and your team finally gets to use AI." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://northsyte.com/" />
 <meta property="og:image" content="https://northsyte.com/brand/NorthSyte-app-icon.png" />
@@ -58,9 +58,8 @@
 
   /* ---- Alternating section themes ----
      Contrast is the constraint here: white on #E8610F is only 3.4:1 and fails
-     WCAG AA, so orange sections carry near-black text (5.1:1) instead. */
+     WCAG AA, so orange is used for accents and buttons, never as a text bed. */
   .sec{position:relative;overflow:hidden;padding:82px 0}
-  .sec[id]{scroll-margin-top:82px}
   .sec-a{
     background:var(--charcoal);
     --fg:#FFFFFF; --fg2:rgba(255,255,255,.72);
@@ -91,8 +90,6 @@
   .btn{background:var(--orange);color:var(--near-black)}
   .btn:hover{background:var(--orange-bright);transform:translateY(-2px);box-shadow:0 10px 26px rgba(232,97,15,.4)}
   .btn:active{transform:translateY(0)}
-  .btn.ghost{background:transparent;color:var(--orange-bright);box-shadow:inset 0 0 0 2px var(--orange-bright)}
-  .btn.ghost:hover{background:rgba(244,122,30,.14);color:var(--orange-bright);box-shadow:inset 0 0 0 2px var(--orange-bright)}
 
   .eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(244,122,30,.15);color:var(--orange-bright);font-weight:700;font-size:.8rem;letter-spacing:.04em;text-transform:uppercase;padding:7px 15px;border-radius:999px;margin-bottom:22px}
   .eyebrow i{width:7px;height:7px;border-radius:50%;background:var(--orange-bright);display:inline-block;animation:pulse 2s infinite}
@@ -104,215 +101,32 @@
   /* Header */
   header{position:sticky;top:0;background:rgba(30,30,30,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.09);z-index:50}
   .progress{position:absolute;left:0;bottom:-1px;height:2px;width:0;background:linear-gradient(90deg,var(--orange-bright),var(--orange));transition:width .1s linear}
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:var(--max);margin:0 auto}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 24px;max-width:var(--max);margin:0 auto}
   .logo{display:flex;align-items:center}
   .logo img{height:38px;width:auto;display:block}
-  .nav-links{display:flex;gap:26px;align-items:center}
-  .nav-links a{white-space:nowrap}
-  .nav-links a:not(.btn){color:rgba(255,255,255,.74);font-weight:500;font-size:.95rem;transition:.18s;position:relative;padding:4px 0}
-  .nav-links a:not(.btn):hover{color:#fff}
-  .nav-links a:not(.btn)::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--orange-bright);transition:width .25s var(--ease)}
-  .nav-links a:not(.btn).active{color:#fff}
-  .nav-links a:not(.btn).active::after,.nav-links a:not(.btn):hover::after{width:100%}
-  .nav-toggle{display:none;background:none;border:0;cursor:pointer;padding:8px;margin-left:8px}
-  .nav-toggle span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:.25s var(--ease)}
-  .nav-toggle span+span{margin-top:5px}
-  .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-  .nav-toggle.open span:nth-child(2){opacity:0}
-  .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-  @media(max-width:1000px){
-    .nav-toggle{display:block}
-    .nav-links{position:absolute;top:100%;left:0;right:0;background:rgba(28,28,28,.99);backdrop-filter:blur(14px);flex-direction:column;align-items:stretch;gap:0;padding:8px 24px 20px;border-bottom:1px solid rgba(255,255,255,.09);display:none}
-    .nav-links.open{display:flex}
-    .nav-links a:not(.btn){padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08)}
-    .nav-links .btn{margin-top:14px;text-align:center}
-  }
-  /* "For teams" is a way out to another page, not a section link or the
-     page's main action, so it gets its own chip between the two. */
-  .nav-sep{width:1px;height:22px;background:rgba(255,255,255,.16)}
-  /* Teams chip and waitlist button share one size so they read as a pair */
-  .nav-links a.nav-teams,.nav-links .btn{display:inline-flex;align-items:center;justify-content:center;min-width:176px;padding:11px 20px;font-size:.95rem;line-height:1.5}
-  .nav-links a.nav-teams{gap:7px;color:#fff;font-weight:600;margin-right:-12px;border-radius:999px;background:rgba(255,255,255,.07);box-shadow:inset 0 0 0 1px rgba(255,255,255,.24)}
-  .nav-links a.nav-teams:hover{color:#fff;background:rgba(244,122,30,.14);box-shadow:inset 0 0 0 1px var(--orange-bright)}
-  .nav-links a.nav-teams::after{display:none}
-  .nav-teams svg{width:16px;height:16px;color:var(--orange-bright);flex:none}
-  .nav-teams .arr{color:var(--orange-bright);transition:transform .2s var(--ease)}
-  .nav-teams:hover .arr{transform:translateX(3px)}
-  @media(max-width:1000px){
-    .nav-sep{display:none}
-    .nav-links a.nav-teams,.nav-links .btn{padding:14px 20px;font-size:1rem}
-    .nav-links a.nav-teams{margin:14px 0 0;border-bottom:0}
+  .nav .btn{white-space:nowrap}
+  @media(max-width:460px){
+    .nav{padding:12px 16px}
+    .logo img{height:30px}
+    .nav .btn{padding:11px 18px;font-size:.9rem}
   }
 
   /* Hero */
-  .hero{padding:78px 0 62px}
-  .hero-grid{display:grid;grid-template-columns:1fr 1.04fr;gap:48px;align-items:center}
-  .hero h1{font-size:clamp(2.2rem,4.6vw,3.5rem);line-height:1.06;letter-spacing:-.03em;margin-bottom:20px;font-weight:800;color:#fff}
+  .hero{padding:96px 0 86px;text-align:center}
+  .hero h1{text-wrap:balance;font-size:clamp(2.2rem,4.6vw,3.5rem);line-height:1.06;letter-spacing:-.03em;margin-bottom:20px;font-weight:800;color:#fff;max-width:19ch;margin-left:auto;margin-right:auto}
   .hero h1 .accent{color:var(--orange-bright)}
-  .hero p.sub{font-size:clamp(1.02rem,2vw,1.18rem);color:var(--fg2);max-width:54ch;margin-bottom:30px}
-  .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
-  .reassure{margin-top:22px;color:var(--fg2);font-size:.88rem;display:flex;gap:18px;flex-wrap:wrap}
-  .reassure span{display:inline-flex;align-items:center;gap:7px}
-  .reassure svg{width:15px;height:15px;color:var(--orange-bright);flex:none}
-  .teams-note{margin-top:18px;color:var(--fg2);font-size:.9rem}
-  .teams-note a{color:var(--orange-bright);font-weight:600}
-  .teams-note a:hover{text-decoration:underline}
-  @media(max-width:960px){
-    .hero-grid{grid-template-columns:1fr;gap:44px}
-    .hero{padding:58px 0 50px;text-align:center}
-    .hero p.sub{margin-left:auto;margin-right:auto}
-    .hero-cta,.reassure{justify-content:center}
-  }
-
-  /* Browser mock */
-  .demo-window{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;box-shadow:0 28px 70px rgba(0,0,0,.42);overflow:hidden;text-align:left}
-  .dw-bar{display:flex;align-items:center;gap:8px;padding:11px 15px;background:#F7F6F4;border-bottom:1px solid var(--line-soft)}
-  .dw-dots{display:flex;gap:6px}
-  .dw-dots i{width:10px;height:10px;border-radius:50%;background:#DCD9D4;display:block}
-  .dw-url{flex:1;text-align:center;font-size:.76rem;color:var(--muted);background:#fff;border:1px solid var(--line-soft);border-radius:999px;padding:4px 12px;max-width:210px;margin:0 auto;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-  .dw-badge{display:flex;align-items:center;gap:5px;font-size:.66rem;font-weight:700;color:var(--orange-deep);background:var(--orange-soft);padding:4px 9px;border-radius:999px;letter-spacing:.03em;white-space:nowrap}
-  .dw-badge i{width:6px;height:6px;border-radius:50%;background:var(--orange);animation:pulse 2s infinite}
-  .dw-body{position:relative;padding:20px;background:#fff}
-  .dw-label{font-size:.68rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:600;margin-bottom:9px}
-  .dw-prompt{font-size:.95rem;line-height:1.62;color:var(--ink);word-break:break-word;white-space:pre-wrap}
-  .dw-prompt .tok{border-radius:4px;padding:1px 2px;transition:background .35s var(--ease),box-shadow .35s var(--ease)}
-  .dw-prompt .tok.on{background:rgba(232,97,15,.16);box-shadow:0 1px 0 0 var(--orange)}
-  .dw-prompt .tok.ai.on{background:rgba(79,70,229,.12);box-shadow:0 1px 0 0 var(--indigo)}
-  .caret{display:inline-block;width:2px;height:1.05em;background:var(--orange);vertical-align:-.16em;margin-left:1px;animation:blink 1s steps(1) infinite}
-  @keyframes blink{50%{opacity:0}}
-  .dw-scrim{position:absolute;inset:0;background:rgba(30,28,26,.34);backdrop-filter:blur(1.5px);opacity:0;transition:opacity .4s var(--ease);pointer-events:none}
-  .dw-scrim.show{opacity:1}
-  .dw-popup-slot{position:absolute;left:16px;right:16px;bottom:16px;opacity:0;transform:translateY(18px) scale(.97);transition:.45s var(--ease);pointer-events:none}
-  .dw-popup-slot.show{opacity:1;transform:none}
-  .hero .dw-body{min-height:560px}
-
-  /* Hero: fake mouse that clicks into the prompt and picks Paste */
-  .ms-cursor{position:absolute;left:0;top:0;width:22px;height:22px;z-index:6;pointer-events:none;opacity:0;
-    transition:transform .75s var(--ease),opacity .3s var(--ease)}
-  .ms-cursor.show{opacity:1}
-  .ms-cursor.jump{transition:none}
-  .ms-cursor svg{width:22px;height:22px;display:block;filter:drop-shadow(0 2px 3px rgba(0,0,0,.28));transform-origin:3px 2px;transition:transform .12s}
-  .ms-cursor.click svg{transform:scale(.82)}
-  .ms-cursor i{position:absolute;left:-9px;top:-10px;width:22px;height:22px;border-radius:50%;border:2px solid var(--orange);opacity:0}
-  .ms-cursor.click i{animation:ms-ring .45s var(--ease)}
-  @keyframes ms-ring{from{opacity:.9;transform:scale(.3)}to{opacity:0;transform:scale(1.5)}}
-  .ms-menu{position:absolute;z-index:5;min-width:150px;background:#fff;border:1px solid #E3E0DC;border-radius:10px;padding:5px;
-    box-shadow:0 12px 30px rgba(30,25,20,.2);font-size:.85rem;opacity:0;transform:scale(.94);transform-origin:top left;
-    transition:opacity .16s,transform .16s var(--ease);pointer-events:none}
-  .ms-menu.show{opacity:1;transform:none}
-  .ms-menu span{display:flex;justify-content:space-between;gap:18px;padding:6px 10px;border-radius:6px;color:#B5B0AA}
-  .ms-menu span em{font-style:normal;font-size:.76rem}
-  .ms-menu .ms-paste{color:var(--ink)}
-  .ms-menu .ms-paste em{color:var(--muted)}
-  .ms-menu .ms-paste.hover{background:var(--orange);color:#fff}
-  .ms-menu .ms-paste.hover em{color:rgba(255,255,255,.8)}
-  .hero .dw-prompt{min-height:88px}
-
-  /* ---- NorthSyte popup (product UI — kept as shipped) ---- */
-  .ns-popup{background:#fff;border:1px solid #E6E4E1;border-radius:20px;box-shadow:0 24px 60px rgba(30,25,20,.28);padding:22px;text-align:left}
-  .ns-pop-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px}
-  .ns-mark{font-size:1.3rem;font-weight:800;letter-spacing:-.02em;color:#161616}
-  .ns-mark span{color:var(--orange)}
-  .ns-close{background:none;border:0;color:#9A9691;padding:2px;line-height:0;border-radius:6px}
-  .ns-close svg{width:21px;height:21px}
-  .ns-pop-title{display:flex;align-items:center;gap:14px;margin-bottom:10px}
-  .ns-warn{flex:none;width:44px;height:44px;border-radius:13px;background:#FDF0E7;display:flex;align-items:center;justify-content:center}
-  .ns-warn svg{width:23px;height:23px;color:var(--orange);display:block}
-  .ns-pop-title h3{font-size:1.32rem;font-weight:700;letter-spacing:-.02em;color:#161616;line-height:1.2}
-  .ns-pop-sub{color:var(--muted);font-size:.98rem;margin-bottom:18px}
-  .ns-detected{background:#F6F5F3;border-radius:14px;padding:16px 16px 14px;margin-bottom:18px}
-  .ns-detected-lbl{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.11em;color:#94908B;margin-bottom:7px}
-  .ns-detected-types{font-size:1.04rem;font-weight:700;color:#161616;margin-bottom:13px;line-height:1.35}
-  .ns-snips{display:flex;flex-direction:column;gap:9px}
-  .ns-snip{background:#fff;border-radius:9px;padding:13px 15px;border-left:4px solid var(--orange);font-size:.96rem;color:#8C8781;overflow-wrap:anywhere;animation:snipin .32s var(--ease) backwards}
-  .ns-snip .q{font-style:italic}
-  .ns-snip mark{background:#FBE3D5;color:#B4460B;font-weight:700;border-radius:4px;padding:1px 5px;font-style:normal}
-  @keyframes snipin{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:none}}
-  .ns-actions{display:flex;flex-direction:column;gap:10px}
-  .ns-btn{border:0;border-radius:11px;font-family:inherit;font-size:1rem;font-weight:700;padding:15px 18px;width:100%;text-align:center;line-height:1.25;display:block}
-  .ns-primary{background:var(--orange);color:#fff}
-  .ns-row{display:flex;gap:10px}
-  .ns-row .ns-btn{flex:1}
-  .ns-green{background:var(--green);color:#fff}
-  .ns-grey{background:#F3F2F0;color:#2B2B2B}
-  .ns-feedback{display:flex;align-items:center;justify-content:center;gap:12px;color:#9A9691;font-size:.92rem;margin-top:16px;padding-top:15px;border-top:1px solid #EFEDEA}
-  .ns-thumb{background:none;border:0;color:#9A9691;padding:3px;line-height:0}
-  .ns-thumb svg{width:19px;height:19px;display:block}
-  .ns-popup.compact{padding:17px;border-radius:17px}
-  .ns-popup.compact .ns-mark{font-size:1.08rem}
-  .ns-popup.compact .ns-pop-head{margin-bottom:12px}
-  .ns-popup.compact .ns-warn{width:36px;height:36px;border-radius:11px}
-  .ns-popup.compact .ns-warn svg{width:19px;height:19px}
-  .ns-popup.compact .ns-pop-title h3{font-size:1.09rem}
-  .ns-popup.compact .ns-pop-sub{font-size:.87rem;margin-bottom:14px}
-  .ns-popup.compact .ns-detected{padding:13px;margin-bottom:14px}
-  .ns-popup.compact .ns-detected-types{font-size:.92rem;margin-bottom:10px}
-  .ns-popup.compact .ns-snip{padding:9px 12px;font-size:.85rem;border-left-width:3px}
-  .ns-popup.compact .ns-btn{font-size:.88rem;padding:11px 14px;border-radius:10px}
-  .ns-popup.compact .ns-feedback{font-size:.82rem;margin-top:12px;padding-top:11px}
-
-  /* ---- NorthSyte Edit panel ---- */
-  .ns-btn{transition:transform .12s,filter .12s}
-  .ns-btn.press{transform:scale(.97);filter:brightness(.9)}
-  .ns-edit .ns-warn{font-size:1.25rem;line-height:1}
-  .ns-edit .ns-detected{margin-bottom:14px}
-  .ns-chg{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;font-size:.9rem;padding:5px 0}
-  .ns-chg b{color:#161616;font-weight:700;min-width:92px}
-  .ns-chg-val{display:inline-flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;min-width:0}
-  .ns-chg s{background:#FBE3D5;color:#B4460B;border-radius:4px;padding:0 5px;overflow-wrap:anywhere}
-  .ns-chg .ar{color:#94908B}
-  .ph{background:#DCF3E3;color:#166534;font-weight:700;border-radius:4px;padding:0 4px}
-  .ns-edited{background:#fff;border-left:4px solid var(--green);border-radius:4px;padding:11px 14px;font-size:.88rem;line-height:1.55;color:#2B2B2B;white-space:pre-wrap;overflow-wrap:anywhere}
-  .ns-edit .ns-row{margin-top:4px}
-  .ns-popup.compact .ns-chg{font-size:.8rem}
-  .ns-popup.compact .ns-edited{font-size:.8rem;padding:9px 11px}
-
-  /* ---- Chat view after Apply & Send ---- */
-  .dw-chat{position:absolute;inset:0;z-index:4;background:#fff;padding:26px;display:flex;flex-direction:column;gap:10px;opacity:0;pointer-events:none;transition:opacity .45s var(--ease);overflow:hidden}
-  .dw-chat.show{opacity:1}
-  .chat-user{align-self:flex-end;max-width:78%;background:#F1EFEC;color:#1E1E1E;border-radius:20px 20px 6px 20px;padding:13px 17px;font-size:.92rem;line-height:1.55;white-space:pre-wrap;overflow-wrap:anywhere;transform:translateY(12px);transition:transform .5s var(--ease)}
-  .dw-chat.show .chat-user{transform:none}
-  .chat-note{align-self:flex-end;display:inline-flex;align-items:center;gap:6px;font-size:.76rem;font-weight:600;color:var(--green)}
-  .chat-note svg{width:13px;height:13px}
-  .chat-ai{position:relative;margin-top:10px;font-size:.92rem;line-height:1.6;color:#1E1E1E}
-  .chat-dots{display:inline-flex;gap:5px;padding:8px 0}
-  .chat-dots i{width:7px;height:7px;border-radius:50%;background:#B9B4AE;animation:pulse 1s infinite}
-  .chat-dots i:nth-child(2){animation-delay:.15s}
-  .chat-dots i:nth-child(3){animation-delay:.3s}
-  .chat-reply{white-space:pre-wrap;overflow-wrap:anywhere;opacity:0;transform:translateY(8px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
-  .dw-chat.replied .chat-dots{display:none}
-  .dw-chat.replied .chat-reply{opacity:1;transform:none}
-
-  /* Marquee */
-  .marquee-sec{background:var(--charcoal-deep);padding:32px 0;position:relative;z-index:2}
-  .marquee-lbl{text-align:center;font-size:.76rem;text-transform:uppercase;letter-spacing:.09em;color:rgba(255,255,255,.6);font-weight:600;margin-bottom:18px}
-  .marquee{position:relative;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
-  .marquee-track{display:flex;gap:14px;width:max-content;animation:scroll-x 38s linear infinite}
-  .marquee:hover .marquee-track{animation-play-state:paused}
-  @keyframes scroll-x{to{transform:translateX(-50%)}}
-  .m-item{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:9px 20px;white-space:nowrap}
-  .m-item i{width:7px;height:7px;border-radius:50%;background:var(--orange-bright);flex:none}
-  .m-item b{font-weight:600;font-size:.94rem;color:#fff}
-  .m-item em{font-style:normal;font-size:.82rem;color:rgba(255,255,255,.55)}
+  .hero p.sub{font-size:clamp(1.02rem,2vw,1.18rem);color:var(--fg2);max-width:58ch;margin:0 auto 32px}
+  @media(max-width:960px){.hero{padding:62px 0 58px}}
 
   /* Section heads */
   .section-head{text-align:center;max-width:900px;margin:0 auto 48px}
   .section-head h2{text-wrap:balance;font-size:clamp(1.7rem,3.5vw,2.4rem);letter-spacing:-.025em;margin-bottom:14px;font-weight:800;color:var(--fg)}
   .section-head p{color:var(--fg2);font-size:1.06rem;max-width:62ch;margin:0 auto}
+  .section-head p + p{margin-top:14px}
   .section-head h2 .accent{color:var(--orange-bright)}
+  .section-head.tight{margin-bottom:0}
 
-  /* Problem: scenario cards */
-  .scenarios{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .scn{background:var(--cardbg);border:1.5px solid rgba(244,122,30,.7);border-radius:var(--radius);padding:26px 24px;display:flex;flex-direction:column;gap:16px;box-shadow:0 0 0 4px rgba(232,97,15,.08),0 0 28px rgba(232,97,15,.12);transition:.25s var(--ease)}
-  .scn:hover{transform:translateY(-4px);background:var(--cardbg-hi);border-color:var(--orange-bright);box-shadow:0 0 0 4px rgba(232,97,15,.14),0 10px 34px rgba(232,97,15,.24)}
-  .scn-ask{align-self:flex-start;background:rgba(255,255,255,.1);color:#fff;font-weight:600;font-size:1.04rem;line-height:1.4;padding:11px 15px;border-radius:16px 16px 16px 4px}
-  .scn-paste{background:#fff;color:var(--ink);border-radius:12px;padding:14px 15px;font-size:.88rem;line-height:1.7;border-left:3px solid var(--line)}
-  .scn-paste mark{background:transparent;color:inherit;border-radius:4px;padding:1px 2px;transition:background .5s var(--ease),box-shadow .5s var(--ease)}
-  .scn.in .scn-paste mark{background:rgba(232,97,15,.18);box-shadow:0 1px 0 0 var(--orange);transition-delay:.7s}
-  .scn-cap{color:var(--fg2);font-size:.95rem;margin-top:auto}
-  @media(max-width:860px){.scenarios{grid-template-columns:1fr;max-width:520px;margin:0 auto}}
-
-  /* How it works */
+  /* What we do: cards */
   .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
   .card{background:var(--cardbg);border:1px solid var(--cardline);border-radius:var(--radius);padding:32px 28px;transition:.28s var(--ease);position:relative;overflow:hidden}
   .card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--orange-bright),var(--orange));transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
@@ -321,65 +135,16 @@
   .card .ico{width:54px;height:54px;border-radius:14px;background:linear-gradient(150deg,var(--orange-bright),var(--orange));display:flex;align-items:center;justify-content:center;margin-bottom:20px;box-shadow:0 6px 16px rgba(232,97,15,.34);transition:.35s var(--ease)}
   .card:hover .ico{transform:scale(1.08) rotate(-4deg)}
   .card .ico svg{width:28px;height:28px;display:block;color:#fff}
-  .card .step{position:absolute;top:24px;right:26px;font-size:.72rem;font-weight:700;color:var(--fg2);opacity:.5;letter-spacing:.08em}
   .card h3{font-size:1.2rem;margin-bottom:10px;color:var(--fg)}
   .card p{color:var(--fg2);font-size:.97rem}
+  .card p.eg{margin-top:10px;font-size:.88rem;color:var(--fg2);opacity:.82}
   @media(max-width:720px){.cards{grid-template-columns:1fr}}
-
-  /* See it live */
-  .live-tabs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:28px}
-  .tab{background:var(--cardbg);border:1px solid var(--cardline);color:#fff;font-weight:600;font-size:.93rem;padding:10px 22px;border-radius:999px;cursor:pointer;transition:.2s var(--ease);font-family:inherit}
-  .tab:hover{background:var(--cardbg-hi);border-color:rgba(244,122,30,.5);transform:translateY(-2px)}
-  .tab.active{background:var(--orange);border-color:var(--orange);color:var(--near-black);font-weight:700}
-  .live-stage{max-width:1000px;margin:0 auto}
-  .live .dw-body{min-height:590px}
-  .live .dw-prompt{min-height:104px}
-  /* Wide screens: popup sits beside the prompt so the highlights stay visible */
-  @media(min-width:900px){
-    .live .dw-body{padding:24px 26px;min-height:640px}
-    .live .dw-label,.live .dw-prompt{max-width:calc(100% - 500px)}
-    .live .dw-scrim{display:none}
-    .live .dw-popup-slot{left:auto;right:18px;top:18px;bottom:auto;width:460px}
-  }
-  .live-cap{text-align:center;color:var(--fg2);font-size:.95rem;margin-top:22px;max-width:56ch;margin-left:auto;margin-right:auto;min-height:48px;transition:opacity .3s}
-  .live-cap strong{color:#fff;font-weight:700}
-  .live-legend{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-top:18px;font-size:.82rem;color:var(--fg2)}
-  .live-legend span{display:inline-flex;align-items:center;gap:8px}
-  .live-legend i{width:18px;height:10px;border-radius:3px;display:inline-block}
-  .lg-rule{background:rgba(232,97,15,.4);box-shadow:0 2px 0 0 var(--orange)}
-  .lg-ai{background:rgba(129,122,255,.4);box-shadow:0 2px 0 0 #8B84FF}
-  @media(max-width:640px){.tab{font-size:.85rem;padding:9px 16px}}
-
-  /* Coverage */
-  .cov-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-  .cov{border:1px solid var(--cardline);border-radius:var(--radius);padding:28px 26px;background:var(--cardbg);transition:.26s var(--ease)}
-  .cov:hover{transform:translateY(-4px);background:var(--cardbg-hi)}
-  .cov .ci{width:44px;height:44px;border-radius:12px;background:rgba(244,122,30,.18);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
-  .cov .ci svg{width:22px;height:22px;color:var(--orange-bright)}
-  .cov h3{font-size:1.08rem;margin-bottom:9px;color:var(--fg)}
-  .cov p{color:var(--fg2);font-size:.93rem}
-  .cov.ai{background:#3B2718;border-color:rgba(244,122,30,.42)}
-  .cov.ai:hover{background:#472F1D}
-  .cov .pill{display:inline-block;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:#C9C3FF;background:rgba(79,70,229,.3);padding:3px 9px;border-radius:999px;margin-bottom:10px}
-  @media(max-width:860px){.cov-grid{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:560px){.cov-grid{grid-template-columns:1fr}}
-
-  /* For teams band */
-  .teams-band{display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;background:var(--cardbg);border:1px solid var(--cardline);border-radius:var(--radius);padding:38px 40px}
-  .teams-kicker{display:block;color:var(--orange-bright);font-weight:700;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
-  .teams-band h2{font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-.02em;font-weight:800;color:var(--fg);margin-bottom:10px}
-  .teams-band p{color:var(--fg2);max-width:60ch}
-  @media(max-width:760px){.teams-band{grid-template-columns:1fr;padding:30px 24px;text-align:center}.teams-band p{margin:0 auto}}
 
   /* CTA */
   .cta{text-align:center}
-  .cta h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:14px;letter-spacing:-.025em;font-weight:800;color:var(--fg)}
-  .cta p{max-width:50ch;margin:0 auto 30px;font-size:1.08rem;color:var(--fg2)}
-  .form{display:flex;gap:12px;max-width:480px;margin:0 auto;flex-wrap:wrap;justify-content:center}
-  .form input{flex:1;min-width:220px;padding:14px 18px;border-radius:999px;border:none;font-size:1rem;font-family:inherit;outline:none;color:var(--ink)}
-  .form input:focus{box-shadow:0 0 0 3px rgba(244,122,30,.55)}
+  .cta h2{text-wrap:balance;font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:14px;letter-spacing:-.025em;font-weight:800;color:var(--fg)}
+  .cta p{max-width:52ch;margin:0 auto 30px;font-size:1.08rem;color:var(--fg2)}
   .cta-note{margin-top:18px;font-size:.86rem;color:var(--fg2)}
-  #demo-success{color:var(--orange-bright);font-size:1.1rem;margin-top:16px;font-weight:700}
 
   footer{background:var(--charcoal-deep);padding:46px 0;text-align:center;color:rgba(255,255,255,.6);font-size:.9rem}
   footer .logo{justify-content:center;margin-bottom:10px}
@@ -388,7 +153,6 @@
     html{scroll-behavior:auto}
     *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
     [data-reveal]{opacity:1;transform:none}
-    .marquee-track{animation:none}
   }
 </style>
 </head>
@@ -397,17 +161,7 @@
 <header>
   <div class="nav">
     <a href="#" class="logo"><img src="brand/NorthSyte-wordmark-on-black.png" alt="NorthSyte"></a>
-    <nav class="nav-links" id="nav-links">
-      <a href="#how">How it works</a>
-      <a href="#live">See it live</a>
-      <a href="#coverage">What we catch</a>
-      <span class="nav-sep" aria-hidden="true"></span>
-      <a href="/teams" class="nav-teams"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 4.6a3.2 3.2 0 0 1 0 6.2"/><path d="M18 14.3A6 6 0 0 1 21 20"/></svg>For teams<span class="arr" aria-hidden="true">&rarr;</span></a>
-      <a href="#waitlist" class="btn">Join the waitlist</a>
-    </nav>
-    <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <a href="mailto:hello@northsyte.com?subject=Booking%20a%20conversation%20about%20NorthSyte" class="btn">Book a conversation</a>
   </div>
   <div class="progress" id="progress"></div>
 </header>
@@ -415,106 +169,55 @@
 <!-- HERO -->
 <section class="sec sec-a hero" data-pipe>
   <div class="wrap">
-    <div class="hero-grid">
-      <div data-clear>
-        <span class="eyebrow"><i></i> Privacy for your AI chats</span>
-        <h1>Use AI without <span class="accent">oversharing</span></h1>
-        <p class="sub">NorthSyte spots personal details, passwords, and card numbers in your prompts before they reach AI. It runs entirely in your browser, never stores your info, and stays out of your way. Free for individuals, built for teams.</p>
-        <div class="hero-cta">
-          <a href="#waitlist" class="btn">Join the waitlist</a>
-          <a href="#live" class="btn ghost">See it live</a>
-        </div>
-        <div class="reassure">
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.4 8.4-8 9.5C7.4 20.4 4 17 4 12V6z"/></svg> Runs in your browser</span>
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Never stores your info</span>
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Free for individuals</span>
-        </div>
-        <p class="teams-note">Using AI at work? <a href="/teams">See NorthSyte for Teams &rarr;</a></p>
-      </div>
-
-      <div class="demo-window" data-reveal>
-        <div class="dw-bar">
-          <div class="dw-dots"><i></i><i></i><i></i></div>
-          <div class="dw-url" id="hero-url">chatgpt.com</div>
-          <div class="dw-badge"><i></i> NorthSyte</div>
-        </div>
-        <div class="dw-body">
-          <div class="dw-label">Prompt</div>
-          <div class="dw-prompt" id="hero-prompt"></div>
-          <div class="dw-scrim" id="hero-scrim"></div>
-          <div class="dw-popup-slot" id="hero-slot"></div>
-        </div>
-      </div>
+    <div data-clear>
+      <span class="eyebrow"><i></i> Private, managed AI</span>
+      <h1>Giving organizations the <span class="accent">peace of mind</span> to embrace AI</h1>
+      <p class="sub">NorthSyte delivers private, managed AI for small and mid-sized businesses in regulated industries. Your data stays yours, and your team finally gets to use AI.</p>
+      <a href="mailto:hello@northsyte.com?subject=Booking%20a%20conversation%20about%20NorthSyte" class="btn">Book a conversation</a>
     </div>
   </div>
 </section>
-
-<div class="divider"></div>
-
-<!-- COVERAGE MARQUEE -->
-<div class="marquee-sec">
-  <div class="marquee-lbl">Works with the AI tools you already use</div>
-  <div class="marquee">
-    <div class="marquee-track" id="marquee-track"></div>
-  </div>
-</div>
 
 <div class="divider"></div>
 
 <!-- PROBLEM -->
+<section class="sec sec-b" data-pipe>
+  <div class="wrap">
+    <div class="section-head tight" data-reveal data-clear>
+      <h2>Your team has been told <span class="accent">not to use AI</span></h2>
+      <p>In insurance, property management and other regulated fields, client information cannot go into public AI tools. So it doesn't.</p>
+      <p>Which leaves two options: keep doing the work the slow way, or use AI quietly, with no safeguards and no record of what was shared.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WHAT WE DO -->
 <section class="sec sec-a" data-pipe>
   <div class="wrap">
     <div class="section-head" data-reveal data-clear>
-      <h2>AI chats feel private. <span class="accent">They aren't.</span></h2>
-      <p>We ask AI for help with the personal stuff: taxes, health questions, a tricky email, a login that won't work. It's easy to paste in more than you meant to, and once it's sent, you can't take it back.</p>
-    </div>
-    <div class="scenarios">
-      <div class="scn" data-reveal>
-        <div class="scn-ask">&ldquo;Can you help me fill out this form?&rdquo;</div>
-        <div class="scn-paste">Applicant: James R. Morin<br>SIN: <mark>046 454 286</mark><br>Marital status: Single</div>
-        <p class="scn-cap">Pasted with your SIN or SSN still in it.</p>
-      </div>
-      <div class="scn" data-reveal>
-        <div class="scn-ask">&ldquo;What does this blood test mean?&rdquo;</div>
-        <div class="scn-paste">Patient: <mark>Morin, Sarah</mark><br>Health Card: <mark>1234-567-890-AB</mark><br>Ferritin: 8 ug/L (L)</div>
-        <p class="scn-cap">Your name, health card number, and results, all in one prompt.</p>
-      </div>
-      <div class="scn" data-reveal>
-        <div class="scn-ask">&ldquo;Make this email sound nicer.&rdquo;</div>
-        <div class="scn-paste">tell the contractor to call my mom at <mark>613-555-0107</mark>, she's home all day at <mark>42 Elm St</mark></div>
-        <p class="scn-cap">Someone else's phone number and home address included.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- HOW IT WORKS -->
-<section id="how" class="sec sec-b" data-pipe>
-  <div class="wrap">
-    <div class="section-head" data-reveal data-clear>
-      <h2>Protection that works the way you do</h2>
-      <p>A lightweight browser extension that has your back, without slowing you down.</p>
+      <h2>What we do</h2>
+      <p>We set up AI your compliance team can approve, and we run it for you.</p>
     </div>
     <div class="cards">
       <div class="card" data-reveal>
-        <span class="step">01</span>
-        <div class="ico"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M50 10 L83 23 V49 C83 70 69 85 50 91 C31 85 17 70 17 49 V23 Z"/><path d="M30 52 H42 L48 38 L55 66 L60 52 H70"/><circle cx="50" cy="50" r="2.5" fill="currentColor" stroke="none"/></svg></div>
-        <h3>Catch it in real time</h3>
-        <p>Personal details, passwords, and card numbers are flagged in your prompt before anything reaches the AI.</p>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.4 8.4-8 9.5C7.4 20.4 4 17 4 12V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Private AI, on your premises</h3>
+        <p>AI that runs inside your organization, so client data never leaves your walls.</p>
+        <p class="eg">Built with insurance brokerages in mind.</p>
       </div>
       <div class="card" data-reveal>
-        <span class="step">02</span>
-        <div class="ico"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 24 H78 a8 8 0 0 1 8 8 V60 a8 8 0 0 1 -8 8 H46 L30 83 V68 H22 a8 8 0 0 1 -8 -8 V32 a8 8 0 0 1 8 -8 Z"/><line x1="50" y1="36" x2="50" y2="50"/><circle cx="50" cy="59" r="3" fill="currentColor" stroke="none"/></svg></div>
-        <h3>Fix it in one click</h3>
-        <p>No lectures, no blocking. NorthSyte shows you what it found and rewrites the prompt for you, so you can keep going.</p>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h4"/></svg></div>
+        <h3>AI that knows your documents</h3>
+        <p>Ask questions across your contracts, leases and files, and get answers grounded in your own records.</p>
+        <p class="eg">For work like commercial property management.</p>
       </div>
       <div class="card" data-reveal>
-        <span class="step">03</span>
-        <div class="ico"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><rect x="22" y="44" width="56" height="42" rx="8"/><path d="M34 44 V32 a16 16 0 0 1 32 0 V44"/><circle cx="50" cy="63" r="4" fill="currentColor" stroke="none"/><line x1="50" y1="66" x2="50" y2="74"/></svg></div>
-        <h3>Keep it private</h3>
-        <p>Everything runs right in your browser. Your prompts are never stored or sent to us.</p>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 7.3l-2.1 2.1a2.6 2.6 0 0 1-3.7-3.7l2.1-2.1a5.3 5.3 0 0 0-7 7L4.2 17.2a2 2 0 0 0 2.8 2.8l6.6-6.6a5.3 5.3 0 0 0 6.9-6.1z"/></svg></div>
+        <h3>Managed for you</h3>
+        <p>We set it up, secure it and support it, with safeguards built in from day one.</p>
+        <p class="eg">No in-house AI team needed.</p>
       </div>
     </div>
   </div>
@@ -522,110 +225,13 @@
 
 <div class="divider"></div>
 
-<!-- SEE IT LIVE -->
-<section id="live" class="sec sec-a live" data-pipe>
+<!-- CLOSING CTA -->
+<section class="sec sec-b cta" data-pipe>
   <div class="wrap">
-    <div class="section-head" data-reveal data-clear>
-      <h2>See it live</h2>
-      <p>A real prompt, typed the way you'd type it. Pick a situation and watch what NorthSyte catches.</p>
-    </div>
-    <div class="live-tabs" id="live-tabs" data-reveal></div>
-    <div class="live-stage" data-reveal>
-      <div class="demo-window">
-        <div class="dw-bar">
-          <div class="dw-dots"><i></i><i></i><i></i></div>
-          <div class="dw-url" id="live-url">chatgpt.com</div>
-          <div class="dw-badge"><i></i> NorthSyte</div>
-        </div>
-        <div class="dw-body">
-          <div class="dw-label">Prompt</div>
-          <div class="dw-prompt" id="live-prompt"></div>
-          <div class="dw-scrim" id="live-scrim"></div>
-          <div class="dw-popup-slot" id="live-slot"></div>
-        </div>
-      </div>
-      <p class="live-legend" data-clear><span><i class="lg-rule"></i> Caught by pattern rules</span><span><i class="lg-ai"></i> Caught by the in-browser AI layer</span></p>
-      <p class="live-cap" id="live-cap" data-clear></p>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- WHAT WE CATCH -->
-<section id="coverage" class="sec sec-b" data-pipe>
-  <div class="wrap">
-    <div class="section-head" data-reveal data-clear>
-      <h2>What NorthSyte catches</h2>
-      <p>Pattern rules for the things that follow a format, and an in-browser AI model for the things that don't.</p>
-    </div>
-    <div class="cov-grid">
-      <div class="cov" data-reveal>
-        <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 9.5a4.5 4.5 0 1 0-4.2 4.5L8 16.3V19h3l1-1h2l1-1.5V14l-1.2-1.2a4.5 4.5 0 0 0 .7-3.3z"/><circle cx="16.4" cy="7.6" r="1.1" fill="currentColor" stroke="none"/></svg></div>
-        <h3>Credentials &amp; secrets</h3>
-        <p>API keys for AWS, OpenAI and Stripe, GitHub and Slack tokens, private keys, passwords, bearer tokens, database connection strings, internal URLs and IP addresses.</p>
-      </div>
-      <div class="cov" data-reveal>
-        <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5.5" width="19" height="13" rx="2.5"/><line x1="2.5" y1="10" x2="21.5" y2="10"/><line x1="6" y1="14.5" x2="10" y2="14.5"/></svg></div>
-        <h3>Financial</h3>
-        <p>Credit card numbers verified with the Luhn checksum, security codes, IBANs, US routing numbers, SWIFT/BIC codes and CRA business numbers.</p>
-      </div>
-      <div class="cov" data-reveal>
-        <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="15" rx="2.5"/><circle cx="9" cy="10.5" r="2.2"/><path d="M5.6 16.2a3.8 3.8 0 0 1 6.8 0"/><line x1="14.5" y1="9.5" x2="18.5" y2="9.5"/><line x1="14.5" y1="13" x2="18.5" y2="13"/></svg></div>
-        <h3>Government &amp; personal IDs</h3>
-        <p>Canadian Social Insurance Numbers with a Luhn check, US Social Security Numbers, Canadian and US passports, and driver's licences across select provinces and states.</p>
-      </div>
-      <div class="cov" data-reveal>
-        <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="2.5" width="19" height="19" rx="4.5"/><path d="M12 7.5v9M7.5 12h9"/></svg></div>
-        <h3>Healthcare</h3>
-        <p>Provincial health card numbers across Ontario, BC, Quebec, Alberta, Newfoundland and the Northwest Territories, plus US provider IDs, DEA numbers and Medicare IDs.</p>
-      </div>
-      <div class="cov" data-reveal>
-        <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3.6 7l8.4 5.8L20.4 7"/></svg></div>
-        <h3>Personal &amp; contact info</h3>
-        <p>Email addresses, phone numbers and Canadian postal codes, alongside the names and addresses that usually travel with them.</p>
-      </div>
-      <div class="cov ai" data-reveal>
-        <span class="pill">AI layer</span>
-        <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></div>
-        <h3>People, organizations &amp; places</h3>
-        <p>A model running inside the browser reads meaning, not formats, so it catches the names and street addresses that no pattern rule could ever match.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- FOR TEAMS -->
-<section id="teams" class="sec sec-a" data-pipe>
-  <div class="wrap">
-    <div class="teams-band" data-reveal>
-      <div>
-        <span class="teams-kicker">NorthSyte for Teams</span>
-        <h2>Bringing AI to work?</h2>
-        <p>The same protection for your whole team, plus a dashboard that shows where sensitive data shows up and training built on your own usage. Prompts are never stored.</p>
-      </div>
-      <a href="/teams" class="btn ghost">Explore NorthSyte for Teams</a>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- CTA / WAITLIST -->
-<section id="waitlist" class="sec sec-b cta" data-pipe>
-  <div class="wrap">
-    <h2 data-clear>Be the first to try it</h2>
-    <p data-clear>Join the waitlist and we'll let you know as soon as NorthSyte is ready to install. Free for individuals.</p>
-    <form class="form" id="demo-form" data-clear action="https://api.web3forms.com/submit" method="post">
-      <input type="hidden" name="access_key" value="b8881090-d815-4602-ae50-4746c5917413" />
-      <input type="hidden" name="subject" value="New waitlist member (individual)" />
-      <input type="email" name="email" placeholder="Your email" required />
-      <button type="submit" class="btn">Join the waitlist</button>
-    </form>
-    <p id="demo-success" style="display:none">Thanks! We'll be in touch shortly.</p>
-    <p class="cta-note" data-clear>No spam. Just one note when we're ready for you.</p>
+    <h2 data-clear>Ready to use AI your compliance team will approve?</h2>
+    <p data-clear>Tell us where AI would help your team most, and we will show you what a private setup looks like.</p>
+    <a href="mailto:hello@northsyte.com?subject=Booking%20a%20conversation%20about%20NorthSyte" class="btn" data-clear>Book a conversation</a>
+    <p class="cta-note" data-clear>For small and mid-sized businesses in regulated industries.</p>
   </div>
 </section>
 
@@ -635,7 +241,7 @@
   <div class="wrap">
     <div class="logo" style="justify-content:center;margin-bottom:8px"><img src="brand/NorthSyte-wordmark-on-black.png" alt="NorthSyte" style="height:30px;width:auto"></div>
     <div>Ottawa, Canada</div>
-    <div style="margin-top:8px">© 2026 NorthSyte · <a href="/teams" style="color:inherit">For teams</a> · <a href="/privacy" style="color:inherit">Privacy</a></div>
+    <div style="margin-top:8px">© 2026 NorthSyte Inc. · <a href="/privacy" style="color:inherit">Privacy</a></div>
   </div>
 </footer>
 
@@ -643,10 +249,6 @@
 (function(){
   "use strict";
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  function esc(s){
-    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-  }
 
   /* ================= Pipeline background =================
      Orthogonal "circuit" traces with glowing packets running along them.
@@ -859,7 +461,6 @@
       pipes.forEach(function(p){ p.resize(); });
     }, 220);
   });
-
   /* ---------- Scroll reveal ---------- */
   var revealEls = document.querySelectorAll('[data-reveal]');
   if ('IntersectionObserver' in window && !reduced) {
@@ -877,507 +478,14 @@
     revealEls.forEach(function(el){ el.classList.add('in'); });
   }
 
-  /* ---------- Scroll progress + active nav ---------- */
+
+  /* ---------- Scroll progress ---------- */
   var progress = document.getElementById('progress');
-  var navAnchors = Array.prototype.slice.call(document.querySelectorAll('.nav-links a[href^="#"]:not(.btn)'));
   window.addEventListener('scroll', function(){
     var h = document.documentElement;
     var max = h.scrollHeight - h.clientHeight;
     progress.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
-    var pos = h.scrollTop + 140, current = null;
-    navAnchors.forEach(function(a){
-      var sec = document.querySelector(a.getAttribute('href'));
-      if (sec && sec.offsetTop <= pos) current = a;
-    });
-    navAnchors.forEach(function(a){ a.classList.toggle('active', a === current); });
   }, { passive: true });
-
-  /* ---------- Mobile nav ---------- */
-  var navToggle = document.getElementById('nav-toggle');
-  var navLinks = document.getElementById('nav-links');
-  navToggle.addEventListener('click', function(){
-    var open = navLinks.classList.toggle('open');
-    navToggle.classList.toggle('open', open);
-    navToggle.setAttribute('aria-expanded', String(open));
-  });
-  navLinks.addEventListener('click', function(e){
-    if (e.target.tagName === 'A') {
-      navLinks.classList.remove('open');
-      navToggle.classList.remove('open');
-      navToggle.setAttribute('aria-expanded', 'false');
-    }
-  });
-
-  /* ---------- Coverage marquee (supported sites) ---------- */
-  var TOOLS = [
-    ['ChatGPT', 'chatgpt.com'],
-    ['Microsoft Copilot', 'copilot.microsoft.com'],
-    ['Google Gemini', 'gemini.google.com'],
-    ['Claude', 'claude.ai'],
-    ['Perplexity', 'perplexity.ai'],
-    ['Mistral Le Chat', 'chat.mistral.ai'],
-    ['Grok', 'grok.com']
-  ];
-  var chips = TOOLS.map(function(t){
-    return '<div class="m-item"><i></i><b>' + t[0] + '</b><em>' + t[1] + '</em></div>';
-  }).join('');
-  document.getElementById('marquee-track').innerHTML = chips + chips;
-
-  /* ---------- Shared popup markup ---------- */
-  var THUMB_UP = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10v11H4a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1z"/><path d="M7 10l4.2-7.2a1.6 1.6 0 0 1 3 .8V9h4.6a2 2 0 0 1 2 2.4l-1.4 7A2 2 0 0 1 17.4 20H7"/></svg>';
-  var THUMB_DOWN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M17 14V3h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1z"/><path d="M17 14l-4.2 7.2a1.6 1.6 0 0 1-3-.8V15H5.2a2 2 0 0 1-2-2.4l1.4-7A2 2 0 0 1 6.6 4H17"/></svg>';
-
-  function popupHTML(sc, compact){
-    var pii = sc.segs.filter(function(s){ return s.pii; });
-    var types = [];
-    pii.forEach(function(s){ if (types.indexOf(s.pii) === -1) types.push(s.pii); });
-    var snips = pii.slice(0, 4).map(function(s, i){
-      return '<div class="ns-snip" style="animation-delay:' + (i * 90) + 'ms">'
-        + '<span class="q">&ldquo;&hellip;</span> <mark>' + esc(s.t.trim()) + '</mark> '
-        + '<span class="q">&hellip;&rdquo;</span></div>';
-    }).join('');
-    if (pii.length > 4) {
-      snips += '<div class="ns-snip" style="border-left-color:#D9D5D0">+ ' + (pii.length - 4) + ' more</div>';
-    }
-    return '<div class="ns-popup' + (compact ? ' compact' : '') + '" aria-hidden="true">'
-      + '<div class="ns-pop-head"><span class="ns-mark">North<span>Syte</span></span>'
-      + '<span class="ns-close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></span></div>'
-      + '<div class="ns-pop-title"><span class="ns-warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><line x1="12" y1="9.5" x2="12" y2="13.5"/><circle cx="12" cy="17.2" r="1" fill="currentColor" stroke="none"/></svg></span>'
-      + '<h3>Sensitive data detected</h3></div>'
-      + '<p class="ns-pop-sub">Review before this leaves your device.</p>'
-      + '<div class="ns-detected"><div class="ns-detected-lbl">Detected</div>'
-      + '<div class="ns-detected-types">' + esc(types.join(', ')) + '</div>'
-      + '<div class="ns-snips">' + snips + '</div></div>'
-      + '<div class="ns-actions">'
-      + '<span class="ns-btn ns-primary">NorthSyte Edit &ndash; Replace it for me</span>'
-      + '<div class="ns-row"><span class="ns-btn ns-green">Cancel and edit</span>'
-      + '<span class="ns-btn ns-grey">Send anyway</span></div></div>'
-      + '<div class="ns-feedback">Was this accurate?'
-      + '<span class="ns-thumb">' + THUMB_UP + '</span>'
-      + '<span class="ns-thumb">' + THUMB_DOWN + '</span></div></div>';
-  }
-
-  /* ---------- NorthSyte Edit: stand-ins for detected values ---------- */
-  var STAND_IN = {
-    'Credit Card': 'CARD NUMBER', 'Person Name': 'NAME', 'Health Card': 'HEALTH CARD NUMBER',
-    'Security Code': 'CVV', 'Bank Account': 'ACCOUNT NUMBER', 'AWS Access Key': 'API KEY'
-  };
-  function standIn(label){
-    return '[' + (STAND_IN[label] || label.toUpperCase()) + ' HERE]';
-  }
-  function cleanPrompt(sc){
-    return sc.segs.map(function(s){ return s.pii ? standIn(s.pii) : s.t; }).join('');
-  }
-  // Escape, then tint every [... HERE] stand-in
-  function withStandIns(text){
-    return esc(text).replace(/\[[A-Z ]+ HERE\]/g, '<span class="ph">$&</span>');
-  }
-
-  function editHTML(sc, compact){
-    var rows = sc.segs.filter(function(s){ return s.pii; }).map(function(s){
-      return '<div class="ns-chg"><b>' + esc(s.pii) + '</b>'
-        + '<span class="ns-chg-val"><s>' + esc(s.t.trim()) + '</s><span class="ar">&rarr;</span>'
-        + '<span class="ph">' + standIn(s.pii) + '</span></span></div>';
-    }).join('');
-    return '<div class="ns-popup ns-edit' + (compact ? ' compact' : '') + '" aria-hidden="true">'
-      + '<div class="ns-pop-head"><span class="ns-mark">North<span>Syte</span></span>'
-      + '<span class="ns-close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></span></div>'
-      + '<div class="ns-pop-title"><span class="ns-warn">&#10024;</span><h3>NorthSyte Edit</h3></div>'
-      + '<p class="ns-pop-sub">We swapped the sensitive values for safe stand-ins. Send the clean prompt, then drop your real values back into the reply.</p>'
-      + '<div class="ns-detected"><div class="ns-detected-lbl">What we changed</div>' + rows + '</div>'
-      + '<div class="ns-detected"><div class="ns-detected-lbl">Edited prompt</div>'
-      + '<div class="ns-edited">' + withStandIns(cleanPrompt(sc)) + '</div></div>'
-      + '<div class="ns-row"><span class="ns-btn ns-grey">Back</span>'
-      + '<span class="ns-btn ns-primary ns-send">Apply &amp; Send</span></div></div>';
-  }
-
-  /* ---------- Typing engine (hero + See it live) ---------- */
-  function Typer(opts){
-    this.urlEl    = document.getElementById(opts.url);
-    this.promptEl = document.getElementById(opts.prompt);
-    this.scrimEl  = document.getElementById(opts.scrim);
-    this.slotEl   = document.getElementById(opts.slot);
-    this.compact  = !!opts.compact;
-    this.mouse    = !!opts.mouse;
-    this.edit     = !!opts.edit;
-    this.gen      = 0;
-  }
-
-  // pasted: text is on screen but not yet scanned, so hold the highlights back
-  Typer.prototype.draw = function(sc, segIdx, charIdx, done, pasted){
-    var html = '';
-    for (var i = 0; i < sc.segs.length; i++) {
-      if (i > segIdx) break;
-      var seg = sc.segs[i];
-      var text = (i === segIdx && !done) ? seg.t.slice(0, charIdx) : seg.t;
-      if (!text) continue;
-      var on = !pasted && (i < segIdx || done);
-      html += seg.pii
-        ? '<span class="tok' + (seg.ai ? ' ai' : '') + (on ? ' on' : '') + '">' + esc(text) + '</span>'
-        : esc(text);
-    }
-    this.promptEl.innerHTML = html + (done ? '' : '<span class="caret"></span>');
-  };
-
-  Typer.prototype.reset = function(){
-    this.gen++;
-    if (this.cursorEl) {
-      this.cursorEl.className = 'ms-cursor jump';
-      this.menuEl.classList.remove('show');
-    }
-    if (this.chatEl) this.chatEl.className = 'dw-chat';
-    this.scrimEl.classList.remove('show');
-    this.slotEl.classList.remove('show');
-    this.promptEl.innerHTML = '';
-  };
-
-  /* ---------- Fake mouse ---------- */
-  Typer.prototype.ensureMouse = function(){
-    if (this.cursorEl) return;
-    var body = this.promptEl.parentNode;
-    this.menuEl = document.createElement('div');
-    this.menuEl.className = 'ms-menu';
-    this.menuEl.setAttribute('aria-hidden', 'true');
-    this.menuEl.innerHTML = '<span>Cut<em>&#8984;X</em></span><span>Copy<em>&#8984;C</em></span><span class="ms-paste">Paste<em>&#8984;V</em></span>';
-    this.cursorEl = document.createElement('div');
-    this.cursorEl.className = 'ms-cursor jump';
-    this.cursorEl.setAttribute('aria-hidden', 'true');
-    this.cursorEl.innerHTML = '<i></i><svg viewBox="0 0 24 24"><path d="M3 2l15.5 11.2-6.6 1.1 3.9 7.3-3 1.5-3.9-7.4L3 20.6z" fill="#fff" stroke="#1A1A1A" stroke-width="1.5" stroke-linejoin="round"/></svg>';
-    body.appendChild(this.menuEl);
-    body.appendChild(this.cursorEl);
-  };
-  Typer.prototype.moveTo = function(x, y){
-    this.cursorEl.style.transform = 'translate(' + x + 'px,' + y + 'px)';
-  };
-  // Park the cursor just off the right edge, then let it glide to (x, y).
-  Typer.prototype.enterTo = function(x, y){
-    var b = this.promptEl.parentNode.getBoundingClientRect(), cur = this.cursorEl;
-    cur.className = 'ms-cursor jump';
-    this.moveTo(b.width + 30, b.height * .62);
-    void cur.offsetWidth;
-    cur.className = 'ms-cursor show';
-    this.moveTo(x, y);
-  };
-  Typer.prototype.leave = function(){
-    var m = /translate\(([-\d.]+)px,([-\d.]+)px\)/.exec(this.cursorEl.style.transform) || [0, 0, 0];
-    this.moveTo(+m[1] + 50, +m[2] + 80);
-    this.cursorEl.classList.remove('show');
-  };
-  Typer.prototype.click = function(){
-    var cur = this.cursorEl;
-    cur.classList.remove('click');
-    void cur.offsetWidth;
-    cur.classList.add('click');
-  };
-  // Point inside an element, relative to the demo body.
-  Typer.prototype.pointAt = function(el){
-    var b = this.promptEl.parentNode.getBoundingClientRect(), r = el.getBoundingClientRect();
-    return { x: r.left - b.left + r.width * .55, y: r.top - b.top + r.height * .6 };
-  };
-  Typer.prototype.later = function(gen, fn, ms){
-    var self = this;
-    setTimeout(function(){ if (gen === self.gen) fn(); }, ms);
-  };
-
-  // Mouse glides in to the caret, clicks, opens a menu and chooses Paste.
-  Typer.prototype.mousePaste = function(gen, onPaste){
-    var self = this, body = this.promptEl.parentNode;
-    this.ensureMouse();
-    var menu = this.menuEl, paste = menu.querySelector('.ms-paste');
-
-    var b = body.getBoundingClientRect();
-    var caret = this.promptEl.querySelector('.caret');
-    var c = caret ? caret.getBoundingClientRect() : { left: b.left + 20, top: b.top + 60, height: 16 };
-    var x = c.left - b.left + 6, y = c.top - b.top + c.height / 2;
-
-    this.enterTo(x, y);
-    this.later(gen, function(){
-      self.click();
-      menu.style.left = (x + 4) + 'px';
-      menu.style.top = (y + 6) + 'px';
-      menu.classList.add('show');
-      self.later(gen, function(){
-        self.moveTo(x + 34, y + 6 + paste.offsetTop + paste.offsetHeight / 2);
-        self.later(gen, function(){
-          paste.classList.add('hover');
-          self.later(gen, function(){
-            self.click();
-            menu.classList.remove('show');
-            paste.classList.remove('hover');
-            onPaste();
-            self.later(gen, function(){ self.leave(); }, 350);
-          }, 260);
-        }, 560);
-      }, 420);
-    }, 900);
-  };
-
-  // Mouse clicks "NorthSyte Edit", reviews the swap, then "Apply & Send".
-  Typer.prototype.editFlow = function(sc, gen){
-    var self = this;
-    this.ensureMouse();
-    var edit = this.slotEl.querySelector('.ns-primary');
-    var p = this.pointAt(edit);
-    this.enterTo(p.x, p.y);
-    this.later(gen, function(){
-      edit.classList.add('press');
-      self.click();
-      self.later(gen, function(){
-        self.slotEl.innerHTML = editHTML(sc, self.compact);
-        self.fitSlot();
-        self.later(gen, function(){
-          var send = self.slotEl.querySelector('.ns-send');
-          var q = self.pointAt(send);
-          self.moveTo(q.x, q.y);
-          self.later(gen, function(){
-            send.classList.add('press');
-            self.click();
-            self.later(gen, function(){
-              self.leave();
-              self.showChat(sc, gen);
-            }, 260);
-          }, 950);
-        }, 2200);
-      }, 220);
-    }, 1000);
-  };
-
-  // The cleaned prompt lands in the AI chat, and the reply keeps the stand-ins.
-  Typer.prototype.showChat = function(sc, gen){
-    var self = this;
-    if (!this.chatEl) {
-      this.chatEl = document.createElement('div');
-      this.chatEl.className = 'dw-chat';
-      this.chatEl.setAttribute('aria-hidden', 'true');
-      this.promptEl.parentNode.insertBefore(this.chatEl, this.cursorEl);
-    }
-    var n = sc.segs.filter(function(s){ return s.pii; }).length;
-    this.chatEl.innerHTML = '<div class="chat-user">' + withStandIns(cleanPrompt(sc)) + '</div>'
-      + '<div class="chat-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>'
-      + 'Sent with NorthSyte Edit &middot; ' + n + (n === 1 ? ' value' : ' values') + ' replaced</div>'
-      + '<div class="chat-ai"><span class="chat-dots"><i></i><i></i><i></i></span>'
-      + '<div class="chat-reply">' + withStandIns(sc.reply) + '</div></div>';
-    this.scrimEl.classList.remove('show');
-    this.slotEl.classList.remove('show');
-    this.chatEl.className = 'dw-chat show';
-    this.later(gen, function(){ self.chatEl.className = 'dw-chat show replied'; }, 1300);
-  };
-
-  // Grow the demo body if a panel is taller than it (never shrinks, so tabs don't bounce).
-  Typer.prototype.fitSlot = function(){
-    var body = this.promptEl.parentNode, need = this.slotEl.offsetHeight + 36;
-    if (need > body.offsetHeight) body.style.minHeight = need + 'px';
-  };
-
-  Typer.prototype.reveal = function(sc){
-    this.slotEl.innerHTML = popupHTML(sc, this.compact);
-    this.fitSlot();
-    this.scrimEl.classList.add('show');
-    this.slotEl.classList.add('show');
-  };
-
-  Typer.prototype.play = function(sc, onDone){
-    var self = this;
-    this.reset();
-    var gen = this.gen;
-    this.urlEl.textContent = sc.url;
-
-    function finish(){
-      if (gen !== self.gen) return;
-      self.draw(sc, sc.segs.length - 1, 0, true);
-      setTimeout(function(){
-        if (gen !== self.gen) return;
-        self.reveal(sc);
-        if (onDone) onDone();
-        if (self.edit && sc.reply && !reduced) self.later(gen, function(){ self.editFlow(sc, gen); }, 1500);
-      }, reduced ? 0 : 420);
-    }
-
-    if (reduced) { finish(); return; }
-
-    var segIdx = 0, charIdx = 0;
-    function step(){
-      if (gen !== self.gen) return;
-      var seg = sc.segs[segIdx];
-      if (seg.paste) {
-        // Everything from here on lands at once, like a paste, then gets scanned.
-        var lastIdx = sc.segs.length - 1;
-        var doPaste = function(){
-          self.draw(sc, lastIdx, sc.segs[lastIdx].t.length, false, true);
-          setTimeout(finish, 1100);
-        };
-        if (self.mouse) self.mousePaste(gen, doPaste); else doPaste();
-        return;
-      }
-      charIdx++;
-      self.draw(sc, segIdx, charIdx, false);
-      if (charIdx >= seg.t.length) {
-        segIdx++; charIdx = 0;
-        if (segIdx >= sc.segs.length) { finish(); return; }
-        setTimeout(step, sc.segs[segIdx].paste ? 900 : 80);
-        return;
-      }
-      setTimeout(step, seg.pii ? 42 : 24);
-    }
-    setTimeout(step, 500);
-  };
-
-  /* ---------- Hero: auto-cycling teaser ---------- */
-  var HERO = [
-    { url: 'chatgpt.com', segs: [
-      { t: 'is this charge a scam? never heard of this store\n\n' },
-      { t: 'SHOPNOVA*ONLINE  TORONTO ON  $212.00\nCard: ', paste: true },
-      { t: '4539 1488 0343 6467', pii: 'Credit Card' }
-    ]},
-    { url: 'claude.ai', segs: [
-      { t: 'help me fill out this benefits form\n\n' },
-      { t: 'Name: ', paste: true },
-      { t: 'Sarah Morin', pii: 'Person Name', ai: true },
-      { t: '\nSIN: ' },
-      { t: '046 454 286', pii: 'SIN' },
-      { t: '\nCell: ' },
-      { t: '613-555-0188', pii: 'Phone' }
-    ]},
-    { url: 'gemini.google.com', segs: [
-      { t: 'write a short intro for the school parents group\n\n' },
-      { t: 'Sarah Morin', pii: 'Person Name', ai: true, paste: true },
-      { t: ', mom of two\n' },
-      { t: 'sarah.morin88@gmail.com', pii: 'Email' },
-      { t: ' | ' },
-      { t: '613-555-0107', pii: 'Phone' }
-    ]}
-  ];
-
-  var heroTyper = new Typer({ url:'hero-url', prompt:'hero-prompt', scrim:'hero-scrim', slot:'hero-slot', compact:true, mouse:true });
-  var heroIdx = 0;
-  function heroLoop(){
-    heroTyper.play(HERO[heroIdx], function(){
-      setTimeout(function(){
-        heroIdx = (heroIdx + 1) % HERO.length;
-        heroLoop();
-      }, reduced ? 7000 : 4600);
-    });
-  }
-  heroLoop();
-
-  /* ---------- See it live: everyday situations ----------
-     Typed question, then a pasted block. Highlights match what the detector
-     actually flags: pattern rules (orange) vs the in-browser AI layer (ai: true). */
-  var SITUATIONS = [
-    { name: 'Taxes', url: 'chatgpt.com',
-      reply: 'Here\'s where each T4 amount goes on your return:\n\n• Box 14, employment income (58,432.10) goes on line 10100.\n• Box 22, income tax deducted (9,871.44) goes on line 43700.\n\nThe name [NAME HERE] and SIN [SIN HERE] just identify the slip, so you don\'t enter them again.',
-      cap: 'Pattern rules catch the <strong>SIN</strong> from the label next to it. The in-browser AI layer flags the name.',
-      segs: [
-        { t: 'what box does this go in on my return?\n\n' },
-        { t: 'Statement of Remuneration Paid (T4) 2025\nEmployee: ', paste: true },
-        { t: 'JAMES R MORIN', pii: 'Person Name', ai: true },
-        { t: '\nSIN: ' },
-        { t: '046 454 286', pii: 'SIN' },
-        { t: '\n14 Employment income: 58,432.10\n22 Income tax deducted: 9,871.44' }
-      ]},
-    { name: 'Health', url: 'claude.ai',
-      reply: 'Here\'s what those results mean in plain words:\n\n• Ferritin 8 ug/L (low): your body\'s iron stores are running low.\n• Hemoglobin 112 g/L (low): you have a bit less oxygen-carrying blood than usual, which can make you feel tired.\n\nTogether these often point to low iron. It\'s worth calling your doctor\'s office to ask if anything should start before your appointment.',
-      cap: 'The <strong>Ontario health card number</strong> is caught by its label. The AI layer flags the patient\'s name.',
-      segs: [
-        { t: 'can you explain these results in normal words, doctor wont see me til next month\n\n' },
-        { t: 'Patient: ', paste: true },
-        { t: 'Morin, Sarah', pii: 'Person Name', ai: true },
-        { t: ' DOB: 1991-03-14\nHealth Card: ' },
-        { t: '1234-567-890-AB', pii: 'Health Card' },
-        { t: '\nFerritin: 8 ug/L (L) Hemoglobin: 112 g/L (L)' }
-      ]},
-    { name: 'Money', url: 'gemini.google.com',
-      reply: 'Here\'s a calmer, professional version that still clearly asks for the refund:\n\nHi,\n\nI noticed that I was charged twice for order #112-4839201. My card ending in [CARD NUMBER HERE] was charged $89.99 on both September 3 and September 4.\n\nCould you please look into this and arrange a refund for the duplicate charge?\n\nThank you for your help.',
-      cap: 'The <strong>card number</strong> passes a checksum, so it\'s flagged. The order number and dollar amounts aren\'t personal, so NorthSyte leaves them alone.',
-      segs: [
-        { t: 'rewrite this so it sounds less angry\n\n' },
-        { t: 'I was charged twice for order #112-4839201. Card ending ', paste: true },
-        { t: '4111 1111 1111 1111', pii: 'Credit Card' },
-        { t: ', charged $89.99 on Sept 3 AND Sept 4. I want my money back.' }
-      ]},
-    { name: 'Email', url: 'copilot.microsoft.com',
-      reply: 'Here\'s a more professional version:\n\nHi Dave,\n\nCould you please send the lease documents to my new address: [ADDRESS HERE], Ottawa [POSTAL CODE HERE]?\n\nIf anything comes up, you can reach me at [PHONE HERE].\n\nThanks!',
-      cap: 'The <strong>phone number and postal code</strong> are caught by pattern rules. The AI layer picks up the street address.',
-      segs: [
-        { t: 'make this sound more professional\n\n' },
-        { t: 'hey Dave, can u send the lease stuff to my new place, ', paste: true },
-        { t: '18 Maple Ave apt 3', pii: 'Address', ai: true },
-        { t: ', Ottawa ' },
-        { t: 'K2P 1L4', pii: 'Postal Code' },
-        { t: '. my cell is ' },
-        { t: '613-555-0142', pii: 'Phone' },
-        { t: ' if anything comes up' }
-      ]},
-    { name: 'Job search', url: 'chatgpt.com',
-      reply: 'Here\'s a cleaner header:\n\n[NAME HERE]\n[ADDRESS HERE], Ottawa ON [POSTAL CODE HERE]\n[PHONE HERE]  ·  [EMAIL HERE]\n\nPut your name on its own line in a larger font, and keep the contact details on one line underneath.',
-      cap: 'Your <strong>email, phone, and postal code</strong> are caught instantly. The AI layer flags your name and street address.',
-      segs: [
-        { t: 'fix the formatting on my resume header\n\n' },
-        { t: 'Jessica Tran', pii: 'Person Name', ai: true, paste: true },
-        { t: '\n' },
-        { t: '245 Rideau St', pii: 'Address', ai: true },
-        { t: ', Ottawa ON ' },
-        { t: 'K1N 5Y2', pii: 'Postal Code' },
-        { t: ' | ' },
-        { t: '613-555-0188', pii: 'Phone' },
-        { t: ' | ' },
-        { t: 'jtran.91@gmail.com', pii: 'Email' }
-      ]}
-  ];
-
-  var liveTyper = new Typer({ url:'live-url', prompt:'live-prompt', scrim:'live-scrim', slot:'live-slot', edit:true });
-  var liveTabs = document.getElementById('live-tabs');
-  var liveCap  = document.getElementById('live-cap');
-
-  liveTabs.innerHTML = SITUATIONS.map(function(sit, i){
-    return '<button class="tab' + (i === 0 ? ' active' : '') + '" data-i="' + i + '">' + sit.name + '</button>';
-  }).join('');
-
-  function playSituation(i){
-    var sit = SITUATIONS[i];
-    Array.prototype.forEach.call(liveTabs.children, function(b, bi){
-      b.classList.toggle('active', bi === i);
-    });
-    liveCap.style.opacity = '0';
-    liveTyper.play(sit, function(){
-      liveCap.innerHTML = sit.cap;
-      liveCap.style.opacity = '1';
-    });
-  }
-
-  liveTabs.addEventListener('click', function(e){
-    var btn = e.target.closest('.tab');
-    if (btn) playSituation(+btn.dataset.i);
-  });
-
-  var liveStarted = false;
-  if ('IntersectionObserver' in window) {
-    var lo = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){
-        if (en.isIntersecting && !liveStarted) { liveStarted = true; playSituation(0); }
-      });
-    }, { threshold: .25 });
-    lo.observe(document.getElementById('live'));
-  } else {
-    playSituation(0);
-  }
-
-  /* ---------- Waitlist form ---------- */
-  document.getElementById('demo-form').addEventListener('submit', async function(e){
-    e.preventDefault();
-    var form = e.target;
-    var res = await fetch(form.action, {
-      method: 'POST',
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
-    });
-    if (res.ok) {
-      form.style.display = 'none';
-      document.getElementById('demo-success').style.display = 'block';
-    } else {
-      alert('Something went wrong — please email us directly at hello@northsyte.com');
-    }
-  });
 })();
 </script>
 </body>
