@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Source of record: AI_Company/docs/privacy-policy.md. Change both together,
-     and in the same PR as any change to what the extension or backend collects.
-     The version below must match CONSENT_VERSION on welcome.html and the pilot page. -->
+<!-- Source of record: AI_Company/docs/privacy-policy.md. The two must match word
+     for word. Change both together, in the same PR as any change to what the
+     extension or backend collects, and bump the version and date in both. -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Privacy Policy — NorthSyte</title>
@@ -49,7 +49,7 @@
 
 <main>
   <h1>Privacy Policy</h1>
-  <p class="meta">Version 2026-09-15 · Last updated September 15, 2026</p>
+  <p class="meta">Version 2026-09-16 · Last updated September 16, 2026</p>
 
   <div class="short">
     <strong>The short version</strong>
@@ -57,7 +57,8 @@
     tools inside your browser. We never receive the text you type or the
     sensitive values we detect — only a short record that a detection happened
     and what <em>kind</em> of data it was. To activate the extension we ask for
-    your email address. We don't sell your data.
+    your email address, and we use it only for messages about your installation.
+    We don't send marketing, and we don't sell your data.
   </div>
 
   <h2>1. Who we are</h2>
@@ -70,8 +71,7 @@
 
   <p>This policy covers the <strong>NorthSyte browser extension</strong>
   ("NorthSyte — AI Privacy Guard"), the setup page it opens, and
-  <strong>northsyte.com</strong>. If you use NorthSyte through your employer,
-  see section 10.</p>
+  <strong>northsyte.com</strong>.</p>
 
   <h2>2. How the extension works</h2>
   <p>On supported AI tools (such as ChatGPT, Claude and Gemini), NorthSyte checks
@@ -94,10 +94,7 @@
   protection switches on once you provide it. We store the address and when you
   gave it. It identifies your installation and lets us send you service messages
   about it — for example, if a site we protect changes and your coverage is
-  affected.</p>
-  <p>Separately, there is an <strong>optional</strong> box to receive product
-  news. If you tick it, we record that you consented, when, and which version of
-  this policy was in effect. If you don't, we will not send you marketing.</p>
+  affected. We don't use it for marketing or newsletters.</p>
 
   <h3>3.3 Detection events</h3>
   <p>Each time you submit a prompt on a supported AI tool, the extension sends a
@@ -125,16 +122,17 @@
   where detection is too eager or misses things — and to find your data if you
   ask us to show or delete it.</p>
 
-  <h3>3.4 Security logs</h3>
-  <p>Our firewall records technical details of requests to our servers — such as
-  IP address, time, the address requested and browser headers — to detect abuse.
-  These logs are kept for 30 days.</p>
+  <h3>3.4 Abuse protection</h3>
+  <p>Like any website, our servers see the IP address of each request. Our
+  firewall uses it for a few minutes to count requests and block abuse, such as
+  a flood of sign-ups from one address. We don't store IP addresses.</p>
 
   <h3>3.5 On your device</h3>
-  <p>The extension keeps its settings, detection rules, installation ID and access
-  token in your browser's extension storage. Websites can't read it. Some of it
-  (your installation ID and settings) syncs across your Chrome browsers if you use
-  Chrome sync.</p>
+  <p>The extension keeps its settings, detection rules, the categories from your
+  most recent detection, your installation ID and your access token in your
+  browser's extension storage. Websites can't read it. Your installation ID,
+  access token and settings sync across your Chrome browsers if you use Chrome
+  sync.</p>
 
   <h3>3.6 Problem reports</h3>
   <p>If you use <strong>Report a problem</strong> in the extension, we receive what
@@ -156,9 +154,9 @@
   Reports are emailed to the NorthSyte team so we can look into them.</p>
 
   <h3>3.7 The website</h3>
-  <p>If you use the waitlist or demo form on northsyte.com, we receive what you
-  enter in it, and use it only to respond to you. The site has no analytics or
-  advertising trackers.</p>
+  <p>If you join the waitlist on northsyte.com, we receive your email address and
+  use it only to tell you when NorthSyte is available. The site has no analytics,
+  advertising trackers or third-party fonts.</p>
 
   <h2>4. What we never collect</h2>
   <ul>
@@ -166,6 +164,7 @@
     <li><strong>The sensitive values we detect.</strong> We record that a card number was found — never the number.</li>
     <li><strong>AI tools' responses</strong>, or any other page content.</li>
     <li><strong>Your browsing history</strong>, or activity on sites outside the supported AI tools.</li>
+    <li><strong>Your IP address</strong>, beyond the few minutes described in 3.4.</li>
     <li><strong>Payment details.</strong></li>
   </ul>
 
@@ -183,11 +182,11 @@
     model runs on your device.</li>
     <li><strong>GitHub</strong> hosts northsyte.com, including the setup page, and
     receives standard web request information when you visit.</li>
-    <li><strong>Google</strong> provides the fonts on northsyte.com (your browser
-    requests them from Google) and our email (Google Workspace), which handles
-    messages you send us and any we send you.</li>
-    <li><strong>Web3Forms</strong> receives and forwards to us what you submit in
-    the website's waitlist form.</li>
+    <li><strong>Google</strong> provides our email (Google Workspace), which handles
+    messages you send us, problem reports emailed to our team, and any messages we
+    send you.</li>
+    <li><strong>Web3Forms</strong> receives and forwards to us the email address you
+    submit in the website's waitlist form.</li>
   </ul>
   <p><strong>We do not sell your personal information, and we do not share it with
   advertisers or data brokers.</strong> We may disclose information if required by
@@ -197,41 +196,35 @@
 
   <h2>6. Why we are allowed to use it</h2>
   <p>In Canada we rely on your consent, given when you install NorthSyte and
-  provide your email on the setup page, for the purposes described here.
-  Marketing emails are sent only with the express consent required by Canada's
-  Anti-Spam Legislation (CASL).</p>
+  provide your email on the setup page, for the purposes described here.</p>
   <p>If you are in the EU or UK, our legal bases under the GDPR are:</p>
   <ul>
     <li><strong>Providing the extension</strong> (installation record, email for
     service messages): performance of our agreement with you.</li>
-    <li><strong>Detection events and security logs:</strong> our legitimate
+    <li><strong>Detection events and abuse protection:</strong> our legitimate
     interest in running, securing and improving a privacy product. They contain
     no prompt text and no detected values.</li>
     <li><strong>Problem reports:</strong> our legitimate interest in fixing the
     problem you asked us to look at.</li>
-    <li><strong>Product news:</strong> your consent, which you can withdraw at any
-    time.</li>
   </ul>
   <p>Canada is recognized by the European Commission as providing adequate
   protection for personal data transferred from the EU.</p>
 
   <h2>7. How long we keep it</h2>
   <ul>
-    <li><strong>Detection events:</strong> 24 months, then deleted automatically.</li>
+    <li><strong>Detection events:</strong> 12 months, then deleted automatically.</li>
     <li><strong>Installations that never provided an email:</strong> deleted
-    automatically after 24 months without contacting us.</li>
+    automatically after 90 days without contacting us.</li>
     <li><strong>Your email address and installation record:</strong> kept while
     you use NorthSyte, and deleted within 30 days of your request. Uninstalling
     the extension stops collection but does not by itself tell us to delete your
     data — email us for that.</li>
-    <li><strong>Proof of consent:</strong> if you consented to product news and
-    later unsubscribe or ask us to delete your data, we may keep a minimal record
-    that consent was given and withdrawn (dates and policy version) for as long as
-    needed to show we followed anti-spam law.</li>
     <li><strong>Problem reports</strong>, including any reply address you gave:
     12 months in our database, then deleted automatically. A copy is emailed to our
     team; ask us and we'll delete both sooner.</li>
-    <li><strong>Security logs:</strong> 30 days.</li>
+    <li><strong>Waitlist sign-ups:</strong> kept until you ask us to remove them.</li>
+    <li><strong>Backups:</strong> our database backups are kept for up to 30 days,
+    so deleted data is gone from them within 30 days of being deleted.</li>
   </ul>
 
   <h2>8. Your rights and choices</h2>
@@ -240,7 +233,6 @@
     <li>see the data linked to your installation, including a portable copy</li>
     <li>correct your email address</li>
     <li>delete your data, including your detection events</li>
-    <li>withdraw consent to product news (or use the unsubscribe link in any such email)</li>
     <li>object to or ask us to restrict how we use your data</li>
   </ul>
   <p>We'll respond within 30 days, and may ask you to confirm you control the
@@ -261,25 +253,18 @@
   breach creates a real risk of significant harm to you, we will notify you and
   the relevant regulator as the law requires.</p>
 
-  <h2>10. If your employer provides NorthSyte</h2>
-  <p>The business edition of NorthSyte is deployed by organizations for their
-  employees. In that case your employer decides how it is used, and we process
-  the data on their behalf under our agreement with them — questions should go
-  to your employer first. The same core rule applies: prompt text never leaves
-  your device.</p>
-
-  <h2>11. Children</h2>
+  <h2>10. Children</h2>
   <p>NorthSyte is not intended for anyone under 16, and we don't knowingly collect
   their data. If you believe a child has given us their information, email us and
   we'll delete it.</p>
 
-  <h2>12. Changes to this policy</h2>
+  <h2>11. Changes to this policy</h2>
   <p>We'll post changes here and update the version and date above. If we make a
   material change — especially to how we use your email address — we'll tell you
   by email or in the extension before it takes effect and, where the law
   requires, ask for your consent again.</p>
 
-  <h2>13. Contact</h2>
+  <h2>12. Contact</h2>
   <p>NorthSyte · Ottawa, Ontario, Canada<br />
   <a href="mailto:privacy@northsyte.com">privacy@northsyte.com</a></p>
 </main>

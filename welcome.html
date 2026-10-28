@@ -65,13 +65,6 @@
   .privacy-line{font-size:.85rem;color:var(--muted);margin-top:10px}
   .privacy-line a{color:var(--orange-deep);font-weight:600}
 
-  /* Consent — deliberately its own block, visually separate from the submit
-     button. Express consent cannot be implied by the act of submitting. */
-  .consent{display:flex;gap:12px;align-items:flex-start;margin:22px 0;padding:16px;background:var(--orange-soft);border-radius:12px}
-  .consent input[type=checkbox]{flex:none;width:20px;height:20px;margin-top:2px;accent-color:var(--orange);cursor:pointer}
-  .consent label{font-size:.95rem;cursor:pointer}
-  .consent .note{display:block;color:var(--muted);font-size:.82rem;margin-top:4px}
-
   form .btn{width:100%}
   .err{display:none;margin-top:14px;padding:12px 14px;border-radius:10px;background:#FDECEC;border:1px solid #F5C2C2;color:#8C2020;font-size:.9rem}
   .err.show{display:block}
@@ -117,14 +110,6 @@
           We'll only use this as described in our <a id="privacy-link" href="/privacy">privacy policy</a>.
         </p>
 
-        <div class="consent">
-          <input type="checkbox" id="marketing-consent" name="marketing_consent" />
-          <label for="marketing-consent">
-            Email me product updates and news from NorthSyte.
-            <span class="note">Optional — you can leave this unticked and still continue.</span>
-          </label>
-        </div>
-
         <button type="submit" class="btn" id="submit-btn">Continue</button>
         <div class="err" id="form-error" role="alert" aria-live="assertive"></div>
       </form>
@@ -133,7 +118,7 @@
         <strong>What NorthSyte collects</strong>
         <ul>
           <li>Your prompt text <strong>never leaves your device</strong> — scanning happens entirely in your browser.</li>
-          <li>We store detection metadata only: what type of sensitive data was found, on which site, and when.</li>
+          <li>Besides this address, we store detection metadata: what type of sensitive data was found, on which site, and when.</li>
           <li>We never store the content we're protecting.</li>
         </ul>
       </div>
@@ -188,12 +173,7 @@
     // Consumer extension listing. Fill in once the extension is published.
     WEB_STORE_URL: "",
 
-    PRIVACY_URL: "/privacy",
-
-    // Identifies the consent text actually shown above. Bump this whenever that
-    // wording changes — it is the record that makes a later campaign lawful.
-    // The server stamps the timestamp itself; a client clock is not evidence.
-    CONSENT_VERSION: "2026-09-15"
+    PRIVACY_URL: "/privacy"
   };
 
   // ── Capture the token, then scrub it from the URL ─────────────────────────
@@ -260,15 +240,11 @@
   }
 
   // ── Submission ────────────────────────────────────────────────────────────
-  function submitEmail(email, consent) {
+  function submitEmail(email) {
     var payload = {
       onboarding_token: token,
-      email: email,
-      marketing_consent: consent
+      email: email
     };
-    // Only sent when consent was actually given, so an unconsented record can
-    // never carry a policy version that makes it look consented later.
-    if (consent) payload.consent_version = CONFIG.CONSENT_VERSION;
 
     return fetch(CONFIG.API_ORIGIN + "/api/onboarding/email", {
       method: "POST",
@@ -283,7 +259,6 @@
 
     var emailInput = el("email");
     var email = emailInput.value.trim();
-    var consent = el("marketing-consent").checked;
 
     // Convenience only — the server validates properly.
     if (!email || email.indexOf("@") < 1 || email.lastIndexOf(".") < email.indexOf("@")) {
@@ -301,11 +276,9 @@
       button.textContent = "Continue";
     };
 
-    submitEmail(email, consent).then(function (res) {
+    submitEmail(email).then(function (res) {
       if (res.ok) {
-        el("success-message").textContent = consent
-          ? "Thanks — we'll let you know when we add support for new AI tools. You can unsubscribe from any email we send."
-          : "Thanks. We've saved your address for service messages about your installation only — we won't send you product news.";
+        el("success-message").textContent = "Thanks. We've saved your address for service messages about your installation only.";
         show("success");
         return;
       }
