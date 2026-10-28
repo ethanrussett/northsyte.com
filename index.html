@@ -140,11 +140,51 @@
   .card p.eg{margin-top:10px;font-size:.88rem;color:var(--fg2);opacity:.82}
   @media(max-width:720px){.cards{grid-template-columns:1fr}}
 
+  /* Sensitive data removal: coverage grid */
+  .cov-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .cov{border:1px solid var(--cardline);border-radius:var(--radius);padding:28px 26px;background:var(--cardbg);transition:.26s var(--ease)}
+  .cov:hover{transform:translateY(-4px);background:var(--cardbg-hi)}
+  .cov .ci{width:44px;height:44px;border-radius:12px;background:rgba(244,122,30,.18);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+  .cov .ci svg{width:22px;height:22px;color:var(--orange-bright)}
+  .cov h3{font-size:1.08rem;margin-bottom:9px;color:var(--fg)}
+  .cov p{color:var(--fg2);font-size:.93rem}
+  .cov.ai{background:#3B2718;border-color:rgba(244,122,30,.42)}
+  .cov.ai:hover{background:#472F1D}
+  .cov .pill{display:inline-block;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:#C9C3FF;background:rgba(79,70,229,.3);padding:3px 9px;border-radius:999px;margin-bottom:10px}
+  @media(max-width:860px){.cov-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.cov-grid{grid-template-columns:1fr}}
+
+  /* Three-step ingest flow: white panels on dark, as the demo window used to be */
+  .flow{display:grid;grid-template-columns:1fr 30px 1fr 30px 1fr;gap:12px;align-items:stretch;margin-bottom:58px}
+  .fcard{background:#fff;color:var(--ink);border-radius:var(--radius);padding:22px 20px;box-shadow:var(--shadow-lg);display:flex;flex-direction:column;text-align:left}
+  .fhead{display:flex;align-items:center;gap:11px;margin-bottom:15px}
+  .fstep{flex:none;width:25px;height:25px;border-radius:50%;background:var(--near-black);color:#fff;font-size:.76rem;font-weight:800;display:flex;align-items:center;justify-content:center}
+  .fcard.hit .fstep{background:var(--orange)}
+  .fhead h4{font-size:1rem;font-weight:700;color:#161616;letter-spacing:-.01em}
+  .fbody{background:#F6F5F3;border-radius:12px;padding:15px 16px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.83rem;line-height:1.85;overflow-wrap:anywhere;flex:1}
+  .fbody mark{border-radius:4px;padding:1px 5px;font-weight:600;font-style:normal}
+  .fbody mark.found{background:#FBE3D5;color:#B4460B}
+  .fbody mark.clean{background:#E7F3E8;color:#2E7D32}
+  .frow{display:flex;justify-content:space-between;align-items:baseline;gap:14px;background:#F6F5F3;border-radius:10px;padding:10px 13px;font-size:.83rem}
+  .frow + .frow{margin-top:8px}
+  .frow b{font-weight:600;color:#3A3734}
+  .frow span{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#B4460B;text-align:right;overflow-wrap:anywhere}
+  .fcap{margin-top:13px;font-size:.79rem;color:var(--muted);line-height:1.5}
+  .farrow{display:flex;align-items:center;justify-content:center;color:var(--orange-bright)}
+  .farrow svg{width:22px;height:22px;display:block}
+  @media(max-width:900px){
+    .flow{grid-template-columns:1fr;gap:10px;max-width:460px;margin-left:auto;margin-right:auto}
+    .farrow{transform:rotate(90deg);height:26px}
+  }
+  .mini-head{text-align:center;margin:0 auto 30px}
+  .mini-head h3{font-size:1.18rem;font-weight:700;color:var(--fg);letter-spacing:-.01em}
+
   /* CTA */
   .cta{text-align:center}
   .cta h2{text-wrap:balance;font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:14px;letter-spacing:-.025em;font-weight:800;color:var(--fg)}
   .cta p{max-width:52ch;margin:0 auto 30px;font-size:1.08rem;color:var(--fg2)}
-  .cta-note{margin-top:18px;font-size:.86rem;color:var(--fg2)}
+  .cta-actions{display:flex;justify-content:center;margin-top:36px}
+  .cta p.cta-note{margin:22px auto 0;font-size:.86rem;color:var(--fg2)}
 
   footer{background:var(--charcoal-deep);padding:46px 0;text-align:center;color:rgba(255,255,255,.6);font-size:.9rem}
   footer .logo{justify-content:center;margin-bottom:10px}
@@ -185,7 +225,7 @@
   <div class="wrap">
     <div class="section-head tight" data-reveal data-clear>
       <h2>Your team has been told <span class="accent">not to use AI</span></h2>
-      <p>In insurance, property management and other regulated fields, client information cannot go into public AI tools. So it doesn't.</p>
+      <p>In regulated and data-sensitive industries, client information cannot go into public AI tools. So it doesn't.</p>
       <p>Which leaves two options: keep doing the work the slow way, or use AI quietly, with no safeguards and no record of what was shared.</p>
     </div>
   </div>
@@ -205,13 +245,11 @@
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.4 8.4-8 9.5C7.4 20.4 4 17 4 12V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
         <h3>Private AI, on your premises</h3>
         <p>AI that runs inside your organization, so client data never leaves your walls.</p>
-        <p class="eg">Built with insurance brokerages in mind.</p>
       </div>
       <div class="card" data-reveal>
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h4"/></svg></div>
         <h3>AI that knows your documents</h3>
         <p>Ask questions across your contracts, leases and files, and get answers grounded in your own records.</p>
-        <p class="eg">For work like commercial property management.</p>
       </div>
       <div class="card" data-reveal>
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 7.3l-2.1 2.1a2.6 2.6 0 0 1-3.7-3.7l2.1-2.1a5.3 5.3 0 0 0-7 7L4.2 17.2a2 2 0 0 0 2.8 2.8l6.6-6.6a5.3 5.3 0 0 0 6.9-6.1z"/></svg></div>
@@ -225,12 +263,86 @@
 
 <div class="divider"></div>
 
+<!-- SENSITIVE DATA REMOVAL -->
+<section class="sec sec-b" data-pipe>
+  <div class="wrap">
+    <div class="section-head" data-reveal data-clear>
+      <h2>Sensitive data <span class="accent">removed at ingest</span></h2>
+      <p>Your files do not arrive at the model as they left your systems. Sensitive details are found and stripped on the way in, so what gets indexed and answered against is already clean.</p>
+    </div>
+
+    <div class="flow" data-reveal>
+      <div class="fcard">
+        <div class="fhead"><span class="fstep">1</span><h4>What goes in</h4></div>
+        <div class="fbody">Settlement letter re: client <mark class="found">Daniel Okafor</mark> (DOB <mark class="found">Mar 12, 1984</mark>). File <mark class="found">CV-24-00881</mark>, settled at <mark class="found">$185,000</mark>. Contact <mark class="found">d.okafor@email.com</mark>.</div>
+        <p class="fcap">A document out of your systems, exactly as you hold it today.</p>
+      </div>
+      <div class="farrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg></div>
+      <div class="fcard hit">
+        <div class="fhead"><span class="fstep">2</span><h4>What NorthSyte finds</h4></div>
+        <div>
+          <div class="frow"><b>Client name</b><span>Daniel Okafor</span></div>
+          <div class="frow"><b>Date of birth</b><span>Mar 12, 1984</span></div>
+          <div class="frow"><b>File number</b><span>CV-24-00881</span></div>
+          <div class="frow"><b>Amount</b><span>$185,000</span></div>
+          <div class="frow"><b>Email</b><span>d.okafor@email.com</span></div>
+        </div>
+        <p class="fcap">Found and classified on the way in, before anything is indexed.</p>
+      </div>
+      <div class="farrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg></div>
+      <div class="fcard">
+        <div class="fhead"><span class="fstep">3</span><h4>What the model sees</h4></div>
+        <div class="fbody">Settlement letter re: client <mark class="clean">[CLIENT]</mark> (DOB <mark class="clean">[DOB]</mark>). File <mark class="clean">[FILE_NO]</mark>, settled at <mark class="clean">[AMOUNT]</mark>. Contact <mark class="clean">[EMAIL]</mark>.</div>
+        <p class="fcap">The same meaning, with nothing sensitive left in it.</p>
+      </div>
+    </div>
+
+    <div class="mini-head" data-reveal data-clear><h3>What gets removed</h3></div>
+
+    <div class="cov-grid">
+      <div class="cov" data-reveal>
+        <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 11V8a5 5 0 0 1 10 0v3"/><rect x="4.5" y="11" width="15" height="9.5" rx="2"/></svg></div>
+        <h3>Credentials &amp; secrets</h3>
+        <p>API keys, access tokens, passwords, private keys and connection strings.</p>
+      </div>
+      <div class="cov" data-reveal>
+        <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.4"/><path d="M2.5 10h19"/><path d="M6.5 15h4"/></svg></div>
+        <h3>Financial</h3>
+        <p>Card numbers, bank account and routing details, and business tax numbers.</p>
+      </div>
+      <div class="cov" data-reveal>
+        <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.4"/><circle cx="8.5" cy="11" r="2.2"/><path d="M5 16.5c.7-1.7 2-2.5 3.5-2.5s2.8.8 3.5 2.5"/><path d="M15 10h4"/><path d="M15 13.5h4"/></svg></div>
+        <h3>Government &amp; personal IDs</h3>
+        <p>National insurance and social security numbers, passports and driver's licences.</p>
+      </div>
+      <div class="cov" data-reveal>
+        <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="15" rx="2.4"/><path d="M12 9.5v6"/><path d="M9 12.5h6"/></svg></div>
+        <h3>Healthcare</h3>
+        <p>Health card and patient numbers, along with provider and billing identifiers.</p>
+      </div>
+      <div class="cov" data-reveal>
+        <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6.5h16v11H4z"/><path d="M4 7.5l8 5.5 8-5.5"/></svg></div>
+        <h3>Personal &amp; contact info</h3>
+        <p>Email addresses, phone numbers and postal codes, with the names and addresses that travel alongside them.</p>
+      </div>
+      <div class="cov ai" data-reveal>
+        <span class="pill">AI layer</span>
+        <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 19.5a6 6 0 0 1 12 0"/><path d="M16 4.6a3.2 3.2 0 0 1 0 6.2"/><path d="M18 14.3a6 6 0 0 1 3 5.2"/></svg></div>
+        <h3>People, organizations &amp; places</h3>
+        <p>A model running inside your environment reads meaning rather than formats, so it catches the names and street addresses no pattern rule could match.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
 <!-- CLOSING CTA -->
-<section class="sec sec-b cta" data-pipe>
+<section class="sec sec-a cta" data-pipe>
   <div class="wrap">
     <h2 data-clear>Ready to use AI your compliance team will approve?</h2>
     <p data-clear>Tell us where AI would help your team most, and we will show you what a private setup looks like.</p>
-    <a href="mailto:hello@northsyte.com?subject=Booking%20a%20conversation%20about%20NorthSyte" class="btn" data-clear>Book a conversation</a>
+    <div class="cta-actions" data-clear><a href="mailto:hello@northsyte.com?subject=Booking%20a%20conversation%20about%20NorthSyte" class="btn">Book a conversation</a></div>
     <p class="cta-note" data-clear>For small and mid-sized businesses in regulated industries.</p>
   </div>
 </section>
